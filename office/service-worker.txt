@@ -1,0 +1,129 @@
+Service Worker:
+----------------
+-> A service worker is a specialized type of JavaScript web worker that runs a script in the background of a web browser and manages caching and other offline-related tasks.
+
+Service worker used for
+1. Offline access
+2. Push Notification
+3. Background sync
+
+-> Service worker is working as when the network is 'ON' then the request is comes from the server side , if the network is 'OFF' then the request is comes from the cache side
+
+-> A Service Worker is like background daemon process that sits between our web application and the network, intercepting all HTTP requests made by the application.
+
+-> A Service Worker is a network proxy, running inside the browser itself!
+
+-> It only use for 'https' so we need to use the production
+-> Service Worker has the three stages are :
+   1. Registration 
+   2. Installation
+   3. Activation
+ 
+Setup for adding the Service Worker
+------------------------------------
+step- 1 : install -> ng add @angular/pwa
+
+step- 2 : Create a ngsw-config.json file  -- > For Configuring the Service Worker and we can specify in this json file which files need to be store in the Cache storage
+    ngsw-config.json:
+	-----------------
+	{
+		"index": "/",
+		"assetGroups": [
+		  {
+			"name": "app",
+			"installMode": "prefetch",    
+			"resources": {
+			  "files": [
+				"/favicon.ico",
+				"/index.html",
+				"/*.css",
+				"/*.js"
+			  ]
+			}
+		  },
+		  {
+			"name": "icons",
+			"installMode": "lazy",
+			"updateMode": "prefetch",
+			"resources": {
+			  "files": [
+				"/icons/**"
+			  ]
+			}
+		  }
+		]
+	}
+  
+
+
+step- 3 : Create a new component ServiceWorker to check whether the setup for service worker is working or not
+ 
+step- 4 : Registration : 
+         ----------------
+		 code : 
+		 ------
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js')
+			.then((registration) => {
+				console.log('Service Worker registered with scope:', registration.scope);
+			})
+			.catch((error) => {
+				console.error('Service Worker registration failed:', error);
+			});
+		}
+		  
+step- 5 : Create a new file 'service-worker.js' file , In this file contains the installation, Activation, Fetching code for the service worker
+    Installation:
+	-------------
+	const version = 'v1';
+	const cacheName = `cache-${version}`;
+
+	self.addEventListener('install', (event) => {
+	  console.log(`${version} installing...`);
+	  self.skipWaiting();
+	});
+	
+	Activation:
+	-----------
+	self.addEventListener('activate', (event) => {
+	  console.log(`${version} activating...`);
+	  event.waitUntil(
+		caches.keys().then((cacheNames) => {
+		  return Promise.all(
+			cacheNames.filter((name) => {
+			  return name !== cacheName;
+			}).map((name) => {
+			  return caches.delete(name);
+			})
+		  );
+		})
+	  );
+	});
+	
+-> Cache Storage only supports the caching 'GET' request
+	Fetching: only for 'get' request
+	---------
+	self.addEventListener('fetch', (event) => {
+	  // Only handle GET requests
+	  if (event.request.method === 'GET') {
+		event.respondWith(
+		  fetch(event.request).then((networkResponse) => {
+			if (networkResponse && networkResponse.status === 200) {
+			  // Clone the response for caching
+			  const responseToCache = networkResponse.clone();
+			  caches.open(cacheName).then((cache) => {
+				cache.put(event.request, responseToCache);
+			  });
+			}
+			return networkResponse;
+		  }).catch(() => {
+			return caches.match(event.request);
+		  })
+		);
+	  }
+	});
+
+
+
+  
+ 

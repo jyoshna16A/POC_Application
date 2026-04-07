@@ -1,0 +1,14 @@
+Step:1 =>  Create new ionic application
+step:2 =>  run 'npm install @capacitor/push-notifications --force'
+step:3 =>  npm run build
+step:4 =>  npx cap sync
+step:5 =>  ionic build
+step:6 =>  need to add code in capacitor.config.ts
+           server: {
+    androidScheme: 'https'
+  },
+  plugins: {
+    PushNotifications: {
+      presentationOptions: ["badge", "sound", "alert"],
+    }
+  }

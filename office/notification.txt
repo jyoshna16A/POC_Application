@@ -1,0 +1,46 @@
+var admin = require("firebase-admin");
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = process.env.PORT || 3000;
+var serviceAccount = require("D:\\serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+var message = {
+  notification: {
+    title: "Hello",
+    body: "World"
+  },
+  topic: "all"
+};
+app.use(bodyParser.json());
+
+// Endpoint to handle incoming FCM messages
+app.post('/fcm/messages', (req, res) => {
+    console.log('Received FCM message:', req.body);
+    // You can add additional processing or saving to a database here if needed
+    res.status(200).send('Message received');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+// Function to send a message to Firebase
+const sendMessage = (message) => {
+    admin.messaging().send(message)
+        .then((response) => {
+            console.log("Successfully sent message:", response);
+            console.log(message);
+        })
+        .catch((error) => {
+            console.log("Error sending message:", error);
+        });
+};
+
+// Send the example message
+sendMessage(message);
+

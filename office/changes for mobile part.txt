@@ -1,0 +1,17 @@
+
+
+changes:
+---------
+estimated time duration of a trip should be specify
+
+alert message when the marker is in deviation up to 5km or more
+
+color changing the route how much the trip completed to green
+
+display the moving marker not the bouncing marker  
+
+train logo in the location icon 
+
+display the static marker for every 10 meters
+
+notification when the out of deviation

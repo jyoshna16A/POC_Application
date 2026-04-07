@@ -1,0 +1,52 @@
+github:
+---
+mail: jyoshna@techtez.com
+password: Jyoshna@1616
+username: jyoshnamv16
+
+
+Github recovery code
+----------
+
+74b81-d74d6
+804ff-7ea2e
+cf23d-e6377
+ed49e-6db7d
+3bf79-272c4
+6a5ab-7b7f2
+0ae7a-a68d0
+aa621-b4acc
+a2747-838d0
+bb51d-f6888
+afc93-23224
+0ac5b-23baf
+432e4-2f578
+3ae68-5bbc5
+16fcc-edabe
+4ba20-23c10
+
+
+
+//all about git
+----------------
+git branch name 
+git checkout name
+ 
+git status
+ 
+git add 'files'
+git commit -m ""
+git pull origin main (for pull code from main branch)
+git push origin rajesh
+ 
+:q!
+git checkout "fiename" (select+shift+inset)
+
+
+npm installs
+-------------
+npm install sockjs-client --save-dev @types/sockjs-client --force
+
+npm install webstomp-client --force
+
+

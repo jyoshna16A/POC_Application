@@ -1,0 +1,14 @@
+firebaseConfig   --> in environment.ts
+--------------
+apiKey: "AIzaSyBduLl8Q8dJULiEmAqOAWVoWZH-FMMUmis",
+authDomain: "lt-mobile-7e194.firebaseapp.com",
+projectId: "lt-mobile-7e194",
+storageBucket: "lt-mobile-7e194.appspot.com",
+messagingSenderId: "27811353605",
+appId: "1:27811353605:android:868a0b16e31ee43403386c",
+
+
+
+private key pair:
+-----------------
+j3RLSiqnrEji1M1NxhRzHS60tkH5S4llbrrYsTRDrgo

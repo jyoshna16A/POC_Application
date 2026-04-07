@@ -1,0 +1,28 @@
+axis2 -->  Jakarta.servlet-api
+           Jakarta.xml.bind-api
+
+Port-In flow  :  telcordia
+--------------------------
+
+port request  	initial_state  	final_state
+
+1001  --> 	PI1    --> 	PI2
+1004  --> 	PI2    --> 	PI3
+1008  --> 	PI3    -->  	PI5
+1009  --> 	PI5    --> 	PI6
+1010  --> 	PI6    --> 	ACP11
+
+
+Port-In flow  : Syniverse
+-------------------------
+port request  	initial_state  	final_state
+
+1001  --> 	PI1    --> 	PI2
+1004  --> 	PI2    --> 	PI3
+1008  --> 	PI3    -->  	PI6, PI3, 
+1009  --> 	PI5    --> 	PI6
+1010  --> 	PI6    --> 	PI7 
+
+
+
+

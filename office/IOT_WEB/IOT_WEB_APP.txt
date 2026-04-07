@@ -1,0 +1,16 @@
+IOT_WEB_APP:
+------------
+--> Cloned the project from git
+--> npm install
+--> Run the react application in mobile with USB connection
+    --> npx react-native run-android
+
+To get the correct Coordinates value changes made in method GeoLocation.getCurrentPosition()
+--------------------------------------------------------------------------------------------
+Before that need to install
+
+--> rm -rf node_modules package-lock.json
+--> npm cache clean --force
+--> npm install
+--> npm install react-native-geolocation-service
+

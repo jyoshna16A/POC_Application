@@ -1,0 +1,14 @@
+mobile sms sending
+-------------------
+CTH22F5ZP8NHWEF2EBRP1BXP
+
+
+
+Account SID
+-----------
+AC3efa7f455a4d5418d13a8ca284472448
+
+
+Auth Token
+----------
+b6b6ead974ee470e49b0263b702a1fab

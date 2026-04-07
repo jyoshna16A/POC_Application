@@ -1,0 +1,74 @@
+uploading the code from CVS to git :
+------------------------------------
+To download the maven project
+https://maven.apache.org/download.cgi
+settings.xml  -->  to connect with Nexus Repositor
+
+Configure maven in the environment variable -- MAVEN_HOME
+
+To check the maven version
+command : mvn -version
+
+To generate the maven project 
+mvn archetype:generate  --> create the maven project
+2229
+9
+com.techtez
+Demo
+1.0-SNAPSHOT
+com.techtez
+Y
+---------------------
+Maven build lifecycles :
+------------------------
+validate - Validate the project 
+mvn validate
+
+Compile - It will generate the java classes and checks the syntax error
+mvn compile
+
+Package- create the jar file
+mvn package
+
+Verify - need to check whether the package is valid or not 
+mvn verify
+
+install - create the jar file
+mvn install
+--------------------------------------------------
+Maven project in eclipse
+
+file -> new -> maven project
+org.apache.maven.archetype
+
+
+Maven Scope :
+-------------
+compile --> the dependency is needed for the compile, runtime and testing the code
+
+provided --> the dependency is needed for compile time not at runtime 
+
+runtime  --> the dependency is needed for runtime time
+
+test  --> the dependency is needed for testing time
+
+system --> The jar i didn't take from the Nexus or Maven, it is there in the local path, that jar need to add in the pom.xml, then will use the scope as system 
+
+import
+
+
+-------
+Git
+-------
+download git bash
+
+Create a branch:
+----------------
+git branch jyoshna
+git branch -a    --> It will show how many branches are there in the repository
+git checkout jyoshna  -->  to switch
+
+
+
+last release of Tunisia
+14.1.1

@@ -1,0 +1,855 @@
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  Renderer2,
+} from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { TrackService } from './track.service';
+import { HomeService } from '../home/home.service';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { apiURL } from 'src/environments/environment';
+import {
+  AlertController,
+  IonRadio,
+  IonRadioGroup,
+  ToastController,
+} from '@ionic/angular';
+import { setPostSignalSetFn } from '@angular/core/primitives/signals';
+import { MapType } from '@angular/compiler';
+import { waitForAsync } from '@angular/core/testing';
+declare var google: any;
+
+@Component({
+  selector: 'app-track',
+  templateUrl: './track.page.html',
+  styleUrls: ['./track.page.scss'],
+})
+export class TrackPage implements OnInit, OnDestroy {
+  cameraAccess: FormGroup;
+  Latitude!: number;
+  Longitude!: number;
+  currentLat: any;
+  currentLng: any;
+  enable: boolean | undefined;
+  trackStatus: any;
+  showCameraAccess: boolean = false;
+  imageSource: SafeUrl[] = [];
+  selectedCard: number | null = null;
+  file: File | null = null;
+  private locationInterval: any;
+  private fetchCoordinatesInterval: any;
+  successMessage: any;
+  errorMessage: any;
+  marker: any;
+  map: any;
+  gpsCordsList: any[] = [];
+  startTime = Date.now();
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private domSanitizer: DomSanitizer,
+    private http: HttpClient,
+    private formBuider: FormBuilder,
+    private trackService: TrackService,
+    private homeService: HomeService,
+    private geolocation: Geolocation,
+    private toastController: ToastController,
+    private renderer: Renderer2,
+    private alertController: AlertController
+  ) {
+    this.cameraAccess = formBuider.group({
+      id: new FormControl(),
+      image: new FormControl(),
+    });
+  }
+
+  id!: number;
+  trainList: any;
+  foundObject: any;
+  from: any;
+  to: any;
+  pickuplt: any;
+  pickuplng: any;
+  droplt: any;
+  droplng: any;
+  routePath: any;
+  newLat : any;
+  newLng : any;
+  bufferRectangle : any;
+  locationIconPath : any;
+  polyline : any;
+  distance : any;
+
+  ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('id')) ?? 0;
+    console.log(this.id);
+    this.loadTrains();
+    
+  
+  }
+
+  ngOnDestroy(): void {
+    this.stopGeolocationUpdates();
+    clearInterval(this.fetchCoordinatesInterval);
+  }
+
+  loadTrains() {
+    this.homeService.getDataByShipperStatus().subscribe((data) => {
+      this.trainList = data.reverse();
+      console.log('after wagon', this.trainList);
+      this.foundObject = this.trainList.find(
+        (obj: { id: number }) => obj.id === this.id
+      );
+      console.log('this.foundObject', this.foundObject);
+      this.pickuplt = this.foundObject.fromLatitude;
+      this.pickuplng = this.foundObject.fromLongitude;
+      this.droplt = this.foundObject.toLatitude;
+      this.droplng = this.foundObject.toLongitude;
+      this.from = this.foundObject.loadingStation;
+      this.to = this.foundObject.emptyStation;
+      this.distance = this.foundObject.distance;
+
+      console.log("distance is : ", this.distance);
+      this.displayEstimatedTime();
+      
+      console.log(
+        'ltn',
+        this.pickuplng,
+        this.pickuplt,
+        this.droplng,
+        this.droplt
+      );
+      this.initMap();
+      // this.startFetchingCoordinates();
+      this.getAllGPSCords();
+    });
+  }
+
+  
+  initMap() {
+    // Specify the coordinates for the origin and destination
+    const origin = new google.maps.LatLng(this.pickuplng, this.pickuplt);
+    const destination = new google.maps.LatLng(this.droplng, this.droplt);
+
+    // Create a new map instance
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      center: origin,
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
+    
+    // Create a DirectionsService object to handle directions requests
+    const directionsService = new google.maps.DirectionsService();
+  
+    // Create a DirectionsRenderer object to display the directions
+    const directionsRenderer = new google.maps.DirectionsRenderer({
+      map: this.map,
+    });
+
+    // Define the request object for directions
+    const request = {
+      origin: origin,
+      destination: destination,
+      travelMode: google.maps.TravelMode.DRIVING,
+      
+    };
+  
+    // Make the directions request
+    directionsService.route(request, (response: any, status: any) => {
+      if (status === 'OK') {
+        // Display the directions on the map
+        directionsRenderer.setDirections(response);
+
+        // Store the path of the route
+        this.routePath = response.routes[0].overview_path.map((coord: any) => ({
+          lat: coord.lat(),
+          lng: coord.lng()
+        }));
+
+          // Create a polyline for the route with initial color
+          this.polyline = new google.maps.Polyline({
+            path: this.routePath,
+            strokeColor: '#FF0000', // Initial color (red)
+            strokeOpacity: 1.0,
+            strokeWeight: 3,
+            map: this.map,
+          });
+          
+      } 
+      else {
+        // Handle error
+        console.error('Directions request failed due to ' + status);
+      }
+    });
+
+    const locationIconPath = "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z M10 7h4v5h-4z M11 14h2v1h-2z"; // Simplified and adjusted train icon path
+    const truckIconPath =
+    'M10 1H6a2 2 0 0 0-2 2v5.18a3 3 0 0 0-1 2.21V14a2 2 0 0 0 2 2h2v3h4v-3h2a2 2 0 0 0 2-2v-3.61a3 3 0 0 0-1-2.21V3a2 2 0 0 0-2-2zm-2 7v4h4V8zm1-7v2h2V1h-2z';
+    // Initialize the marker at the pickup location with bouncing animation
+    
+    this.marker = new google.maps.Marker({
+      position: { lat: this.pickuplt, lng: this.pickuplng },
+      map: this.map,
+      title: 'Current Position',
+      // animation: google.maps.Animation.BOUNCE,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE, 
+        fillColor: 'green',
+        fillOpacity: 1,
+        scale: 10,
+        strokeColor: 'white',
+        strokeWeight: 2,
+      },
+    });  
+  }
+
+  // Function to calculate the estimated time to reach the destination in hours
+calculateEstimatedTime(distance: number, speed: number): number {
+  return distance / speed;
+}
+
+// Method to calculate and display the estimated time
+displayEstimatedTime() {
+  const averageSpeed = 50; // Assume an average speed of 50 km/h
+  const time = this.calculateEstimatedTime(this.distance, averageSpeed);
+    console.log("The estimated time to reach the destination: ", time.toFixed(2), "hours");
+}
+
+
+  // updateMarkerPosition(lat: number, lng: number) {
+
+  //   // Update the current marker position with bouncing animation
+  //   const newPosition = new google.maps.LatLng(lat, lng);
+  //   this.marker.setPosition(newPosition);
+  //   this.marker.setAnimation(google.maps.Animation.BOUNCE);
+
+  //   this.checkPositionOnRoute({ lat, lng });
+
+  //   // Center the map to the new marker position
+  //   this.map.setCenter(newPosition);
+
+  //   // Stop the bounce animation after a few seconds
+  //   // setTimeout(() => {
+  //   //   this.marker.setAnimation(null);
+  //   // }, 3000); // Stop bouncing after 3 seconds
+  // }
+
+  updateMarkerPosition(lat: number, lng: number) {
+    const newPosition = new google.maps.LatLng(lat, lng);
+    const currentPos = this.marker.getPosition();
+
+     // Check if the new position is significantly different
+    const distance = google.maps.geometry.spherical.computeDistanceBetween(currentPos, newPosition);
+    if (distance < 5) { // Adjust the threshold as needed
+      return; // No need to update if the change is minimal
+    }
+    console.log("distance is : ", distance);
+    const steps = 100; // Number of steps for smooth transition
+    const stepDuration = 1000 / steps; // Duration per step
+
+    let currentStep = 0;
+
+    const latStep = (lat - currentPos.lat()) / steps;
+    const lngStep = (lng - currentPos.lng()) / steps;
+
+    const animateMarker = () => {
+      currentStep++;
+      const lat = currentPos.lat() + latStep * currentStep;
+      const lng = currentPos.lng() + lngStep * currentStep;
+
+      this.marker.setPosition({ lat, lng });
+      // this.marker.setAnimation(google.maps.Animation.BOUNCE);
+
+      if (currentStep < steps) {
+        requestAnimationFrame(animateMarker);
+      } else {
+        this.marker.setAnimation(null);
+      }
+    };
+
+    animateMarker();
+    this.checkPositionOnRoute({ lat, lng });
+    this.map.setCenter(newPosition);
+
+    this.updateEstimatedTime(lat, lng);
+  }
+
+  
+  
+  checkPositionOnRoute(position: { lat: number, lng: number }) {
+    const locationIconPath =
+      'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z';
+
+    const buffer = 0.01;
+
+    const pathWithBuffer = this.routePath.map((coord: any) => ({
+      lat: coord.lat,
+      lng: coord.lng,
+    }));
+
+    const polyline = new google.maps.Polyline({
+      path: pathWithBuffer,
+    });
+
+    const isOnRoute = google.maps.geometry.poly.isLocationOnEdge(
+      position,
+      polyline,
+      buffer
+    );
+
+    let onRoute = false;
+    const deviationThreshold = 500; // Adjust the threshold in meters
+
+    console.log("routePath list is : ",this.routePath);
+
+    // Check if the marker's position is close to any point on the route
+    for (let i = 0; i < this.routePath.length - 1; i++) {
+      const segmentStart = this.routePath[i];
+      const segmentEnd = this.routePath[i + 1];
+      const distance = this.distanceToSegment(position, segmentStart, segmentEnd);
+      
+      if (distance < deviationThreshold) {
+        onRoute = true;
+        break;
+      }
+    }
+    // Calculate the distance to the destination
+    const destination = { lat: this.droplt, lng: this.droplng };
+    const distanceToDestination = this.haversineDistance(position, destination);
+    const distance = distanceToDestination / 1000;
+    console.log(`Distance to destination: ${distanceToDestination.toFixed(2)} kilometers`);
+
+    console.log("Distance to destination : ", distance);
+    console.log("routes : ", this.routePath)
+    let reachedOrigin = false;
+    if(this.marker.getPosition() >= origin){
+      this.updatePolylineColor(this.marker.getPosition());
+      let x = true;
+      for(let i = 0; i < this.routePath.length; i++){
+        if(this.marker.getPosition() === this.routePath[i]){
+          x = false;
+          return;
+        }
+      }
+      if(x){
+        reachedOrigin = true;
+      }
+    }
+
+    if (onRoute) {
+      
+      // Set the red color for the previous marker to be a standard marker
+      new google.maps.Marker({
+        position: this.marker.getPosition(),
+        map: this.map,
+        title: 'Previous Position',
+        icon: {
+          path: locationIconPath, // Use a location shape
+          fillColor: 'green', // Change fillColor to green for previous positions
+          fillOpacity: 1,
+          scale: 2,
+          strokeColor: 'white',
+          strokeWeight: 2,
+        },
+      });
+      
+
+      // Marker is on the route, set to green
+      this.marker.setIcon({
+        path: this.marker.getIcon().path,
+        fillColor: 'green',
+        fillOpacity: 1,
+        scale: 10,
+        strokeColor: 'white',
+        strokeWeight: 2,
+      });
+    } 
+    else {
+
+      // Set the red color for the previous marker to be a standard marker
+      new google.maps.Marker({
+        position: this.marker.getPosition(),
+        map: this.map,
+        title: 'Previous Position',
+        icon: {
+          path: locationIconPath, // Use a location shape
+          fillColor: 'red', // Change fillColor to red for previous positions
+          fillOpacity: 1,
+          scale: 2,
+          strokeColor: 'white',
+          strokeWeight: 2,
+        },
+      });
+
+      // Marker is off the route, set to red
+      this.marker.setIcon({
+        path: this.marker.getIcon().path,
+        fillColor: 'red',
+        fillOpacity: 1,
+        scale: 10,
+        strokeColor: 'white',
+        strokeWeight: 2,
+      });
+
+      if(reachedOrigin){
+        alert('Marker is out of the deviation!');
+      }
+    }
+    
+    // setTimeout(() => {}, 1000);
+  }
+
+  updateEstimatedTime(lat: number, lng: number) {
+    const newDistance = google.maps.geometry.spherical.computeDistanceBetween(
+      new google.maps.LatLng(lat, lng),
+      new google.maps.LatLng(this.droplt, this.droplng)
+    ) / 1000; // Convert to kilometers
+
+    this.distance = newDistance;
+    this.displayEstimatedTime();
+  }
+
+  updatePolylineColor(position: { lat: number; lng: number }) {
+    const positionLatLng = new google.maps.LatLng(position.lat, position.lng);
+    const routePathLatLng = this.routePath.map(
+      (point: { lat: number; lng: number }) =>
+        new google.maps.LatLng(point.lat, point.lng)
+    );
+
+    // Calculate the closest point on the polyline
+    let closestSegmentIndex = -1;
+    let minDistance = Infinity;
+
+    for (let i = 0; i < routePathLatLng.length - 1; i++) {
+      const segmentStart = routePathLatLng[i];
+      // if(positionLatLng >= origin){
+        const distance = google.maps.geometry.spherical.computeDistanceBetween(
+          positionLatLng,
+          segmentStart
+        );
+      
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestSegmentIndex = i;
+        }
+      // }
+    }
+
+    // Update polyline color based on the closest segment
+    if (closestSegmentIndex !== -1) {
+      const segments = this.routePath.map(
+        (point: { lat: number; lng: number }, index: number) => ({
+          lat: point.lat,
+          lng: point.lng,
+          color: index <= closestSegmentIndex ? '#00FF00' : '#FF0000', // Green if the segment is behind the marker, red otherwise
+        })
+      );
+
+      // Update the polyline with new colors
+      this.polyline.setMap(null); // Remove the old polyline
+
+      this.polyline = new google.maps.Polyline({
+        path: segments.map((segment: any) => ({
+          lat: segment.lat,
+          lng: segment.lng,
+        })),
+        strokeColor: '#FF0000', // Default color (red)
+        strokeOpacity: 1.0,
+        strokeWeight: 3,
+        map: this.map,
+      });
+
+      const greenPath = segments.filter((segment: any) => segment.color === '#00FF00').map((segment: any) => ({
+        lat: segment.lat,
+        lng: segment.lng,
+      }));
+
+      if (greenPath.length > 1) {
+        new google.maps.Polyline({
+          path: greenPath,
+          strokeColor: '#00FF00', // Green color for passed segments
+          strokeOpacity: 1.0,
+          strokeWeight: 3,
+          map: this.map,
+        });
+      }
+    }
+  }
+
+  // Haversine formula to calculate distance between two points
+  haversineDistance(position1: { lat: number, lng: number }, position2: { lat: number, lng: number }) {
+    const R = 6371; // Radius of the Earth in kilometers
+    const dLat = this.deg2rad(position2.lat - position1.lat);
+    const dLng = this.deg2rad(position2.lng - position1.lng);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.deg2rad(position1.lat)) * Math.cos(this.deg2rad(position2.lat)) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distance in kilometers
+    return distance;
+  }
+  
+  deg2rad(deg: number) {
+    return deg * (Math.PI / 180);
+  }
+
+  displayDistance() {
+    const origin = { lat: this.pickuplt, lng: this.pickuplng };
+    const destination = { lat: this.droplt, lng: this.droplng };
+
+    const distanceToDestination = this.haversineDistance(origin, destination);
+    console.log(`Distance from origin to destination: ${distanceToDestination.toFixed(2)} kilometers`);
+
+    // Update the DOM element to display the distance
+    // const distanceElement = document.getElementById('distance-display');
+    // if (distanceElement) {
+    //   distanceElement.innerText = `Distance from origin to destination: ${distanceToDestination.toFixed(2)} kilometers`;
+    // }
+  }
+
+  // Function to calculate the distance from a point to a line segment
+  distanceToSegment(point: { lat: number, lng: number }, segmentStart: { lat: number, lng: number }, segmentEnd: { lat: number, lng: number }) {
+    const A = point.lat - segmentStart.lat;
+    const B = point.lng - segmentStart.lng;
+    const C = segmentEnd.lat - segmentStart.lat;
+    const D = segmentEnd.lng - segmentStart.lng;
+
+    const dot = A * C + B * D;
+    const len_sq = C * C + D * D;
+    let param = -1;
+    if (len_sq != 0) // in case of 0 length line
+        param = dot / len_sq;
+
+    let xx, yy;
+
+    if (param < 0) {
+        xx = segmentStart.lat;
+        yy = segmentStart.lng;
+    }
+    else if (param > 1) {
+        xx = segmentEnd.lat;
+        yy = segmentEnd.lng;
+    }
+    else {
+        xx = segmentStart.lat + param * C;
+        yy = segmentStart.lng + param * D;
+    }
+
+    const dx = point.lat - xx;
+    const dy = point.lng - yy;
+    return Math.sqrt(dx * dx + dy * dy) * 111319.9; // Distance in meters
+  }
+
+  getAllGPSCords1() {
+    this.trackService.getAllGPSCords(this.foundObject.id).subscribe(
+      (response: any) => {
+        this.gpsCordsList = response.gpsCordsList;
+        this.initMap();
+      },
+      (error: any) => {
+        console.error('Error fetching GPS coordinates:', error);
+      }
+    );
+  }
+
+  startGeolocationUpdates() {
+    if (this.trackStatus === 'Pick Up Station') {
+      this.locationInterval = setInterval(() => {
+        this.geolocation
+          .getCurrentPosition()
+          .then((resp) => {
+            this.Latitude = resp.coords.latitude;
+            this.Longitude = resp.coords.longitude;
+
+            console.log('lat long', this.Latitude, this.Longitude);
+
+            this.trackService
+              .updatecords(this.id, this.Latitude, this.Longitude)
+              .subscribe((data) => {
+                console.log('data response', data);
+              });
+            this.trackService
+              .updatecords1(this.id, this.Latitude, this.Longitude)
+              .subscribe((data) => {
+                console.log('data response1', data);
+              });
+            this.trackService
+              .getLatestCoordinates(this.id)
+              .subscribe((data: any) => {
+                console.log('data response3', data);
+                this.updateMarkerPosition(data.latitude, data.longitude);
+              });
+          })
+          .catch((error) => {
+            console.log('Error getting location', error);
+          });
+      }, 3000);
+    } else {
+      console.log('Closed');
+    }
+  }
+
+  stopGeolocationUpdates() {
+    clearInterval(this.locationInterval);
+  }
+
+  // startFetchingCoordinates() {
+  //   this.fetchCoordinatesInterval = setInterval(() => {
+  //     this.trackService
+  //       .getLatestCoordinates(this.foundObject.trainNumber)
+  //       .subscribe(
+  //         (data) => {
+  //           console.log('Latest coordinates:', data);
+  //           // this.updateMarkerPosition(data.latitude, data.longitude);
+  //         },
+  //         (error) => {
+  //           console.error('Error fetching latest coordinates:', error);
+  //         }
+  //       );
+  //   }, 3000);
+  // }
+
+  updateStatus(status: any) {
+    if (status == 'pickup') {
+      this.trackStatus = 'Pick Up Station';
+      this.startGeolocationUpdates();
+      this.trackService
+        .updatestatus(this.id, this.trackStatus)
+        .subscribe((data) => {
+          console.log('data response', data);
+        });
+    } else if (status == 'transit') {
+      console.log('Transit');
+      this.trackStatus = 'On the way';
+      this.trackService
+        .updatestatus(this.id, this.trackStatus)
+        .subscribe((data) => {
+          console.log('data response', data);
+        });
+    } else if (status == 'delivered') {
+      console.log('Delivered');
+      // this.stopGeolocationUpdates();
+      this.trackStatus = 'Delivery Station';
+      this.trackService
+        .updatestatus(this.id, this.trackStatus)
+        .subscribe((data) => {
+          console.log('data response', data);
+        });
+    } else {
+      console.log('Ready for pickup');
+      this.trackStatus = 'Ready for Pickup';
+      this.trackService
+        .updatestatus(this.id, this.trackStatus)
+        .subscribe((data) => {
+          console.log('data response', data);
+        });
+      this.trackService
+        .updateTrainCompletedStatus(this.id)
+        .subscribe((data) => {
+          console.log(data);
+        });
+    }
+  }
+ 
+  getAllGPSCords(): void {
+    this.trackService.getAllGPSCords(this.id).subscribe((data) => {
+      this.gpsCordsList = data;
+      console.log(
+        'Coordinates data : ',
+        JSON.stringify(this.gpsCordsList, null, 2)
+      );
+    });
+  }
+
+  takePicture = async (card: number) => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      saveToGallery: true,
+    });
+
+    this.imageSource[card] = this.domSanitizer.bypassSecurityTrustUrl(
+      image.webPath ? image.webPath : ''
+    );
+
+    // Convert the captured image to a Blob
+    const response = await fetch(image.webPath!);
+    const blob = await response.blob();
+    this.file = new File([blob], `image-${card}.jpg`, { type: 'image/jpeg' });
+  };
+
+  getPhoto(cardIndex: number) {
+    return this.selectedCard === cardIndex
+      ? this.imageSource[cardIndex]
+      : undefined;
+  }
+
+  toggleImage(card: number) {
+    if (this.selectedCard === card) {
+      this.selectedCard = null;
+    } else {
+      this.selectedCard = card;
+    }
+  }
+
+  onFileSelected(event: any): void {
+    this.file = event.target.files[0];
+  }
+
+  async presentToast(message: string, color: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+      color: color,
+      position: 'top',
+    });
+    toast.present();
+  }
+
+  onSubmit() {
+    if (this.file) {
+      const formData: FormData = new FormData();
+      formData.append('id', this.id.toString());
+      formData.append('image', this.file, this.file.name);
+      console.log(this.id, 'thisid');
+      formData.forEach((value, key) => {
+        console.log(`${key}: ${value}`);
+      });
+      this.trackService.addMedia(formData).subscribe(
+        (response) => {
+          console.log('Image uploaded successfully', response);
+          this.presentToast('Image uploaded successfully', 'success');
+        },
+        (error) => {
+          console.error('Error uploading image:', error);
+          this.presentToast('Error uploading image', 'danger');
+        }
+      );
+    } else {
+      console.error('No files selected');
+      this.presentToast('No files selected', 'danger');
+    }
+  }
+  //------------pick up pop up window-------------
+  @ViewChild('radioGroup', { static: false }) radioGroup!: IonRadioGroup;
+  public alertButtons1 = [
+    {
+      text: 'No',
+      role: 'cancel',
+      cssClass: 'alert-button-cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'Yes',
+      role: 'confirm',
+      cssClass: 'alert-button-confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+
+        this.onSubmit();
+        this.updateStatus('pickup');
+      },
+    },
+  ];
+  
+  //-----------transient pop up window------------
+  async openAlert1() {
+    const alert = await this.alertController.create({
+      header: 'Are you willing to transient',
+      buttons: this.alertButtons2,
+    });
+
+    await alert.present();
+  }
+  public alertButtons2 = [
+    {
+      text: 'No',
+      role: 'cancel',
+      cssClass: 'alert-button-cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'Yes',
+      role: 'confirm',
+      cssClass: 'alert-button-confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+        // Handle 'Yes' action if needed
+
+        this.updateStatus('transit');
+      },
+    },
+  ];
+  
+  //-------------delivered to customer pop up window ---------
+  public alertButtons3 = [
+    {
+      text: 'No',
+      role: 'cancel',
+      cssClass: 'alert-button-cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'Yes',
+      role: 'confirm',
+      cssClass: 'alert-button-confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+        // Handle 'Yes' action if needed
+        this.updateStatus('delivered');
+      },
+    },
+  ];
+  async openAlert2() {
+    const alert = await this.alertController.create({
+      header: 'Are you willing to deliver',
+      buttons: this.alertButtons3,
+    });
+    await alert.present();
+  }
+
+  public alertButtons4 = [
+    {
+      text: 'No',
+      role: 'cancel',
+      cssClass: 'alert-button-cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'Yes',
+      role: 'confirm',
+      cssClass: 'alert-button-confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+        // Handle 'Yes' action if needed
+        this.updateStatus('Ready for pickup');
+      },
+    },
+  ];
+  async openAlert3() {
+    const alert = await this.alertController.create({
+      header: 'Are you ready for pickup',
+      buttons: this.alertButtons4,
+    });
+    await alert.present();
+  }
+}
