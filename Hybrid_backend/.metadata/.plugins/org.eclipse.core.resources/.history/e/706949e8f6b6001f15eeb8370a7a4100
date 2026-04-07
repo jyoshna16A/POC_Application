@@ -1,0 +1,9 @@
+spring.application.name=hybrid_backend
+server.port = 8080
+server.address=139.59.7.229
+
+
+server.ssl.enabled=true
+server.ssl.key-store=classpath:newcert.pfx
+server.ssl.key-store-password=admin123
+server.ssl.key-store-type=PKCS12
