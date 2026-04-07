@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:soap.example.com="http://soap.example.com">
+  <wsdd:service name="PersonServiceImpl" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://soap.example.com"/>
+    <wsdd:parameter name="wsdlServiceElement" value="PersonServiceImplService"/>
+    <wsdd:parameter name="schemaQualified" value="http://soap.example.com"/>
+    <wsdd:parameter name="wsdlServicePort" value="PersonServiceImpl"/>
+    <wsdd:parameter name="className" value="com.example.soap.PersonServiceImpl"/>
+    <wsdd:parameter name="wsdlPortType" value="PersonServiceImpl"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="deletePerson getPerson getAllPersons addPerson"/>
+    <wsdd:typeMapping qname="soap.example.com:Person" type="java:com.example.soap.Person" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:operation name="deletePerson" qname="soap.example.com:deletePerson" returnQName="soap.example.com:deletePersonReturn" returnType="XMLSchema:boolean" soapAction="">
+      <wsdd:parameter qname="soap.example.com:in0" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="getAllPersons" qname="soap.example.com:getAllPersons" returnQName="soap.example.com:getAllPersonsReturn" returnType="soap.example.com:Person" soapAction=""/>
+    <wsdd:operation name="addPerson" qname="soap.example.com:addPerson" returnQName="soap.example.com:addPersonReturn" returnType="XMLSchema:boolean" soapAction="">
+      <wsdd:parameter qname="soap.example.com:in0" type="soap.example.com:Person"/>
+    </wsdd:operation>
+    <wsdd:operation name="getPerson" qname="soap.example.com:getPerson" returnQName="soap.example.com:getPersonReturn" returnType="soap.example.com:Person" soapAction="">
+      <wsdd:parameter qname="soap.example.com:in0" type="XMLSchema:int"/>
+    </wsdd:operation>
+  </wsdd:service>
+</wsdd:deployment>

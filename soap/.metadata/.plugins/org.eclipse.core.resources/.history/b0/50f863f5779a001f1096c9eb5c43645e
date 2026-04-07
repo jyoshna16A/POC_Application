@@ -1,0 +1,92 @@
+/**
+ * MNPFrameSoapBindingSkeleton.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4.1-SNAPSHOT Nov 07, 2023 (07:57:58 UTC) WSDL2Java emitter.
+ */
+
+package com.example;
+
+public class MNPFrameSoapBindingSkeleton implements com.example.MNPFrame, org.apache.axis.wsdl.Skeleton {
+    private com.example.MNPFrame impl;
+    private static java.util.Map _myOperations = new java.util.Hashtable();
+    private static java.util.Collection _myOperationsList = new java.util.ArrayList();
+
+    /**
+    * Returns List of OperationDesc objects with this name
+    */
+    public static java.util.List getOperationDescByName(java.lang.String methodName) {
+        return (java.util.List)_myOperations.get(methodName);
+    }
+
+    /**
+    * Returns Collection of OperationDescs
+    */
+    public static java.util.Collection getOperationDescs() {
+        return _myOperationsList;
+    }
+
+    static {
+        org.apache.axis.description.OperationDesc _oper;
+        org.apache.axis.description.FaultDesc _fault;
+        org.apache.axis.description.ParameterDesc [] _params;
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://example.com", "value"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setVersion", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://example.com", "setVersion"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setVersion") == null) {
+            _myOperations.put("setVersion", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setVersion")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOOrNVPOrNVPA", _params, new javax.xml.namespace.QName("http://example.com", "getNPOOrNVPOrNVPAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://example.com", "ArrayOf_xsd_anyType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://example.com", "getNPOOrNVPOrNVPA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOOrNVPOrNVPA") == null) {
+            _myOperations.put("getNPOOrNVPOrNVPA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOOrNVPOrNVPA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getVersion", _params, new javax.xml.namespace.QName("http://example.com", "getVersionReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://example.com", "getVersion"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getVersion") == null) {
+            _myOperations.put("getVersion", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getVersion")).add(_oper);
+    }
+
+    public MNPFrameSoapBindingSkeleton() {
+        this.impl = new com.example.MNPFrameSoapBindingImpl();
+    }
+
+    public MNPFrameSoapBindingSkeleton(com.example.MNPFrame impl) {
+        this.impl = impl;
+    }
+    public void setVersion(java.lang.String value) throws java.rmi.RemoteException
+    {
+        impl.setVersion(value);
+    }
+
+    public java.lang.Object[] getNPOOrNVPOrNVPA() throws java.rmi.RemoteException
+    {
+        java.lang.Object[] ret = impl.getNPOOrNVPOrNVPA();
+        return ret;
+    }
+
+    public java.lang.String getVersion() throws java.rmi.RemoteException
+    {
+        java.lang.String ret = impl.getVersion();
+        return ret;
+    }
+
+}

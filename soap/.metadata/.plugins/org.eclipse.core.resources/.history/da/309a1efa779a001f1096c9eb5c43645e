@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://example.com" xmlns:intf="http://example.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://example.com">
+  
+  <!--WSDL created by Apache Axis version: 1.4.1-SNAPSHOT
+Built on Nov 07, 2023 (07:57:58 UTC)-->
+   
+  <wsdl:types>
+      
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://example.com">
+         
+      <element name="setVersion">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="value" type="xsd:string"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+         
+      <element name="setVersionResponse">
+            
+        <complexType/>
+           
+      </element>
+         
+      <element name="getNPOOrNVPOrNVPA">
+            
+        <complexType/>
+           
+      </element>
+         
+      <element name="getNPOOrNVPOrNVPAResponse">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="getNPOOrNVPOrNVPAReturn" type="impl:ArrayOf_xsd_anyType"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+         
+      <complexType name="ArrayOf_xsd_anyType">
+            
+        <sequence>
+               
+          <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+              
+        </sequence>
+           
+      </complexType>
+         
+      <element name="getVersion">
+            
+        <complexType/>
+           
+      </element>
+         
+      <element name="getVersionResponse">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="getVersionReturn" type="xsd:string"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+        
+    </schema>
+     
+  </wsdl:types>
+     
+  <wsdl:message name="setVersionResponse">
+          
+    <wsdl:part element="impl:setVersionResponse" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="getNPOOrNVPOrNVPARequest">
+          
+    <wsdl:part element="impl:getNPOOrNVPOrNVPA" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="getVersionRequest">
+          
+    <wsdl:part element="impl:getVersion" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="setVersionRequest">
+          
+    <wsdl:part element="impl:setVersion" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="getNPOOrNVPOrNVPAResponse">
+          
+    <wsdl:part element="impl:getNPOOrNVPOrNVPAResponse" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="getVersionResponse">
+          
+    <wsdl:part element="impl:getVersionResponse" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:portType name="MNPFrame">
+          
+    <wsdl:operation name="setVersion">
+               
+      <wsdl:input message="impl:setVersionRequest" name="setVersionRequest">
+
+       </wsdl:input>
+               
+      <wsdl:output message="impl:setVersionResponse" name="setVersionResponse">
+
+       </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="getNPOOrNVPOrNVPA">
+               
+      <wsdl:input message="impl:getNPOOrNVPOrNVPARequest" name="getNPOOrNVPOrNVPARequest">
+
+       </wsdl:input>
+               
+      <wsdl:output message="impl:getNPOOrNVPOrNVPAResponse" name="getNPOOrNVPOrNVPAResponse">
+
+       </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="getVersion">
+               
+      <wsdl:input message="impl:getVersionRequest" name="getVersionRequest">
+
+       </wsdl:input>
+               
+      <wsdl:output message="impl:getVersionResponse" name="getVersionResponse">
+
+       </wsdl:output>
+            
+    </wsdl:operation>
+       
+  </wsdl:portType>
+     
+  <wsdl:binding name="MNPFrameSoapBinding" type="impl:MNPFrame">
+          
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+          
+    <wsdl:operation name="setVersion">
+               
+      <wsdlsoap:operation soapAction=""/>
+               
+      <wsdl:input name="setVersionRequest">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:input>
+               
+      <wsdl:output name="setVersionResponse">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="getNPOOrNVPOrNVPA">
+               
+      <wsdlsoap:operation soapAction=""/>
+               
+      <wsdl:input name="getNPOOrNVPOrNVPARequest">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:input>
+               
+      <wsdl:output name="getNPOOrNVPOrNVPAResponse">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="getVersion">
+               
+      <wsdlsoap:operation soapAction=""/>
+               
+      <wsdl:input name="getVersionRequest">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:input>
+               
+      <wsdl:output name="getVersionResponse">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:output>
+            
+    </wsdl:operation>
+       
+  </wsdl:binding>
+     
+  <wsdl:service name="MNPFrameService">
+          
+    <wsdl:port binding="impl:MNPFrameSoapBinding" name="MNPFrame">
+               
+      <wsdlsoap:address location="http://localhost:9791/wsdl/services/MNPFrame"/>
+            
+    </wsdl:port>
+       
+  </wsdl:service>
+  
+</wsdl:definitions>

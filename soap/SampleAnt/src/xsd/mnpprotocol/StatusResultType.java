@@ -1,0 +1,110 @@
+
+package xsd.mnpprotocol;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for StatusResultType complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="StatusResultType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}ResultCode"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}ReferenceId"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}StatusCode" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "StatusResultType", propOrder = {
+    "resultCode",
+    "referenceId",
+    "statusCode"
+})
+public class StatusResultType {
+
+    @XmlElement(name = "ResultCode")
+    protected int resultCode;
+    @XmlElement(name = "ReferenceId", required = true)
+    protected String referenceId;
+    @XmlElement(name = "StatusCode")
+    protected String statusCode;
+
+    /**
+     * Gets the value of the resultCode property.
+     * 
+     */
+    public int getResultCode() {
+        return resultCode;
+    }
+
+    /**
+     * Sets the value of the resultCode property.
+     * 
+     */
+    public void setResultCode(int value) {
+        this.resultCode = value;
+    }
+
+    /**
+     * Gets the value of the referenceId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    /**
+     * Sets the value of the referenceId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReferenceId(String value) {
+        this.referenceId = value;
+    }
+
+    /**
+     * Gets the value of the statusCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStatusCode() {
+        return statusCode;
+    }
+
+    /**
+     * Sets the value of the statusCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setStatusCode(String value) {
+        this.statusCode = value;
+    }
+
+}

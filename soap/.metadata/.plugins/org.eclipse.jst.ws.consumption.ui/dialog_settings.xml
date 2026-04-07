@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="/Project1/mnpservice.wsdl"/>
+		<item value="/Soap1/geoipservice.asmx.wsdl"/>
+		<item value="/Soap1/src/main/resources/geoipservice.asmx.wsdl"/>
+		<item value="/Project/src/main/webapp/WEB-INF/wsdl/mnpservice.wsdl"/>
+		<item value="/SoapApplication/src/main/webapp/wsdl/mnpservice.wsdl"/>
+	</list>
+	<list key="org.eclipse.jst.ws.internal.consumption.ui.widgets.test.ClientTestWidget.sampleFolderText_">
+		<item value="sampleMNPFrame"/>
+	</list>
+</section>

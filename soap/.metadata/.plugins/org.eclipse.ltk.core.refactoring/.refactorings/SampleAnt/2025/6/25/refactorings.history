@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;SampleAnt&apos;&#x0D;&#x0A;- Original project: &apos;SampleAnt&apos;&#x0D;&#x0A;- Original element: &apos;SampleAnt/src/generated.com.example.stub&apos;" description="Delete element" element1="/src&lt;generated.com.example.stub" element2="/src&lt;generated.com.example" element3="/src&lt;generated.com" element4="/src&lt;generated" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1750420438923" subPackages="false" version="1.0"/>
+</session>

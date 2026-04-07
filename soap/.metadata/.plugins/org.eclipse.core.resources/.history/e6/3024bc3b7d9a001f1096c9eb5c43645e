@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:MNPProtocol.xsd="http://MNPProtocol.xsd" xmlns:MNPProtocol.xsd_1="MNPProtocol.xsd" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:xsd="http://ws-i.org/profiles/basic/1.1/xsd">
+  <wsdd:service name="MNPFrameSoapBindingImpl" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://MNPProtocol.xsd"/>
+    <wsdd:parameter name="wsdlServiceElement" value="MNPFrameSoapBindingImplService"/>
+    <wsdd:parameter name="schemaQualified" value="http://ws-i.org/profiles/basic/1.1/xsd,MNPProtocol.xsd,http://MNPProtocol.xsd"/>
+    <wsdd:parameter name="wsdlServicePort" value="MNPFrameSoapBindingImpl"/>
+    <wsdd:parameter name="className" value="xsd.MNPProtocol.MNPFrameSoapBindingImpl"/>
+    <wsdd:parameter name="wsdlPortType" value="MNPFrameSoapBindingImpl"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="getNPOSQ setNPOSPR setNPOTA getTQ getNPOSAACK setNPOSQRsp setCAN getNVPA setRsp getRsp getCAN getSerializer getNPOSA setNPOSQ setNOTE setSCNOTICE getSCNOTICE getDeserializer setVersion getNPOSPR setNPO getRDBPD getRDBPDRsp getNPOSQRsp setRDBPD getNPOTA setSC getRNAA setSD setSDNOTICE setNPOA getNPOSTER getNPO setNPOT setTQRsp setNPOS getNOTE setSCA getSDNOTICEA getSCA getSCNOTICEA setSCNOTICEA setSDNOTICEA setNPOSAACK getRDBFDRsp setNVPA setNPOSTER setPER setRDBFDRsp getTQRsp setTQ getVersion setRNA getTypeDesc setNVP setNPOSA getRNA getNPOA setRDBPDRsp setSDA getPER setRNAA getSDA getNVP getSD getRDBFD getSDNOTICE getSC setRDBFD getNPOS getNPOT"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getSDNOTICEA" type="java:xsd.MNPProtocol.GetSDNOTICEA" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setCANResponse" type="java:xsd.MNPProtocol.SetCANResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getVersionResponse" type="java:xsd.MNPProtocol.GetVersionResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RNAType" type="java:xsd.MNPProtocol.RNAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:NumberRangeType" type="java:xsd.MNPProtocol.NumberRangeType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCType" type="java:xsd.MNPProtocol.SCType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:QuotaResultType" type="java:xsd.MNPProtocol.QuotaResultType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getDeserializerResponse" type="java:xsd.MNPProtocol.GetDeserializerResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOSTER" type="java:xsd.MNPProtocol.GetNPOSTER" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOTResponse" type="java:xsd.MNPProtocol.SetNPOTResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:SDInfoType" type="java:xsd.MNPProtocol.SDInfoType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOType" type="java:xsd.MNPProtocol.NPOType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:TimeRangeType" type="java:xsd.MNPProtocol.TimeRangeType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:CANType" type="java:xsd.MNPProtocol.CANType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOSQResponse" type="java:xsd.MNPProtocol.SetNPOSQResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:CorporateCustomerType" type="java:xsd.MNPProtocol.CorporateCustomerType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDType" type="java:xsd.MNPProtocol.SDType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:TQType" type="java:xsd.MNPProtocol.TQType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NVPAType" type="java:xsd.MNPProtocol.NVPAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NOTEType" type="java:xsd.MNPProtocol.NOTEType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:PersonCustomerType" type="java:xsd.MNPProtocol.PersonCustomerType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSAACKType" type="java:xsd.MNPProtocol.NPOSAACKType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getRDBPDRsp" type="java:xsd.MNPProtocol.GetRDBPDRsp" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setSCNOTICEAResponse" type="java:xsd.MNPProtocol.SetSCNOTICEAResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RspType" type="java:xsd.MNPProtocol.RspType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:WindowType" type="java:xsd.MNPProtocol.WindowType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNOTE" type="java:xsd.MNPProtocol.GetNOTE" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RNAAType" type="java:xsd.MNPProtocol.RNAAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getSerializer" type="java:xsd.MNPProtocol.GetSerializer" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setSCNOTICEResponse" type="java:xsd.MNPProtocol.SetSCNOTICEResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBFDRspType" type="java:xsd.MNPProtocol.RDBFDRspType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getRDBFDRsp" type="java:xsd.MNPProtocol.GetRDBFDRsp" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCAType" type="java:xsd.MNPProtocol.SCAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:PERInfoType" type="java:xsd.MNPProtocol.PERInfoType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getSerializerResponse" type="java:xsd.MNPProtocol.GetSerializerResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:SubscriberResultType" type="java:xsd.MNPProtocol.SubscriberResultType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBPDType" type="java:xsd.MNPProtocol.RDBPDType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setRspResponse" type="java:xsd.MNPProtocol.SetRspResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setSDNOTICEAResponse" type="java:xsd.MNPProtocol.SetSDNOTICEAResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSAType" type="java:xsd.MNPProtocol.NPOSAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:DonorQuotaType" type="java:xsd.MNPProtocol.DonorQuotaType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOSAACK" type="java:xsd.MNPProtocol.GetNPOSAACK" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOSResponse" type="java:xsd.MNPProtocol.SetNPOSResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:AuthorType" type="java:xsd.MNPProtocol.AuthorType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOSAResponse" type="java:xsd.MNPProtocol.SetNPOSAResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNOTEResponse" type="java:xsd.MNPProtocol.SetNOTEResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getTypeDescResponse" type="java:xsd.MNPProtocol.GetTypeDescResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:BCInfoType" type="java:xsd.MNPProtocol.BCInfoType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOTypeSubscriberAuthSequenceSubscriberAuthorization" type="java:xsd.MNPProtocol.NPOTypeSubscriberAuthSequenceSubscriberAuthorization" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:TQRspType" type="java:xsd.MNPProtocol.TQRspType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="xsd:swaRef" type="java:org.ws_i.profiles.basic._1_1.xsd.SwaRef" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDNOTICEType" type="java:xsd.MNPProtocol.SDNOTICEType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getTypeDesc" type="java:xsd.MNPProtocol.GetTypeDesc" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOSA" type="java:xsd.MNPProtocol.GetNPOSA" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOSQ" type="java:xsd.MNPProtocol.GetNPOSQ" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOSTERResponse" type="java:xsd.MNPProtocol.SetNPOSTERResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:PERType" type="java:xsd.MNPProtocol.PERType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getRsp" type="java:xsd.MNPProtocol.GetRsp" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:StatusResultType" type="java:xsd.MNPProtocol.StatusResultType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSType" type="java:xsd.MNPProtocol.NPOSType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NVPType" type="java:xsd.MNPProtocol.NVPType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:SCInfoType" type="java:xsd.MNPProtocol.SCInfoType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOSQRsp" type="java:xsd.MNPProtocol.GetNPOSQRsp" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setTQRspResponse" type="java:xsd.MNPProtocol.SetTQRspResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setSDNOTICEResponse" type="java:xsd.MNPProtocol.SetSDNOTICEResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd_1:DateRangeType" type="java:xsd.MNPProtocol.DateRangeType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getSCNOTICEA" type="java:xsd.MNPProtocol.GetSCNOTICEA" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOSAACKResponse" type="java:xsd.MNPProtocol.SetNPOSAACKResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCNOTICEType" type="java:xsd.MNPProtocol.SCNOTICEType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSQType" type="java:xsd.MNPProtocol.NPOSQType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getVersion" type="java:xsd.MNPProtocol.GetVersion" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCNOTICEAType" type="java:xsd.MNPProtocol.SCNOTICEAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSTERType" type="java:xsd.MNPProtocol.NPOSTERType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSQRspType" type="java:xsd.MNPProtocol.NPOSQRspType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBPDRspType" type="java:xsd.MNPProtocol.RDBPDRspType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setRDBPDRspResponse" type="java:xsd.MNPProtocol.SetRDBPDRspResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getSCNOTICE" type="java:xsd.MNPProtocol.GetSCNOTICE" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOAType" type="java:xsd.MNPProtocol.NPOAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOS" type="java:xsd.MNPProtocol.GetNPOS" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getSDNOTICE" type="java:xsd.MNPProtocol.GetSDNOTICE" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOTAType" type="java:xsd.MNPProtocol.NPOTAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setNPOSQRspResponse" type="java:xsd.MNPProtocol.SetNPOSQRspResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDAType" type="java:xsd.MNPProtocol.SDAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBFDType" type="java:xsd.MNPProtocol.RDBFDType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSPRType" type="java:xsd.MNPProtocol.NPOSPRType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getCAN" type="java:xsd.MNPProtocol.GetCAN" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;setRDBFDRspResponse" type="java:xsd.MNPProtocol.SetRDBFDRspResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOTType" type="java:xsd.MNPProtocol.NPOTType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:&gt;getNPOSPR" type="java:xsd.MNPProtocol.GetNPOSPR" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDNOTICEAType" type="java:xsd.MNPProtocol.SDNOTICEAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getCANResponse" type="java:xsd.MNPProtocol.CANType[]" encodingStyle="" innerType="MNPProtocol.xsd:CANType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getSDNOTICEAResponse" type="java:xsd.MNPProtocol.SDNOTICEAType[]" encodingStyle="" innerType="MNPProtocol.xsd:SDNOTICEAType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setSCNOTICEA" type="java:xsd.MNPProtocol.SCNOTICEAType[]" encodingStyle="" innerType="MNPProtocol.xsd:SCNOTICEAType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setRDBPDRsp" type="java:xsd.MNPProtocol.RDBPDRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:RDBPDRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:ArrayOf_xsd_string" type="java:java.lang.String[]" encodingStyle="" innerType="XMLSchema:string"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOSQ" type="java:xsd.MNPProtocol.NPOSQType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSQType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSPRResponse" type="java:xsd.MNPProtocol.NPOSPRType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSPRType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getSDNOTICEResponse" type="java:xsd.MNPProtocol.SDNOTICEType[]" encodingStyle="" innerType="MNPProtocol.xsd:SDNOTICEType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSAResponse" type="java:xsd.MNPProtocol.NPOSAType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSAType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSAACKResponse" type="java:xsd.MNPProtocol.NPOSAACKType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSAACKType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOT" type="java:xsd.MNPProtocol.NPOTType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOTType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOS" type="java:xsd.MNPProtocol.NPOSType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setRDBFDRsp" type="java:xsd.MNPProtocol.RDBFDRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:RDBFDRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getRDBPDRspResponse" type="java:xsd.MNPProtocol.RDBPDRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:RDBPDRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setCAN" type="java:xsd.MNPProtocol.CANType[]" encodingStyle="" innerType="MNPProtocol.xsd:CANType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOSQRsp" type="java:xsd.MNPProtocol.NPOSQRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSQRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSQResponse" type="java:xsd.MNPProtocol.NPOSQType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSQType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getRDBFDRspResponse" type="java:xsd.MNPProtocol.RDBFDRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:RDBFDRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSQRspResponse" type="java:xsd.MNPProtocol.NPOSQRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSQRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOSAACK" type="java:xsd.MNPProtocol.NPOSAACKType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSAACKType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setSDNOTICEA" type="java:xsd.MNPProtocol.SDNOTICEAType[]" encodingStyle="" innerType="MNPProtocol.xsd:SDNOTICEAType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setTQRsp" type="java:xsd.MNPProtocol.TQRspType[]" encodingStyle="" innerType="MNPProtocol.xsd:TQRspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNOTEResponse" type="java:xsd.MNPProtocol.NOTEType[]" encodingStyle="" innerType="MNPProtocol.xsd:NOTEType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:ArrayOfNPOTypeSubscriberAuthSequenceSubscriberAuthorization" type="java:xsd.MNPProtocol.NPOTypeSubscriberAuthSequenceSubscriberAuthorization[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOTypeSubscriberAuthSequenceSubscriberAuthorization"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setRsp" type="java:xsd.MNPProtocol.RspType[]" encodingStyle="" innerType="MNPProtocol.xsd:RspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNOTE" type="java:xsd.MNPProtocol.NOTEType[]" encodingStyle="" innerType="MNPProtocol.xsd:NOTEType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOSTER" type="java:xsd.MNPProtocol.NPOSTERType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSTERType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSResponse" type="java:xsd.MNPProtocol.NPOSType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getNPOSTERResponse" type="java:xsd.MNPProtocol.NPOSTERType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSTERType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setSDNOTICE" type="java:xsd.MNPProtocol.SDNOTICEType[]" encodingStyle="" innerType="MNPProtocol.xsd:SDNOTICEType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getSCNOTICEResponse" type="java:xsd.MNPProtocol.SCNOTICEType[]" encodingStyle="" innerType="MNPProtocol.xsd:SCNOTICEType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getRspResponse" type="java:xsd.MNPProtocol.RspType[]" encodingStyle="" innerType="MNPProtocol.xsd:RspType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;getSCNOTICEAResponse" type="java:xsd.MNPProtocol.SCNOTICEAType[]" encodingStyle="" innerType="MNPProtocol.xsd:SCNOTICEAType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setNPOSA" type="java:xsd.MNPProtocol.NPOSAType[]" encodingStyle="" innerType="MNPProtocol.xsd:NPOSAType"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:&gt;setSCNOTICE" type="java:xsd.MNPProtocol.SCNOTICEType[]" encodingStyle="" innerType="MNPProtocol.xsd:SCNOTICEType"/>
+    <wsdd:operation name="setVersion" qname="MNPProtocol.xsd:setVersion" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:version" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="setNPOSPR" qname="MNPProtocol.xsd:setNPOSPR" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOSPR" type="MNPProtocol.xsd:NPOSPRType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOTA" qname="MNPProtocol.xsd:getNPOTA" returnQName="MNPProtocol.xsd:getNPOTAReturn" returnType="MNPProtocol.xsd:NPOTAType" soapAction=""/>
+    <wsdd:operation name="getPER" qname="MNPProtocol.xsd:getPER" returnQName="MNPProtocol.xsd:getPERReturn" returnType="MNPProtocol.xsd:PERType" soapAction=""/>
+    <wsdd:operation name="setNPOTA" qname="MNPProtocol.xsd:setNPOTA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOTA" type="MNPProtocol.xsd:NPOTAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOA" qname="MNPProtocol.xsd:getNPOA" returnQName="MNPProtocol.xsd:getNPOAReturn" returnType="MNPProtocol.xsd:NPOAType" soapAction=""/>
+    <wsdd:operation name="setNPOA" qname="MNPProtocol.xsd:setNPOA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOA" type="MNPProtocol.xsd:NPOAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOT" qname="MNPProtocol.xsd:getNPOT" returnQName="MNPProtocol.xsd:getNPOTReturn" returnType="MNPProtocol.xsd:NPOTType" soapAction=""/>
+    <wsdd:operation name="getNPO" qname="MNPProtocol.xsd:getNPO" returnQName="MNPProtocol.xsd:getNPOReturn" returnType="MNPProtocol.xsd:NPOType" soapAction=""/>
+    <wsdd:operation name="setNPO" qname="MNPProtocol.xsd:setNPO" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPO" type="MNPProtocol.xsd:NPOType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNVP" qname="MNPProtocol.xsd:getNVP" returnQName="MNPProtocol.xsd:getNVPReturn" returnType="MNPProtocol.xsd:NVPType" soapAction=""/>
+    <wsdd:operation name="setNVP" qname="MNPProtocol.xsd:setNVP" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NVP" type="MNPProtocol.xsd:NVPType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNVPA" qname="MNPProtocol.xsd:getNVPA" returnQName="MNPProtocol.xsd:getNVPAReturn" returnType="MNPProtocol.xsd:NVPAType" soapAction=""/>
+    <wsdd:operation name="setNVPA" qname="MNPProtocol.xsd:setNVPA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NVPA" type="MNPProtocol.xsd:NVPAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setPER" qname="MNPProtocol.xsd:setPER" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:PER" type="MNPProtocol.xsd:PERType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setSD" qname="MNPProtocol.xsd:setSD" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SD" type="MNPProtocol.xsd:SDType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getSD" qname="MNPProtocol.xsd:getSD" returnQName="MNPProtocol.xsd:getSDReturn" returnType="MNPProtocol.xsd:SDType" soapAction=""/>
+    <wsdd:operation name="getSDA" qname="MNPProtocol.xsd:getSDA" returnQName="MNPProtocol.xsd:getSDAReturn" returnType="MNPProtocol.xsd:SDAType" soapAction=""/>
+    <wsdd:operation name="setTQ" qname="MNPProtocol.xsd:setTQ" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:TQ" type="MNPProtocol.xsd:TQType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getTQRsp" qname="MNPProtocol.xsd:getTQRsp" returnQName="MNPProtocol.xsd:getTQRspReturn" returnType="MNPProtocol.xsd:TQRspType" soapAction=""/>
+    <wsdd:operation name="getSCA" qname="MNPProtocol.xsd:getSCA" returnQName="MNPProtocol.xsd:getSCAReturn" returnType="MNPProtocol.xsd:SCAType" soapAction=""/>
+    <wsdd:operation name="getRDBPD" qname="MNPProtocol.xsd:getRDBPD" returnQName="MNPProtocol.xsd:getRDBPDReturn" returnType="MNPProtocol.xsd:RDBPDType" soapAction=""/>
+    <wsdd:operation name="setSDA" qname="MNPProtocol.xsd:setSDA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SDA" type="MNPProtocol.xsd:SDAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setSC" qname="MNPProtocol.xsd:setSC" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SC" type="MNPProtocol.xsd:SCType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getSC" qname="MNPProtocol.xsd:getSC" returnQName="MNPProtocol.xsd:getSCReturn" returnType="MNPProtocol.xsd:SCType" soapAction=""/>
+    <wsdd:operation name="setSCA" qname="MNPProtocol.xsd:setSCA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SCA" type="MNPProtocol.xsd:SCAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setRDBPD" qname="MNPProtocol.xsd:setRDBPD" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:RDBPD" type="MNPProtocol.xsd:RDBPDType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getRDBFD" qname="MNPProtocol.xsd:getRDBFD" returnQName="MNPProtocol.xsd:getRDBFDReturn" returnType="MNPProtocol.xsd:RDBFDType" soapAction=""/>
+    <wsdd:operation name="setRDBFD" qname="MNPProtocol.xsd:setRDBFD" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:RDBFD" type="MNPProtocol.xsd:RDBFDType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getRNA" qname="MNPProtocol.xsd:getRNA" returnQName="MNPProtocol.xsd:getRNAReturn" returnType="MNPProtocol.xsd:RNAType" soapAction=""/>
+    <wsdd:operation name="setRNA" qname="MNPProtocol.xsd:setRNA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:RNA" type="MNPProtocol.xsd:RNAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getRNAA" qname="MNPProtocol.xsd:getRNAA" returnQName="MNPProtocol.xsd:getRNAAReturn" returnType="MNPProtocol.xsd:RNAAType" soapAction=""/>
+    <wsdd:operation name="setRNAA" qname="MNPProtocol.xsd:setRNAA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:RNAA" type="MNPProtocol.xsd:RNAAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getTQ" qname="MNPProtocol.xsd:getTQ" returnQName="MNPProtocol.xsd:getTQReturn" returnType="MNPProtocol.xsd:TQType" soapAction=""/>
+    <wsdd:operation name="getDeserializer" qname="MNPProtocol.xsd:getDeserializer" returnQName="MNPProtocol.xsd:getDeserializerReturn" returnType="XMLSchema:anyType" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:mechType" type="XMLSchema:string"/>
+      <wsdd:parameter qname="MNPProtocol.xsd:_javaType" type="XMLSchema:anyType"/>
+      <wsdd:parameter qname="MNPProtocol.xsd:_xmlType" type="XMLSchema:QName"/>
+    </wsdd:operation>
+    <wsdd:operation name="getSerializer" qname="MNPProtocol.xsd:getSerializer" returnQName="MNPProtocol.xsd:getSerializerReturn" returnType="XMLSchema:anyType" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:mechType" type="XMLSchema:string"/>
+      <wsdd:parameter qname="MNPProtocol.xsd:_xmlType" type="XMLSchema:QName"/>
+    </wsdd:operation>
+    <wsdd:operation name="setNPOSAACK" qname="MNPProtocol.xsd:setNPOSAACK" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOSAACK" type="MNPProtocol.xsd:NPOSAACKType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setSCNOTICE" qname="MNPProtocol.xsd:setSCNOTICE" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SCNOTICE" type="MNPProtocol.xsd:SCNOTICEType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getSCNOTICEA" qname="MNPProtocol.xsd:getSCNOTICEA" returnQName="MNPProtocol.xsd:getSCNOTICEAReturn" returnType="MNPProtocol.xsd:SCNOTICEAType" soapAction=""/>
+    <wsdd:operation name="setSCNOTICEA" qname="MNPProtocol.xsd:setSCNOTICEA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SCNOTICEA" type="MNPProtocol.xsd:SCNOTICEAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getSCNOTICE" qname="MNPProtocol.xsd:getSCNOTICE" returnQName="MNPProtocol.xsd:getSCNOTICEReturn" returnType="MNPProtocol.xsd:SCNOTICEType" soapAction=""/>
+    <wsdd:operation name="getSDNOTICE" qname="MNPProtocol.xsd:getSDNOTICE" returnQName="MNPProtocol.xsd:getSDNOTICEReturn" returnType="MNPProtocol.xsd:SDNOTICEType" soapAction=""/>
+    <wsdd:operation name="getNPOSAACK" qname="MNPProtocol.xsd:getNPOSAACK" returnQName="MNPProtocol.xsd:getNPOSAACKReturn" returnType="MNPProtocol.xsd:NPOSAACKType" soapAction=""/>
+    <wsdd:operation name="setSDNOTICE" qname="MNPProtocol.xsd:setSDNOTICE" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SDNOTICE" type="MNPProtocol.xsd:SDNOTICEType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getSDNOTICEA" qname="MNPProtocol.xsd:getSDNOTICEA" returnQName="MNPProtocol.xsd:getSDNOTICEAReturn" returnType="MNPProtocol.xsd:SDNOTICEAType" soapAction=""/>
+    <wsdd:operation name="setSDNOTICEA" qname="MNPProtocol.xsd:setSDNOTICEA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:SDNOTICEA" type="MNPProtocol.xsd:SDNOTICEAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setRDBFDRsp" qname="MNPProtocol.xsd:setRDBFDRsp" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:RDBFDRsp" type="MNPProtocol.xsd:RDBFDRspType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getRDBFDRsp" qname="MNPProtocol.xsd:getRDBFDRsp" returnQName="MNPProtocol.xsd:getRDBFDRspReturn" returnType="MNPProtocol.xsd:RDBFDRspType" soapAction=""/>
+    <wsdd:operation name="setNPOSQRsp" qname="MNPProtocol.xsd:setNPOSQRsp" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOSQRsp" type="MNPProtocol.xsd:NPOSQRspType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getRDBPDRsp" qname="MNPProtocol.xsd:getRDBPDRsp" returnQName="MNPProtocol.xsd:getRDBPDRspReturn" returnType="MNPProtocol.xsd:RDBPDRspType" soapAction=""/>
+    <wsdd:operation name="setRDBPDRsp" qname="MNPProtocol.xsd:setRDBPDRsp" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:RDBPDRsp" type="MNPProtocol.xsd:RDBPDRspType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOSQRsp" qname="MNPProtocol.xsd:getNPOSQRsp" returnQName="MNPProtocol.xsd:getNPOSQRspReturn" returnType="MNPProtocol.xsd:NPOSQRspType" soapAction=""/>
+    <wsdd:operation name="getTypeDesc" qname="MNPProtocol.xsd:getTypeDesc" returnQName="MNPProtocol.xsd:getTypeDescReturn" returnType="XMLSchema:anyType" soapAction=""/>
+    <wsdd:operation name="getNPOSPR" qname="MNPProtocol.xsd:getNPOSPR" returnQName="MNPProtocol.xsd:getNPOSPRReturn" returnType="MNPProtocol.xsd:NPOSPRType" soapAction=""/>
+    <wsdd:operation name="getCAN" qname="MNPProtocol.xsd:getCAN" returnQName="MNPProtocol.xsd:getCANReturn" returnType="MNPProtocol.xsd:CANType" soapAction=""/>
+    <wsdd:operation name="setCAN" qname="MNPProtocol.xsd:setCAN" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:CAN" type="MNPProtocol.xsd:CANType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setNPOT" qname="MNPProtocol.xsd:setNPOT" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOT" type="MNPProtocol.xsd:NPOTType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOS" qname="MNPProtocol.xsd:getNPOS" returnQName="MNPProtocol.xsd:getNPOSReturn" returnType="MNPProtocol.xsd:NPOSType" soapAction=""/>
+    <wsdd:operation name="setNPOS" qname="MNPProtocol.xsd:setNPOS" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOS" type="MNPProtocol.xsd:NPOSType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOSTER" qname="MNPProtocol.xsd:getNPOSTER" returnQName="MNPProtocol.xsd:getNPOSTERReturn" returnType="MNPProtocol.xsd:NPOSTERType" soapAction=""/>
+    <wsdd:operation name="setNPOSTER" qname="MNPProtocol.xsd:setNPOSTER" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOSTER" type="MNPProtocol.xsd:NPOSTERType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOSA" qname="MNPProtocol.xsd:getNPOSA" returnQName="MNPProtocol.xsd:getNPOSAReturn" returnType="MNPProtocol.xsd:NPOSAType" soapAction=""/>
+    <wsdd:operation name="setNPOSA" qname="MNPProtocol.xsd:setNPOSA" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOSA" type="MNPProtocol.xsd:NPOSAType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setTQRsp" qname="MNPProtocol.xsd:setTQRsp" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:TQRsp" type="MNPProtocol.xsd:TQRspType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNOTE" qname="MNPProtocol.xsd:getNOTE" returnQName="MNPProtocol.xsd:getNOTEReturn" returnType="MNPProtocol.xsd:NOTEType" soapAction=""/>
+    <wsdd:operation name="getRsp" qname="MNPProtocol.xsd:getRsp" returnQName="MNPProtocol.xsd:getRspReturn" returnType="MNPProtocol.xsd:RspType" soapAction=""/>
+    <wsdd:operation name="setRsp" qname="MNPProtocol.xsd:setRsp" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:rsp" type="MNPProtocol.xsd:RspType"/>
+    </wsdd:operation>
+    <wsdd:operation name="setNPOSQ" qname="MNPProtocol.xsd:setNPOSQ" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NPOSQ" type="MNPProtocol.xsd:NPOSQType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOSQ" qname="MNPProtocol.xsd:getNPOSQ" returnQName="MNPProtocol.xsd:getNPOSQReturn" returnType="MNPProtocol.xsd:NPOSQType" soapAction=""/>
+    <wsdd:operation name="setNOTE" qname="MNPProtocol.xsd:setNOTE" soapAction="">
+      <wsdd:parameter qname="MNPProtocol.xsd:NOTE" type="MNPProtocol.xsd:NOTEType"/>
+    </wsdd:operation>
+    <wsdd:operation name="getVersion" qname="MNPProtocol.xsd:getVersion" returnQName="MNPProtocol.xsd:getVersionReturn" returnType="XMLSchema:string" soapAction=""/>
+  </wsdd:service>
+</wsdd:deployment>

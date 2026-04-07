@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com" xmlns="http://www.example.com" elementFormDefault="qualified">
+
+    <!-- Simple Types -->
+    <xs:simpleType name="PhoneNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="EmailAddress">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^@]+\.[^@]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex Types -->
+    <xs:complexType name="Address">
+        <xs:sequence>
+            <xs:element name="Street" type="xs:string"/>
+            <xs:element name="City" type="xs:string"/>
+            <xs:element name="State" type="xs:string"/>
+            <xs:element name="PostalCode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element name="FirstName" type="xs:string"/>
+            <xs:element name="LastName" type="xs:string"/>
+            <xs:element name="Email" type="EmailAddress"/>
+            <xs:element name="Phone" type="PhoneNumber"/>
+            <xs:element name="Address" type="Address"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderItem">
+        <xs:sequence>
+            <xs:element name="ProductCode" type="xs:string"/>
+            <xs:element name="Quantity" type="xs:int"/>
+            <xs:element name="Price" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Order">
+        <xs:sequence>
+            <xs:element name="OrderID" type="xs:string"/>
+            <xs:element name="OrderDate" type="xs:date"/>
+            <xs:element name="Customer" type="Person"/>
+            <xs:element name="OrderItems" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Item" type="OrderItem"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="TotalAmount" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Main Elements -->
+    <xs:element name="Customers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Customer" maxOccurs="unbounded" type="Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Orders">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Order" maxOccurs="unbounded" type="Order"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

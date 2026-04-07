@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+D:\backup\soap\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3725269035.index
+449384428.index
+1167323687.index
+1710578894.index
+885874995.index
+2291680939.index
+2456662266.index
+2652317424.index
+712673515.index
+3720636683.index
+2558061747.index

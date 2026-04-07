@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="MnpService" targetNamespace="http://example.com/mnp" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example.com/mnp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema targetNamespace="http://example.com/mnp">
+                  
+      <xsd:element name="getMnpServiceRequest">
+                        
+        <xsd:complexType>
+                              
+          <xsd:sequence>
+                                    
+            <xsd:element name="requestData" type="xsd:string"/>
+                                
+          </xsd:sequence>
+                          
+        </xsd:complexType>
+                    
+      </xsd:element>
+                  
+      <xsd:element name="getMnpServiceResponse">
+                        
+        <xsd:complexType>
+                              
+          <xsd:sequence>
+                                    
+            <xsd:element name="responseData" type="xsd:string"/>
+                                
+          </xsd:sequence>
+                          
+        </xsd:complexType>
+                    
+      </xsd:element>
+              
+    </xsd:schema>
+  </types>
+  <message name="getMnpServiceRequest">
+    <part name="parameters" element="tns:getMnpServiceRequest">
+    </part>
+  </message>
+  <message name="getMnpServiceResponse">
+    <part name="parameters" element="tns:getMnpServiceResponse">
+    </part>
+  </message>
+  <portType name="MnpServicePortType">
+    <operation name="getMnpService">
+      <input message="tns:getMnpServiceRequest">
+    </input>
+      <output message="tns:getMnpServiceResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="MnpServiceBinding" type="tns:MnpServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getMnpService">
+      <soap:operation soapAction="http://example.com/mnp/getMnpService"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="MnpService">
+    <port name="MnpServicePort" binding="tns:MnpServiceBinding">
+      <soap:address location="http://localhost:9798/wsdl/services"/>
+    </port>
+  </service>
+</definitions>

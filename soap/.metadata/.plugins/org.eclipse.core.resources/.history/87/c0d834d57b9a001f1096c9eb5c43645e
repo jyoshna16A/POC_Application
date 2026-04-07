@@ -1,0 +1,269 @@
+/**
+ * MNPFrameSoapBindingImpl.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4.1-SNAPSHOT Nov 07, 2023 (07:57:58 UTC) WSDL2Java emitter.
+ */
+
+package xsd.MNPProtocol;
+
+public class MNPFrameSoapBindingImpl implements xsd.MNPProtocol.MNPFrame{
+    public void setVersion(java.lang.String version) throws java.rmi.RemoteException {
+    }
+
+    public void setNPOSPR(xsd.MNPProtocol.NPOSPRType[] NPOSPR) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOTAType[] getNPOTA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.PERType[] getPER() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOTA(xsd.MNPProtocol.NPOTAType[] NPOTA) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOAType[] getNPOA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOA(xsd.MNPProtocol.NPOAType[] NPOA) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOTType[] getNPOT() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.NPOType[] getNPO() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPO(xsd.MNPProtocol.NPOType[] NPO) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NVPType[] getNVP() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNVP(xsd.MNPProtocol.NVPType[] NVP) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NVPAType[] getNVPA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNVPA(xsd.MNPProtocol.NVPAType[] NVPA) throws java.rmi.RemoteException {
+    }
+
+    public void setPER(xsd.MNPProtocol.PERType[] PER) throws java.rmi.RemoteException {
+    }
+
+    public void setSD(xsd.MNPProtocol.SDType[] SD) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.SDType[] getSD() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.SDAType[] getSDA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setTQ(xsd.MNPProtocol.TQType[] TQ) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.TQRspType[] getTQRsp() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.SCAType[] getSCA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.RDBPDType[] getRDBPD() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setSDA(xsd.MNPProtocol.SDAType[] SDA) throws java.rmi.RemoteException {
+    }
+
+    public void setSC(xsd.MNPProtocol.SCType[] SC) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.SCType[] getSC() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setSCA(xsd.MNPProtocol.SCAType[] SCA) throws java.rmi.RemoteException {
+    }
+
+    public void setRDBPD(xsd.MNPProtocol.RDBPDType[] RDBPD) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.RDBFDType[] getRDBFD() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setRDBFD(xsd.MNPProtocol.RDBFDType[] RDBFD) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.RNAType[] getRNA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setRNA(xsd.MNPProtocol.RNAType[] RNA) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.RNAAType[] getRNAA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setRNAA(xsd.MNPProtocol.RNAAType[] RNAA) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.TQType[] getTQ() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public java.lang.Object getDeserializer(java.lang.String mechType, java.lang.Object _javaType, javax.xml.namespace.QName _xmlType) throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public java.lang.Object getSerializer(java.lang.String mechType, javax.xml.namespace.QName _xmlType) throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOSAACK(xsd.MNPProtocol.NPOSAACKType[] NPOSAACK) throws java.rmi.RemoteException {
+    }
+
+    public void setSCNOTICE(xsd.MNPProtocol.SCNOTICEType[] SCNOTICE) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.SCNOTICEAType[] getSCNOTICEA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setSCNOTICEA(xsd.MNPProtocol.SCNOTICEAType[] SCNOTICEA) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.SCNOTICEType[] getSCNOTICE() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.SDNOTICEType[] getSDNOTICE() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.NPOSAACKType[] getNPOSAACK() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setSDNOTICE(xsd.MNPProtocol.SDNOTICEType[] SDNOTICE) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.SDNOTICEAType[] getSDNOTICEA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setSDNOTICEA(xsd.MNPProtocol.SDNOTICEAType[] SDNOTICEA) throws java.rmi.RemoteException {
+    }
+
+    public void setRDBFDRsp(xsd.MNPProtocol.RDBFDRspType[] RDBFDRsp) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.RDBFDRspType[] getRDBFDRsp() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOSQRsp(xsd.MNPProtocol.NPOSQRspType[] NPOSQRsp) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.RDBPDRspType[] getRDBPDRsp() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setRDBPDRsp(xsd.MNPProtocol.RDBPDRspType[] RDBPDRsp) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOSQRspType[] getNPOSQRsp() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public java.lang.Object getTypeDesc() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.NPOSPRType[] getNPOSPR() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.CANType[] getCAN() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setCAN(xsd.MNPProtocol.CANType[] CAN) throws java.rmi.RemoteException {
+    }
+
+    public void setNPOT(xsd.MNPProtocol.NPOTType[] NPOT) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOSType[] getNPOS() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOS(xsd.MNPProtocol.NPOSType[] NPOS) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOSTERType[] getNPOSTER() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOSTER(xsd.MNPProtocol.NPOSTERType[] NPOSTER) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOSAType[] getNPOSA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNPOSA(xsd.MNPProtocol.NPOSAType[] NPOSA) throws java.rmi.RemoteException {
+    }
+
+    public void setTQRsp(xsd.MNPProtocol.TQRspType[] TQRsp) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NOTEType[] getNOTE() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public xsd.MNPProtocol.RspType[] getRsp() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setRsp(xsd.MNPProtocol.RspType[] rsp) throws java.rmi.RemoteException {
+    }
+
+    public void setNPOSQ(xsd.MNPProtocol.NPOSQType[] NPOSQ) throws java.rmi.RemoteException {
+    }
+
+    public xsd.MNPProtocol.NPOSQType[] getNPOSQ() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public void setNOTE(xsd.MNPProtocol.NOTEType[] NOTE) throws java.rmi.RemoteException {
+    }
+
+    public boolean equals(java.lang.Object obj) throws java.rmi.RemoteException {
+        return false;
+    }
+
+    public int hashCode() throws java.rmi.RemoteException {
+        return -3;
+    }
+
+    public java.lang.String getVersion() throws java.rmi.RemoteException {
+        return null;
+    }
+
+}

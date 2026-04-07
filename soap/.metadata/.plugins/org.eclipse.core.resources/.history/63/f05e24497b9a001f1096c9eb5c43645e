@@ -1,0 +1,4709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://MNPProtocol.xsd" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://MNPProtocol.xsd" xmlns:intf="http://MNPProtocol.xsd" xmlns:tns1="MNPProtocol.xsd" xmlns:tns2="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:tns3="http://lang.java" xmlns:tns4="http://encoding.axis.apache.org" xmlns:tns5="http://description.axis.apache.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4.1-SNAPSHOT
+Built on Nov 07, 2023 (07:57:58 UTC)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://MNPProtocol.xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://encoding.axis.apache.org"/>
+   <import namespace="MNPProtocol.xsd"/>
+   <import namespace="http://lang.java"/>
+   <import namespace="http://ws-i.org/profiles/basic/1.1/xsd"/>
+   <import namespace="http://description.axis.apache.org"/>
+   <element name="setVersion">
+    <complexType>
+     <sequence>
+      <element name="version" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setVersionResponse">
+    <complexType/>
+   </element>
+   <element name="setNPOSPR">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOSPR" type="impl:NPOSPRType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSPRType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOSPRResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOTA">
+    <complexType/>
+   </element>
+   <element name="getNPOTAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOTAReturn" type="impl:NPOTAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOTAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="getPER">
+    <complexType/>
+   </element>
+   <element name="getPERResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getPERReturn" type="impl:PERType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="PERType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="PERInfo" type="tns1:PERInfoType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOTA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOTA" type="impl:NPOTAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOTAResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOA">
+    <complexType/>
+   </element>
+   <element name="getNPOAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOAReturn" type="impl:NPOAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="OrderedTransferTime" nillable="true" type="xsd:dateTime"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOA" type="impl:NPOAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOAResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOT">
+    <complexType/>
+   </element>
+   <element name="getNPOTResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOTReturn" type="impl:NPOTType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="NPOTType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberSequence" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="LSA" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="OrderedTransferTime" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="OrderedApprovalTime" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="getNPO">
+    <complexType/>
+   </element>
+   <element name="getNPOResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOReturn" type="impl:NPOType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOTypeSubscriberAuthSequenceSubscriberAuthorization">
+    <sequence>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="OwnerId" nillable="true" type="xsd:string"/>
+     <element name="TypeOfId" nillable="true" type="xsd:integer"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfNPOTypeSubscriberAuthSequenceSubscriberAuthorization">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:NPOTypeSubscriberAuthSequenceSubscriberAuthorization"/>
+    </sequence>
+   </complexType>
+   <complexType name="NPOType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="RecipientTelco" nillable="true" type="xsd:string"/>
+     <element name="DonorTelco" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="OldReferenceId" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ByLOA" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="LOAImage" type="tns2:swaRef"/>
+     <element maxOccurs="1" minOccurs="0" name="UndertakingAck" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="SubscriberSequence" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element maxOccurs="1" minOccurs="0" name="SubscriberAuthSequence" nillable="true" type="impl:ArrayOfNPOTypeSubscriberAuthSequenceSubscriberAuthorization"/>
+     <element maxOccurs="1" minOccurs="0" name="OrderedTransferTime" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="OrderedApprovalTime" nillable="true" type="xsd:dateTime"/>
+     <element name="LSA" nillable="true" type="xsd:string"/>
+     <element name="RouteNumber" nillable="true" type="xsd:string"/>
+     <element name="ServiceType" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="PersonCustomer" nillable="true" type="tns1:PersonCustomerType"/>
+     <element maxOccurs="1" minOccurs="0" name="CorporateCustomer" nillable="true" type="tns1:CorporateCustomerType"/>
+     <element name="Author" nillable="true" type="tns1:AuthorType"/>
+     <element maxOccurs="1" minOccurs="0" name="Remark" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPO">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPO" type="impl:NPOType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOResponse">
+    <complexType/>
+   </element>
+   <element name="getNVP">
+    <complexType/>
+   </element>
+   <element name="getNVPResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNVPReturn" type="impl:NVPType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NVPType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="TimeoutDate" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="Remark" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNVP">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NVP" type="impl:NVPType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNVPResponse">
+    <complexType/>
+   </element>
+   <element name="getNVPA">
+    <complexType/>
+   </element>
+   <element name="getNVPAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNVPAReturn" type="impl:NVPAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NVPAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="Corporate" nillable="true" type="xsd:string"/>
+     <element name="ContractualObligation" nillable="true" type="xsd:string"/>
+     <element name="ActivateAging" nillable="true" type="xsd:string"/>
+     <element name="OwnershipChange" nillable="true" type="xsd:string"/>
+     <element name="OutstandingBill" nillable="true" type="xsd:string"/>
+     <element name="UnderSub-judice" nillable="true" type="xsd:string"/>
+     <element name="PortingProhibited" nillable="true" type="xsd:string"/>
+     <element name="SimSwap" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNVPA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NVPA" type="impl:NVPAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNVPAResponse">
+    <complexType/>
+   </element>
+   <element name="setPER">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="PER" type="impl:PERType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPERResponse">
+    <complexType/>
+   </element>
+   <element name="setSD">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SD" type="impl:SDType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SDType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="SDInfo" type="tns1:SDInfoType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setSDResponse">
+    <complexType/>
+   </element>
+   <element name="getSD">
+    <complexType/>
+   </element>
+   <element name="getSDResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSDReturn" type="impl:SDType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSDA">
+    <complexType/>
+   </element>
+   <element name="getSDAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSDAReturn" type="impl:SDAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SDAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setTQ">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="TQ" type="impl:TQType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TQType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="DateRange" nillable="true" type="tns1:DateRangeType"/>
+     <element name="DonorTelco" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setTQResponse">
+    <complexType/>
+   </element>
+   <element name="getTQRsp">
+    <complexType/>
+   </element>
+   <element name="getTQRspResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getTQRspReturn" type="impl:TQRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TQRspType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="QuotaResult" nillable="true" type="tns1:QuotaResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="getSCA">
+    <complexType/>
+   </element>
+   <element name="getSCAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSCAReturn" type="impl:SCAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SCAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="getRDBPD">
+    <complexType/>
+   </element>
+   <element name="getRDBPDResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRDBPDReturn" type="impl:RDBPDType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RDBPDType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="SubscriberSequence" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element maxOccurs="1" minOccurs="0" name="NumberRange" nillable="true" type="tns1:NumberRangeType"/>
+     <element maxOccurs="1" minOccurs="0" name="TimeRange" nillable="true" type="tns1:TimeRangeType"/>
+     <element maxOccurs="1" minOccurs="0" name="LSA" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setSDA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SDA" type="impl:SDAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSDAResponse">
+    <complexType/>
+   </element>
+   <element name="setSC">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SC" type="impl:SCType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SCType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="SCInfo" type="tns1:SCInfoType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setSCResponse">
+    <complexType/>
+   </element>
+   <element name="getSC">
+    <complexType/>
+   </element>
+   <element name="getSCResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSCReturn" type="impl:SCType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSCA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SCA" type="impl:SCAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSCAResponse">
+    <complexType/>
+   </element>
+   <element name="setRDBPD">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="RDBPD" type="impl:RDBPDType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRDBPDResponse">
+    <complexType/>
+   </element>
+   <element name="getRDBFD">
+    <complexType/>
+   </element>
+   <element name="getRDBFDResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRDBFDReturn" type="impl:RDBFDType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RDBFDType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setRDBFD">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="RDBFD" type="impl:RDBFDType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRDBFDResponse">
+    <complexType/>
+   </element>
+   <element name="getRNA">
+    <complexType/>
+   </element>
+   <element name="getRNAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRNAReturn" type="impl:RNAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RNAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="RouteNumber" nillable="true" type="xsd:string"/>
+     <element name="SuspectedTelco" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setRNA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="RNA" type="impl:RNAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRNAResponse">
+    <complexType/>
+   </element>
+   <element name="getRNAA">
+    <complexType/>
+   </element>
+   <element name="getRNAAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRNAAReturn" type="impl:RNAAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RNAAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="RouteNumber" nillable="true" type="xsd:string"/>
+     <element name="SuspectedTelco" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setRNAA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="RNAA" type="impl:RNAAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRNAAResponse">
+    <complexType/>
+   </element>
+   <element name="getTQ">
+    <complexType/>
+   </element>
+   <element name="getTQResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getTQReturn" type="impl:TQType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDeserializer">
+    <complexType>
+     <sequence>
+      <element name="mechType" type="xsd:string"/>
+      <element name="_javaType" type="xsd:anyType"/>
+      <element name="_xmlType" type="xsd:QName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDeserializerResponse">
+    <complexType>
+     <sequence>
+      <element name="getDeserializerReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSerializer">
+    <complexType>
+     <sequence>
+      <element name="mechType" type="xsd:string"/>
+      <element name="_xmlType" type="xsd:QName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSerializerResponse">
+    <complexType>
+     <sequence>
+      <element name="getSerializerReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOSAACK">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOSAACK" type="impl:NPOSAACKType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSAACKType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOSAACKResponse">
+    <complexType/>
+   </element>
+   <element name="setSCNOTICE">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SCNOTICE" type="impl:SCNOTICEType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SCNOTICEType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="BCInfo" type="tns1:BCInfoType"/>
+     <element name="BatchId" nillable="true" type="xsd:string"/>
+     <element name="LSA" nillable="true" type="xsd:string"/>
+     <element name="Checksum" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setSCNOTICEResponse">
+    <complexType/>
+   </element>
+   <element name="getSCNOTICEA">
+    <complexType/>
+   </element>
+   <element name="getSCNOTICEAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSCNOTICEAReturn" type="impl:SCNOTICEAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SCNOTICEAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="BatchId" nillable="true" type="xsd:string"/>
+     <element name="Success" nillable="true" type="xsd:integer"/>
+     <element name="Fail" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setSCNOTICEA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SCNOTICEA" type="impl:SCNOTICEAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSCNOTICEAResponse">
+    <complexType/>
+   </element>
+   <element name="getSCNOTICE">
+    <complexType/>
+   </element>
+   <element name="getSCNOTICEResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSCNOTICEReturn" type="impl:SCNOTICEType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSDNOTICE">
+    <complexType/>
+   </element>
+   <element name="getSDNOTICEResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSDNOTICEReturn" type="impl:SDNOTICEType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SDNOTICEType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="BCInfo" type="tns1:BCInfoType"/>
+     <element name="BatchId" nillable="true" type="xsd:string"/>
+     <element name="LSA" nillable="true" type="xsd:string"/>
+     <element name="Checksum" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="getNPOSAACK">
+    <complexType/>
+   </element>
+   <element name="getNPOSAACKResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSAACKReturn" type="impl:NPOSAACKType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSDNOTICE">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SDNOTICE" type="impl:SDNOTICEType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSDNOTICEResponse">
+    <complexType/>
+   </element>
+   <element name="getSDNOTICEA">
+    <complexType/>
+   </element>
+   <element name="getSDNOTICEAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSDNOTICEAReturn" type="impl:SDNOTICEAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SDNOTICEAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="BatchId" nillable="true" type="xsd:string"/>
+     <element name="Success" nillable="true" type="xsd:integer"/>
+     <element name="Fail" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setSDNOTICEA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="SDNOTICEA" type="impl:SDNOTICEAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSDNOTICEAResponse">
+    <complexType/>
+   </element>
+   <element name="setRDBFDRsp">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="RDBFDRsp" type="impl:RDBFDRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RDBFDRspType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="1" minOccurs="0" name="DownloadTime" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="DataFileName" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setRDBFDRspResponse">
+    <complexType/>
+   </element>
+   <element name="getRDBFDRsp">
+    <complexType/>
+   </element>
+   <element name="getRDBFDRspResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRDBFDRspReturn" type="impl:RDBFDRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOSQRsp">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOSQRsp" type="impl:NPOSQRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSQRspType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="unbounded" name="StatusResult" nillable="true" type="tns1:StatusResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOSQRspResponse">
+    <complexType/>
+   </element>
+   <element name="getRDBPDRsp">
+    <complexType/>
+   </element>
+   <element name="getRDBPDRspResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRDBPDRspReturn" type="impl:RDBPDRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RDBPDRspType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="1" minOccurs="0" name="DownloadTime" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="DataFileName" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setRDBPDRsp">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="RDBPDRsp" type="impl:RDBPDRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRDBPDRspResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOSQRsp">
+    <complexType/>
+   </element>
+   <element name="getNPOSQRspResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSQRspReturn" type="impl:NPOSQRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTypeDesc">
+    <complexType/>
+   </element>
+   <element name="getTypeDescResponse">
+    <complexType>
+     <sequence>
+      <element name="getTypeDescReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNPOSPR">
+    <complexType/>
+   </element>
+   <element name="getNPOSPRResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSPRReturn" type="impl:NPOSPRType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCAN">
+    <complexType/>
+   </element>
+   <element name="getCANResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getCANReturn" type="impl:CANType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="CANType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="ReasonCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="1" minOccurs="0" name="ReasonText" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setCAN">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="CAN" type="impl:CANType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCANResponse">
+    <complexType/>
+   </element>
+   <element name="setNPOT">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOT" type="impl:NPOTType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOTResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOS">
+    <complexType/>
+   </element>
+   <element name="getNPOSResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSReturn" type="impl:NPOSType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="BillDate" nillable="true" type="xsd:dateTime"/>
+     <element name="DueDate" nillable="true" type="xsd:dateTime"/>
+     <element name="Amount" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Remark" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOS">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOS" type="impl:NPOSType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOSResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOSTER">
+    <complexType/>
+   </element>
+   <element name="getNPOSTERResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSTERReturn" type="impl:NPOSTERType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSTERType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOSTER">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOSTER" type="impl:NPOSTERType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOSTERResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOSA">
+    <complexType/>
+   </element>
+   <element name="getNPOSAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSAReturn" type="impl:NPOSAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSAType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOSA">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOSA" type="impl:NPOSAType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNPOSAResponse">
+    <complexType/>
+   </element>
+   <element name="setTQRsp">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="TQRsp" type="impl:TQRspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTQRspResponse">
+    <complexType/>
+   </element>
+   <element name="getNOTE">
+    <complexType/>
+   </element>
+   <element name="getNOTEResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNOTEReturn" type="impl:NOTEType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NOTEType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="MessageType" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="getRsp">
+    <complexType/>
+   </element>
+   <element name="getRspResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRspReturn" type="impl:RspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="RspType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="MessageType" nillable="true" type="xsd:string"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="unbounded" minOccurs="0" name="SubscriberResult" nillable="true" type="tns1:SubscriberResultType"/>
+     <element maxOccurs="1" minOccurs="0" name="OrderedTransferTime" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="RecommendTransferTime" nillable="true" type="xsd:dateTime"/>
+     <element maxOccurs="1" minOccurs="0" name="RecipientTelco" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="LSA" nillable="true" type="xsd:string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setRsp">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="rsp" type="impl:RspType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRspResponse">
+    <complexType/>
+   </element>
+   <element name="setNPOSQ">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NPOSQ" type="impl:NPOSQType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="NPOSQType">
+    <sequence>
+     <element name="MessageSenderTelco" nillable="true" type="xsd:string"/>
+     <element name="MessageReceiverTelco" nillable="true" type="xsd:string"/>
+     <element name="RequestId" nillable="true" type="xsd:string"/>
+     <element name="Timestamp" nillable="true" type="xsd:dateTime"/>
+     <element name="BatchReference" nillable="true" type="impl:ArrayOf_xsd_string"/>
+    </sequence>
+    <attribute name="version" type="xsd:string"/>
+   </complexType>
+   <element name="setNPOSQResponse">
+    <complexType/>
+   </element>
+   <element name="getNPOSQ">
+    <complexType/>
+   </element>
+   <element name="getNPOSQResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNPOSQReturn" type="impl:NPOSQType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNOTE">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="NOTE" type="impl:NOTEType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNOTEResponse">
+    <complexType/>
+   </element>
+   <element name="equals">
+    <complexType>
+     <sequence>
+      <element name="obj" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="equalsResponse">
+    <complexType>
+     <sequence>
+      <element name="equalsReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="hashCode">
+    <complexType/>
+   </element>
+   <element name="hashCodeResponse">
+    <complexType>
+     <sequence>
+      <element name="hashCodeReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getVersion">
+    <complexType/>
+   </element>
+   <element name="getVersionResponse">
+    <complexType>
+     <sequence>
+      <element name="getVersionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="MNPProtocol.xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://MNPProtocol.xsd"/>
+   <import namespace="http://encoding.axis.apache.org"/>
+   <import namespace="http://lang.java"/>
+   <import namespace="http://ws-i.org/profiles/basic/1.1/xsd"/>
+   <import namespace="http://description.axis.apache.org"/>
+   <complexType name="SubscriberResultType">
+    <sequence>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="1" minOccurs="0" name="ResultCode2" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="1" minOccurs="0" name="ResultCode3" nillable="true" type="xsd:integer"/>
+     <element maxOccurs="1" minOccurs="0" name="ResultText" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PERInfoType">
+    <sequence>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PersonCustomerType">
+    <sequence>
+     <element name="OwnerName" nillable="true" type="xsd:string"/>
+     <element name="OwnerId" nillable="true" type="xsd:string"/>
+     <element name="TypeOfId" nillable="true" type="xsd:integer"/>
+     <element name="SignatureDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <complexType name="CorporateCustomerType">
+    <sequence>
+     <element name="CompanyName" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="RegistrationCode" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AccountNumber" nillable="true" type="xsd:string"/>
+     <element name="SignatureDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <complexType name="AuthorType">
+    <sequence>
+     <element name="Name" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Phone" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Telefax" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Email" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Date" nillable="true" type="xsd:date"/>
+    </sequence>
+   </complexType>
+   <complexType name="SDInfoType">
+    <sequence>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="DateRangeType">
+    <sequence>
+     <element name="DateRangeStart" nillable="true" type="xsd:date"/>
+     <element name="DateRangeEnd" nillable="true" type="xsd:date"/>
+    </sequence>
+   </complexType>
+   <complexType name="WindowType">
+    <sequence>
+     <element name="QuotaAmount" nillable="true" type="xsd:integer"/>
+     <element name="WindowName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="DonorQuotaType">
+    <sequence>
+     <element name="DonorTelco" nillable="true" type="xsd:string"/>
+     <element maxOccurs="unbounded" name="Window" nillable="true" type="tns1:WindowType"/>
+    </sequence>
+   </complexType>
+   <complexType name="QuotaResultType">
+    <sequence>
+     <element name="QuotaDate" nillable="true" type="xsd:date"/>
+     <element name="DonorQuota" nillable="true" type="tns1:DonorQuotaType"/>
+     <element name="ActivationQuota" nillable="true" type="xsd:integer"/>
+     <element name="MaxSNPerNPO" nillable="true" type="xsd:integer"/>
+    </sequence>
+   </complexType>
+   <complexType name="NumberRangeType">
+    <sequence>
+     <element name="NumberRangeStart" nillable="true" type="xsd:string"/>
+     <element name="NumberRangeEnd" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="TimeRangeType">
+    <sequence>
+     <element name="TimeRangeStart" nillable="true" type="xsd:dateTime"/>
+     <element name="TimeRangeEnd" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <complexType name="SCInfoType">
+    <sequence>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="BCInfoType">
+    <sequence>
+     <element name="SubscriberNumber" nillable="true" type="xsd:string"/>
+     <element name="BCAction" nillable="true" type="xsd:integer"/>
+     <element name="DCTime" type="xsd:dateTime"/>
+     <element name="ServiceType" nillable="true" type="xsd:string"/>
+     <element name="RouteNumber" nillable="true" type="xsd:string"/>
+     <element name="RNO" nillable="true" type="xsd:string"/>
+     <element name="DNO" nillable="true" type="xsd:string"/>
+     <element name="NRH" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ResultText" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="StatusResultType">
+    <sequence>
+     <element name="ResultCode" nillable="true" type="xsd:integer"/>
+     <element name="ReferenceId" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="StatusCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://MNPProtocol.xsd"/>
+   <import namespace="http://encoding.axis.apache.org"/>
+   <import namespace="MNPProtocol.xsd"/>
+   <import namespace="http://lang.java"/>
+   <import namespace="http://ws-i.org/profiles/basic/1.1/xsd"/>
+   <import namespace="http://description.axis.apache.org"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws-i.org/profiles/basic/1.1/xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://MNPProtocol.xsd"/>
+   <import namespace="http://encoding.axis.apache.org"/>
+   <import namespace="MNPProtocol.xsd"/>
+   <import namespace="http://lang.java"/>
+   <import namespace="http://description.axis.apache.org"/>
+   <complexType name="swaRef">
+    <simpleContent>
+     <extension/>
+    </simpleContent>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getNPOSTERRequest">
+
+      <wsdl:part element="impl:getNPOSTER" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDNOTICERequest">
+
+      <wsdl:part element="impl:setSDNOTICE" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVersionResponse">
+
+      <wsdl:part element="impl:getVersionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSARequest">
+
+      <wsdl:part element="impl:getNPOSA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSRequest">
+
+      <wsdl:part element="impl:getNPOS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBFDResponse">
+
+      <wsdl:part element="impl:setRDBFDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOTRequest">
+
+      <wsdl:part element="impl:getNPOT" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSPRResponse">
+
+      <wsdl:part element="impl:setNPOSPRResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCNOTICEAResponse">
+
+      <wsdl:part element="impl:getSCNOTICEAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSQRspRequest">
+
+      <wsdl:part element="impl:getNPOSQRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setVersionResponse">
+
+      <wsdl:part element="impl:setVersionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPERRequest">
+
+      <wsdl:part element="impl:getPER" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBPDRspRequest">
+
+      <wsdl:part element="impl:getRDBPDRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCANResponse">
+
+      <wsdl:part element="impl:setCANResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="equalsRequest">
+
+      <wsdl:part element="impl:equals" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSPRRequest">
+
+      <wsdl:part element="impl:setNPOSPR" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSQRspResponse">
+
+      <wsdl:part element="impl:setNPOSQRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCARequest">
+
+      <wsdl:part element="impl:getSCA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPORequest">
+
+      <wsdl:part element="impl:getNPO" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTQRspRequest">
+
+      <wsdl:part element="impl:getTQRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCANRequest">
+
+      <wsdl:part element="impl:setCAN" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDRequest">
+
+      <wsdl:part element="impl:getSD" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTQRspResponse">
+
+      <wsdl:part element="impl:getTQRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCNOTICERequest">
+
+      <wsdl:part element="impl:getSCNOTICE" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBPDResponse">
+
+      <wsdl:part element="impl:setRDBPDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSerializerResponse">
+
+      <wsdl:part element="impl:getSerializerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSQRspResponse">
+
+      <wsdl:part element="impl:getNPOSQRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSPRResponse">
+
+      <wsdl:part element="impl:getNPOSPRResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setVersionRequest">
+
+      <wsdl:part element="impl:setVersion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVersionRequest">
+
+      <wsdl:part element="impl:getVersion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSRequest">
+
+      <wsdl:part element="impl:setNPOS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSResponse">
+
+      <wsdl:part element="impl:getNPOSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNOTEResponse">
+
+      <wsdl:part element="impl:setNOTEResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSAACKRequest">
+
+      <wsdl:part element="impl:getNPOSAACK" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="hashCodeRequest">
+
+      <wsdl:part element="impl:hashCode" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSTERResponse">
+
+      <wsdl:part element="impl:setNPOSTERResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTypeDescRequest">
+
+      <wsdl:part element="impl:getTypeDesc" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRNARequest">
+
+      <wsdl:part element="impl:setRNA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTQRequest">
+
+      <wsdl:part element="impl:getTQ" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCNOTICEAResponse">
+
+      <wsdl:part element="impl:setSCNOTICEAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRspRequest">
+
+      <wsdl:part element="impl:getRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSQResponse">
+
+      <wsdl:part element="impl:setNPOSQResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRNAAResponse">
+
+      <wsdl:part element="impl:setRNAAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCAResponse">
+
+      <wsdl:part element="impl:getSCAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBPDResponse">
+
+      <wsdl:part element="impl:getRDBPDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOTAResponse">
+
+      <wsdl:part element="impl:setNPOTAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSResponse">
+
+      <wsdl:part element="impl:setNPOSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTQRspRequest">
+
+      <wsdl:part element="impl:setTQRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCAResponse">
+
+      <wsdl:part element="impl:setSCAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOAResponse">
+
+      <wsdl:part element="impl:getNPOAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOResponse">
+
+      <wsdl:part element="impl:setNPOResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSPRRequest">
+
+      <wsdl:part element="impl:getNPOSPR" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSAACKRequest">
+
+      <wsdl:part element="impl:setNPOSAACK" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOResponse">
+
+      <wsdl:part element="impl:getNPOResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDAResponse">
+
+      <wsdl:part element="impl:setSDAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCANResponse">
+
+      <wsdl:part element="impl:getCANResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRNARequest">
+
+      <wsdl:part element="impl:getRNA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRspRequest">
+
+      <wsdl:part element="impl:setRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCARequest">
+
+      <wsdl:part element="impl:setSCA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCANRequest">
+
+      <wsdl:part element="impl:getCAN" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPORequest">
+
+      <wsdl:part element="impl:setNPO" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTQRequest">
+
+      <wsdl:part element="impl:setTQ" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNVPARequest">
+
+      <wsdl:part element="impl:setNVPA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDResponse">
+
+      <wsdl:part element="impl:setSDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBPDRequest">
+
+      <wsdl:part element="impl:setRDBPD" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBFDRspRequest">
+
+      <wsdl:part element="impl:getRDBFDRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOTResponse">
+
+      <wsdl:part element="impl:getNPOTResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDNOTICEResponse">
+
+      <wsdl:part element="impl:setSDNOTICEResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCResponse">
+
+      <wsdl:part element="impl:setSCResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOTARequest">
+
+      <wsdl:part element="impl:setNPOTA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNOTERequest">
+
+      <wsdl:part element="impl:setNOTE" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRNAAResponse">
+
+      <wsdl:part element="impl:getRNAAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDNOTICEResponse">
+
+      <wsdl:part element="impl:getSDNOTICEResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDNOTICEARequest">
+
+      <wsdl:part element="impl:getSDNOTICEA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDeserializerResponse">
+
+      <wsdl:part element="impl:getDeserializerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSAResponse">
+
+      <wsdl:part element="impl:setNPOSAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRNAARequest">
+
+      <wsdl:part element="impl:getRNAA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDNOTICEARequest">
+
+      <wsdl:part element="impl:setSDNOTICEA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNOTEResponse">
+
+      <wsdl:part element="impl:getNOTEResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNVPARequest">
+
+      <wsdl:part element="impl:getNVPA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDAResponse">
+
+      <wsdl:part element="impl:getSDAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTQRspResponse">
+
+      <wsdl:part element="impl:setTQRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="equalsResponse">
+
+      <wsdl:part element="impl:equalsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRspResponse">
+
+      <wsdl:part element="impl:getRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="hashCodeResponse">
+
+      <wsdl:part element="impl:hashCodeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDNOTICEAResponse">
+
+      <wsdl:part element="impl:setSDNOTICEAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNOTERequest">
+
+      <wsdl:part element="impl:getNOTE" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCNOTICEResponse">
+
+      <wsdl:part element="impl:getSCNOTICEResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOTResponse">
+
+      <wsdl:part element="impl:setNPOTResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBFDResponse">
+
+      <wsdl:part element="impl:getRDBFDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSQRspRequest">
+
+      <wsdl:part element="impl:setNPOSQRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNVPResponse">
+
+      <wsdl:part element="impl:getNVPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNVPResponse">
+
+      <wsdl:part element="impl:setNVPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDNOTICERequest">
+
+      <wsdl:part element="impl:getSDNOTICE" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPERResponse">
+
+      <wsdl:part element="impl:getPERResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCNOTICEResponse">
+
+      <wsdl:part element="impl:setSCNOTICEResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSAACKResponse">
+
+      <wsdl:part element="impl:getNPOSAACKResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOARequest">
+
+      <wsdl:part element="impl:setNPOA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRspResponse">
+
+      <wsdl:part element="impl:setRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSQResponse">
+
+      <wsdl:part element="impl:getNPOSQResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBPDRequest">
+
+      <wsdl:part element="impl:getRDBPD" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRNAARequest">
+
+      <wsdl:part element="impl:setRNAA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDResponse">
+
+      <wsdl:part element="impl:getSDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTQResponse">
+
+      <wsdl:part element="impl:getTQResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOAResponse">
+
+      <wsdl:part element="impl:setNPOAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSAACKResponse">
+
+      <wsdl:part element="impl:setNPOSAACKResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNVPAResponse">
+
+      <wsdl:part element="impl:getNVPAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNVPRequest">
+
+      <wsdl:part element="impl:getNVP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDNOTICEAResponse">
+
+      <wsdl:part element="impl:getSDNOTICEAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBPDRspResponse">
+
+      <wsdl:part element="impl:setRDBPDRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBFDRspRequest">
+
+      <wsdl:part element="impl:setRDBFDRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOTAResponse">
+
+      <wsdl:part element="impl:getNPOTAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDRequest">
+
+      <wsdl:part element="impl:setSD" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSerializerRequest">
+
+      <wsdl:part element="impl:getSerializer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCRequest">
+
+      <wsdl:part element="impl:setSC" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSDARequest">
+
+      <wsdl:part element="impl:setSDA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBPDRspResponse">
+
+      <wsdl:part element="impl:getRDBPDRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDeserializerRequest">
+
+      <wsdl:part element="impl:getDeserializer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSARequest">
+
+      <wsdl:part element="impl:setNPOSA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNVPRequest">
+
+      <wsdl:part element="impl:setNVP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOTARequest">
+
+      <wsdl:part element="impl:getNPOTA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSQRequest">
+
+      <wsdl:part element="impl:getNPOSQ" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCNOTICERequest">
+
+      <wsdl:part element="impl:setSCNOTICE" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPERRequest">
+
+      <wsdl:part element="impl:setPER" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTypeDescResponse">
+
+      <wsdl:part element="impl:getTypeDescResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBFDRequest">
+
+      <wsdl:part element="impl:setRDBFD" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBFDRspResponse">
+
+      <wsdl:part element="impl:getRDBFDRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRNAResponse">
+
+      <wsdl:part element="impl:getRNAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSQRequest">
+
+      <wsdl:part element="impl:setNPOSQ" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPERResponse">
+
+      <wsdl:part element="impl:setPERResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSDARequest">
+
+      <wsdl:part element="impl:getSDA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCRequest">
+
+      <wsdl:part element="impl:getSC" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOARequest">
+
+      <wsdl:part element="impl:getNPOA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTQResponse">
+
+      <wsdl:part element="impl:setTQResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCNOTICEARequest">
+
+      <wsdl:part element="impl:getSCNOTICEA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSAResponse">
+
+      <wsdl:part element="impl:getNPOSAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRNAResponse">
+
+      <wsdl:part element="impl:setRNAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOSTERRequest">
+
+      <wsdl:part element="impl:setNPOSTER" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBFDRspResponse">
+
+      <wsdl:part element="impl:setRDBFDRspResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSCResponse">
+
+      <wsdl:part element="impl:getSCResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRDBFDRequest">
+
+      <wsdl:part element="impl:getRDBFD" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNPOTRequest">
+
+      <wsdl:part element="impl:setNPOT" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNVPAResponse">
+
+      <wsdl:part element="impl:setNVPAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNPOSTERResponse">
+
+      <wsdl:part element="impl:getNPOSTERResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRDBPDRspRequest">
+
+      <wsdl:part element="impl:setRDBPDRsp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSCNOTICEARequest">
+
+      <wsdl:part element="impl:setSCNOTICEA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MNPFrame">
+
+      <wsdl:operation name="setVersion">
+
+         <wsdl:input message="impl:setVersionRequest" name="setVersionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setVersionResponse" name="setVersionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSPR">
+
+         <wsdl:input message="impl:setNPOSPRRequest" name="setNPOSPRRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSPRResponse" name="setNPOSPRResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOTA">
+
+         <wsdl:input message="impl:getNPOTARequest" name="getNPOTARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOTAResponse" name="getNPOTAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPER">
+
+         <wsdl:input message="impl:getPERRequest" name="getPERRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPERResponse" name="getPERResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOTA">
+
+         <wsdl:input message="impl:setNPOTARequest" name="setNPOTARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOTAResponse" name="setNPOTAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOA">
+
+         <wsdl:input message="impl:getNPOARequest" name="getNPOARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOAResponse" name="getNPOAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOA">
+
+         <wsdl:input message="impl:setNPOARequest" name="setNPOARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOAResponse" name="setNPOAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOT">
+
+         <wsdl:input message="impl:getNPOTRequest" name="getNPOTRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOTResponse" name="getNPOTResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPO">
+
+         <wsdl:input message="impl:getNPORequest" name="getNPORequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOResponse" name="getNPOResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPO">
+
+         <wsdl:input message="impl:setNPORequest" name="setNPORequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOResponse" name="setNPOResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNVP">
+
+         <wsdl:input message="impl:getNVPRequest" name="getNVPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNVPResponse" name="getNVPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNVP">
+
+         <wsdl:input message="impl:setNVPRequest" name="setNVPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNVPResponse" name="setNVPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNVPA">
+
+         <wsdl:input message="impl:getNVPARequest" name="getNVPARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNVPAResponse" name="getNVPAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNVPA">
+
+         <wsdl:input message="impl:setNVPARequest" name="setNVPARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNVPAResponse" name="setNVPAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPER">
+
+         <wsdl:input message="impl:setPERRequest" name="setPERRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPERResponse" name="setPERResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSD">
+
+         <wsdl:input message="impl:setSDRequest" name="setSDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSDResponse" name="setSDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSD">
+
+         <wsdl:input message="impl:getSDRequest" name="getSDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSDResponse" name="getSDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSDA">
+
+         <wsdl:input message="impl:getSDARequest" name="getSDARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSDAResponse" name="getSDAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTQ">
+
+         <wsdl:input message="impl:setTQRequest" name="setTQRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setTQResponse" name="setTQResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTQRsp">
+
+         <wsdl:input message="impl:getTQRspRequest" name="getTQRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTQRspResponse" name="getTQRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSCA">
+
+         <wsdl:input message="impl:getSCARequest" name="getSCARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSCAResponse" name="getSCAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBPD">
+
+         <wsdl:input message="impl:getRDBPDRequest" name="getRDBPDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRDBPDResponse" name="getRDBPDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSDA">
+
+         <wsdl:input message="impl:setSDARequest" name="setSDARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSDAResponse" name="setSDAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSC">
+
+         <wsdl:input message="impl:setSCRequest" name="setSCRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSCResponse" name="setSCResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSC">
+
+         <wsdl:input message="impl:getSCRequest" name="getSCRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSCResponse" name="getSCResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSCA">
+
+         <wsdl:input message="impl:setSCARequest" name="setSCARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSCAResponse" name="setSCAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBPD">
+
+         <wsdl:input message="impl:setRDBPDRequest" name="setRDBPDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRDBPDResponse" name="setRDBPDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBFD">
+
+         <wsdl:input message="impl:getRDBFDRequest" name="getRDBFDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRDBFDResponse" name="getRDBFDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBFD">
+
+         <wsdl:input message="impl:setRDBFDRequest" name="setRDBFDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRDBFDResponse" name="setRDBFDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRNA">
+
+         <wsdl:input message="impl:getRNARequest" name="getRNARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRNAResponse" name="getRNAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRNA">
+
+         <wsdl:input message="impl:setRNARequest" name="setRNARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRNAResponse" name="setRNAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRNAA">
+
+         <wsdl:input message="impl:getRNAARequest" name="getRNAARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRNAAResponse" name="getRNAAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRNAA">
+
+         <wsdl:input message="impl:setRNAARequest" name="setRNAARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRNAAResponse" name="setRNAAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTQ">
+
+         <wsdl:input message="impl:getTQRequest" name="getTQRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTQResponse" name="getTQResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDeserializer">
+
+         <wsdl:input message="impl:getDeserializerRequest" name="getDeserializerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDeserializerResponse" name="getDeserializerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSerializer">
+
+         <wsdl:input message="impl:getSerializerRequest" name="getSerializerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSerializerResponse" name="getSerializerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSAACK">
+
+         <wsdl:input message="impl:setNPOSAACKRequest" name="setNPOSAACKRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSAACKResponse" name="setNPOSAACKResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSCNOTICE">
+
+         <wsdl:input message="impl:setSCNOTICERequest" name="setSCNOTICERequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSCNOTICEResponse" name="setSCNOTICEResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSCNOTICEA">
+
+         <wsdl:input message="impl:getSCNOTICEARequest" name="getSCNOTICEARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSCNOTICEAResponse" name="getSCNOTICEAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSCNOTICEA">
+
+         <wsdl:input message="impl:setSCNOTICEARequest" name="setSCNOTICEARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSCNOTICEAResponse" name="setSCNOTICEAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSCNOTICE">
+
+         <wsdl:input message="impl:getSCNOTICERequest" name="getSCNOTICERequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSCNOTICEResponse" name="getSCNOTICEResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSDNOTICE">
+
+         <wsdl:input message="impl:getSDNOTICERequest" name="getSDNOTICERequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSDNOTICEResponse" name="getSDNOTICEResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSAACK">
+
+         <wsdl:input message="impl:getNPOSAACKRequest" name="getNPOSAACKRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSAACKResponse" name="getNPOSAACKResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSDNOTICE">
+
+         <wsdl:input message="impl:setSDNOTICERequest" name="setSDNOTICERequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSDNOTICEResponse" name="setSDNOTICEResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSDNOTICEA">
+
+         <wsdl:input message="impl:getSDNOTICEARequest" name="getSDNOTICEARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSDNOTICEAResponse" name="getSDNOTICEAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSDNOTICEA">
+
+         <wsdl:input message="impl:setSDNOTICEARequest" name="setSDNOTICEARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSDNOTICEAResponse" name="setSDNOTICEAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBFDRsp">
+
+         <wsdl:input message="impl:setRDBFDRspRequest" name="setRDBFDRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRDBFDRspResponse" name="setRDBFDRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBFDRsp">
+
+         <wsdl:input message="impl:getRDBFDRspRequest" name="getRDBFDRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRDBFDRspResponse" name="getRDBFDRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSQRsp">
+
+         <wsdl:input message="impl:setNPOSQRspRequest" name="setNPOSQRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSQRspResponse" name="setNPOSQRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBPDRsp">
+
+         <wsdl:input message="impl:getRDBPDRspRequest" name="getRDBPDRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRDBPDRspResponse" name="getRDBPDRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBPDRsp">
+
+         <wsdl:input message="impl:setRDBPDRspRequest" name="setRDBPDRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRDBPDRspResponse" name="setRDBPDRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSQRsp">
+
+         <wsdl:input message="impl:getNPOSQRspRequest" name="getNPOSQRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSQRspResponse" name="getNPOSQRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTypeDesc">
+
+         <wsdl:input message="impl:getTypeDescRequest" name="getTypeDescRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTypeDescResponse" name="getTypeDescResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSPR">
+
+         <wsdl:input message="impl:getNPOSPRRequest" name="getNPOSPRRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSPRResponse" name="getNPOSPRResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCAN">
+
+         <wsdl:input message="impl:getCANRequest" name="getCANRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCANResponse" name="getCANResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCAN">
+
+         <wsdl:input message="impl:setCANRequest" name="setCANRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCANResponse" name="setCANResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOT">
+
+         <wsdl:input message="impl:setNPOTRequest" name="setNPOTRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOTResponse" name="setNPOTResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOS">
+
+         <wsdl:input message="impl:getNPOSRequest" name="getNPOSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSResponse" name="getNPOSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOS">
+
+         <wsdl:input message="impl:setNPOSRequest" name="setNPOSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSResponse" name="setNPOSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSTER">
+
+         <wsdl:input message="impl:getNPOSTERRequest" name="getNPOSTERRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSTERResponse" name="getNPOSTERResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSTER">
+
+         <wsdl:input message="impl:setNPOSTERRequest" name="setNPOSTERRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSTERResponse" name="setNPOSTERResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSA">
+
+         <wsdl:input message="impl:getNPOSARequest" name="getNPOSARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSAResponse" name="getNPOSAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSA">
+
+         <wsdl:input message="impl:setNPOSARequest" name="setNPOSARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSAResponse" name="setNPOSAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTQRsp">
+
+         <wsdl:input message="impl:setTQRspRequest" name="setTQRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setTQRspResponse" name="setTQRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNOTE">
+
+         <wsdl:input message="impl:getNOTERequest" name="getNOTERequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNOTEResponse" name="getNOTEResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRsp">
+
+         <wsdl:input message="impl:getRspRequest" name="getRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRspResponse" name="getRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRsp">
+
+         <wsdl:input message="impl:setRspRequest" name="setRspRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRspResponse" name="setRspResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSQ">
+
+         <wsdl:input message="impl:setNPOSQRequest" name="setNPOSQRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNPOSQResponse" name="setNPOSQResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSQ">
+
+         <wsdl:input message="impl:getNPOSQRequest" name="getNPOSQRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNPOSQResponse" name="getNPOSQResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNOTE">
+
+         <wsdl:input message="impl:setNOTERequest" name="setNOTERequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNOTEResponse" name="setNOTEResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="equals">
+
+         <wsdl:input message="impl:equalsRequest" name="equalsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:equalsResponse" name="equalsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hashCode">
+
+         <wsdl:input message="impl:hashCodeRequest" name="hashCodeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:hashCodeResponse" name="hashCodeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVersion">
+
+         <wsdl:input message="impl:getVersionRequest" name="getVersionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getVersionResponse" name="getVersionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MNPFrameSoapBinding" type="impl:MNPFrame">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="setVersion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setVersionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setVersionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSPR">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSPRRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSPRResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOTA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOTARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOTAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPER">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPERRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPERResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOTA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOTARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOTAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOT">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOTRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOTResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPO">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPORequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPO">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPORequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNVP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNVPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNVPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNVP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNVPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNVPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNVPA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNVPARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNVPAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNVPA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNVPARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNVPAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPER">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPERRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPERResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSD">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSD">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSDA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSDARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSDAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTQ">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTQRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTQResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTQRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTQRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTQRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSCA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSCARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSCAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBPD">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRDBPDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRDBPDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSDA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSDARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSDAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSC">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSCRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSCResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSC">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSCRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSCResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSCA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSCARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSCAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBPD">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRDBPDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRDBPDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBFD">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRDBFDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRDBFDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBFD">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRDBFDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRDBFDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRNA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRNARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRNAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRNA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRNARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRNAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRNAA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRNAARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRNAAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRNAA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRNAARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRNAAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTQ">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTQRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTQResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDeserializer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDeserializerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDeserializerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSerializer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSerializerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSerializerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSAACK">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSAACKRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSAACKResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSCNOTICE">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSCNOTICERequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSCNOTICEResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSCNOTICEA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSCNOTICEARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSCNOTICEAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSCNOTICEA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSCNOTICEARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSCNOTICEAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSCNOTICE">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSCNOTICERequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSCNOTICEResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSDNOTICE">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSDNOTICERequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSDNOTICEResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSAACK">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSAACKRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSAACKResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSDNOTICE">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSDNOTICERequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSDNOTICEResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSDNOTICEA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSDNOTICEARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSDNOTICEAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSDNOTICEA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSDNOTICEARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSDNOTICEAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBFDRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRDBFDRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRDBFDRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBFDRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRDBFDRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRDBFDRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSQRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSQRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSQRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRDBPDRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRDBPDRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRDBPDRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRDBPDRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRDBPDRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRDBPDRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSQRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSQRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSQRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTypeDesc">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTypeDescRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTypeDescResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSPR">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSPRRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSPRResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCAN">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCANRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCANResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCAN">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCANRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCANResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOT">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOTRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOTResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSTER">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSTERRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSTERResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSTER">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSTERRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSTERResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTQRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTQRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTQRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNOTE">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNOTERequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNOTEResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRsp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRspRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRspResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNPOSQ">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNPOSQRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNPOSQResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNPOSQ">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNPOSQRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNPOSQResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNOTE">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNOTERequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNOTEResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="equals">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="equalsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="equalsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hashCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="hashCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="hashCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVersion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getVersionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getVersionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MNPFrameService">
+
+      <wsdl:port binding="impl:MNPFrameSoapBinding" name="MNPFrame">
+
+         <wsdlsoap:address location="http://localhost:9791/wsdl/services/MNPFrame"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

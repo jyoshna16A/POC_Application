@@ -1,0 +1,101 @@
+package com.example.soap;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class PersonServiceImpl implements PersonService {
+
+	private static Map<Integer,Person> persons = new HashMap<Integer,Person>();
+
+
+	@Override
+	public boolean addPerson(Person p) {
+		if(persons.get(p.getId()) != null) return false;
+		persons.put(p.getId(), p);
+		System.out.println("Add person : " + p.getId());
+		try (Connection conn = DBConnection.getConnection()) {
+            // Check if the person already exists
+            String checkQuery = "SELECT * FROM Person WHERE id = ?";
+            try (PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
+                checkStmt.setInt(1, p.getId());
+                ResultSet rs = checkStmt.executeQuery();
+                if (rs.next()) {
+                    return false; // Person already exists
+                }
+            }
+
+            // Insert the new person
+            String insertQuery = "INSERT INTO db.Person (id, name, age) VALUES (?, ?, ?)";
+            try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
+                insertStmt.setInt(1, p.getId());
+                insertStmt.setString(2, p.getName());
+                insertStmt.setInt(3, p.getAge());
+                insertStmt.executeUpdate();
+            }
+
+            System.out.println("Add person: " + p.getId());
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+	}
+
+	@Override
+	public boolean deletePerson(int id) {
+		System.out.println("delete : " + id);
+		if(persons.get(id) == null) return false;
+		persons.remove(id);
+		System.out.println("delete person : " + id);
+		try (Connection conn = DBConnection.getConnection()) {
+            // Check if the person already exists
+			String checkQuery = "SELECT * FROM Person WHERE id = ?";
+            try (PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
+                checkStmt.setInt(1, id);
+                ResultSet rs = checkStmt.executeQuery();
+                if (!rs.next()) {
+                    return false; // Person does not exist
+                }
+            }
+            //Delete the person data
+            String deleteQuery = "DELETE FROM db.Person WHERE id = ?";
+            try (PreparedStatement deleteStmt = conn.prepareStatement(deleteQuery)) {
+                deleteStmt.setInt(1, id);
+                deleteStmt.executeUpdate();
+            }
+
+            System.out.println("Deleted person: " + id);
+            return true;
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+		
+	}
+
+	@Override
+	public Person getPerson(int id) {
+		return persons.get(id);
+	}
+
+	@Override
+	public Person[] getAllPersons() {
+		Set<Integer> ids = persons.keySet();
+		Person[] p = new Person[ids.size()];
+		int i=0;
+		for(Integer id : ids){
+			p[i] = persons.get(id);
+			i++;
+		}
+		return p;
+	}
+
+}
+

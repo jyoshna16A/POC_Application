@@ -1,0 +1,1255 @@
+/**
+ * MNPFrameSoapBindingSkeleton.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4.1-SNAPSHOT Nov 07, 2023 (07:57:58 UTC) WSDL2Java emitter.
+ */
+
+package xsd.MNPProtocol;
+
+public class MNPFrameSoapBindingSkeleton implements xsd.MNPProtocol.MNPFrame, org.apache.axis.wsdl.Skeleton {
+    private xsd.MNPProtocol.MNPFrame impl;
+    private static java.util.Map _myOperations = new java.util.Hashtable();
+    private static java.util.Collection _myOperationsList = new java.util.ArrayList();
+
+    /**
+    * Returns List of OperationDesc objects with this name
+    */
+    public static java.util.List getOperationDescByName(java.lang.String methodName) {
+        return (java.util.List)_myOperations.get(methodName);
+    }
+
+    /**
+    * Returns Collection of OperationDescs
+    */
+    public static java.util.Collection getOperationDescs() {
+        return _myOperationsList;
+    }
+
+    static {
+        org.apache.axis.description.OperationDesc _oper;
+        org.apache.axis.description.FaultDesc _fault;
+        org.apache.axis.description.ParameterDesc [] _params;
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "version"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setVersion", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setVersion"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setVersion") == null) {
+            _myOperations.put("setVersion", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setVersion")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSPR"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSPRType"), xsd.MNPProtocol.NPOSPRType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOSPR", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOSPR"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOSPR") == null) {
+            _myOperations.put("setNPOSPR", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOSPR")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOTA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOTAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOTAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOTA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOTA") == null) {
+            _myOperations.put("getNPOTA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOTA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getPER", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getPERReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "PERType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getPER"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getPER") == null) {
+            _myOperations.put("getPER", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getPER")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOTA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOTAType"), xsd.MNPProtocol.NPOTAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOTA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOTA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOTA") == null) {
+            _myOperations.put("setNPOTA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOTA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOA") == null) {
+            _myOperations.put("getNPOA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOAType"), xsd.MNPProtocol.NPOAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOA") == null) {
+            _myOperations.put("setNPOA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOT", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOTReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOTType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOT"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOT") == null) {
+            _myOperations.put("getNPOT", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOT")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPO", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPO"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPO") == null) {
+            _myOperations.put("getNPO", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPO")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPO"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOType"), xsd.MNPProtocol.NPOType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPO", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPO"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPO") == null) {
+            _myOperations.put("setNPO", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPO")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNVP", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNVPReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NVPType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNVP"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNVP") == null) {
+            _myOperations.put("getNVP", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNVP")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NVP"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NVPType"), xsd.MNPProtocol.NVPType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNVP", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNVP"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNVP") == null) {
+            _myOperations.put("setNVP", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNVP")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNVPA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNVPAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NVPAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNVPA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNVPA") == null) {
+            _myOperations.put("getNVPA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNVPA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NVPA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NVPAType"), xsd.MNPProtocol.NVPAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNVPA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNVPA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNVPA") == null) {
+            _myOperations.put("setNVPA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNVPA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "PER"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "PERType"), xsd.MNPProtocol.PERType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setPER", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setPER"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setPER") == null) {
+            _myOperations.put("setPER", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setPER")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SD"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDType"), xsd.MNPProtocol.SDType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSD", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSD"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSD") == null) {
+            _myOperations.put("setSD", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSD")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSD", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSD"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSD") == null) {
+            _myOperations.put("getSD", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSD")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSDA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSDA") == null) {
+            _myOperations.put("getSDA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSDA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "TQ"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "TQType"), xsd.MNPProtocol.TQType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setTQ", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setTQ"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setTQ") == null) {
+            _myOperations.put("setTQ", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setTQ")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getTQRsp", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getTQRspReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "TQRspType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getTQRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getTQRsp") == null) {
+            _myOperations.put("getTQRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getTQRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSCA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSCA") == null) {
+            _myOperations.put("getSCA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSCA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRDBPD", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBPDReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBPDType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBPD"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRDBPD") == null) {
+            _myOperations.put("getRDBPD", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRDBPD")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDAType"), xsd.MNPProtocol.SDAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSDA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSDA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSDA") == null) {
+            _myOperations.put("setSDA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSDA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SC"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCType"), xsd.MNPProtocol.SCType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSC", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSC"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSC") == null) {
+            _myOperations.put("setSC", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSC")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSC", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSC"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSC") == null) {
+            _myOperations.put("getSC", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSC")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCAType"), xsd.MNPProtocol.SCAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSCA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSCA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSCA") == null) {
+            _myOperations.put("setSCA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSCA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBPD"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBPDType"), xsd.MNPProtocol.RDBPDType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRDBPD", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRDBPD"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRDBPD") == null) {
+            _myOperations.put("setRDBPD", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRDBPD")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRDBFD", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBFDReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBFDType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBFD"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRDBFD") == null) {
+            _myOperations.put("getRDBFD", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRDBFD")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBFD"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBFDType"), xsd.MNPProtocol.RDBFDType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRDBFD", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRDBFD"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRDBFD") == null) {
+            _myOperations.put("setRDBFD", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRDBFD")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRNA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRNAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RNAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRNA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRNA") == null) {
+            _myOperations.put("getRNA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRNA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RNA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RNAType"), xsd.MNPProtocol.RNAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRNA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRNA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRNA") == null) {
+            _myOperations.put("setRNA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRNA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRNAA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRNAAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RNAAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRNAA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRNAA") == null) {
+            _myOperations.put("getRNAA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRNAA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RNAA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RNAAType"), xsd.MNPProtocol.RNAAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRNAA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRNAA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRNAA") == null) {
+            _myOperations.put("setRNAA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRNAA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getTQ", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getTQReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "TQType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getTQ"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getTQ") == null) {
+            _myOperations.put("getTQ", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getTQ")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "mechType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false), 
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "_javaType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"), java.lang.Object.class, false, false), 
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "_xmlType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "QName"), javax.xml.namespace.QName.class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getDeserializer", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getDeserializerReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getDeserializer"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getDeserializer") == null) {
+            _myOperations.put("getDeserializer", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getDeserializer")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "mechType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false), 
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "_xmlType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "QName"), javax.xml.namespace.QName.class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSerializer", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSerializerReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSerializer"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSerializer") == null) {
+            _myOperations.put("getSerializer", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSerializer")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSAACK"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSAACKType"), xsd.MNPProtocol.NPOSAACKType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOSAACK", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOSAACK"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOSAACK") == null) {
+            _myOperations.put("setNPOSAACK", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOSAACK")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCNOTICE"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCNOTICEType"), xsd.MNPProtocol.SCNOTICEType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSCNOTICE", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSCNOTICE"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSCNOTICE") == null) {
+            _myOperations.put("setSCNOTICE", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSCNOTICE")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSCNOTICEA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCNOTICEAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCNOTICEAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCNOTICEA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSCNOTICEA") == null) {
+            _myOperations.put("getSCNOTICEA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSCNOTICEA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCNOTICEA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCNOTICEAType"), xsd.MNPProtocol.SCNOTICEAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSCNOTICEA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSCNOTICEA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSCNOTICEA") == null) {
+            _myOperations.put("setSCNOTICEA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSCNOTICEA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSCNOTICE", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCNOTICEReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SCNOTICEType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSCNOTICE"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSCNOTICE") == null) {
+            _myOperations.put("getSCNOTICE", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSCNOTICE")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSDNOTICE", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDNOTICEReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDNOTICEType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDNOTICE"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSDNOTICE") == null) {
+            _myOperations.put("getSDNOTICE", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSDNOTICE")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOSAACK", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSAACKReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSAACKType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSAACK"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOSAACK") == null) {
+            _myOperations.put("getNPOSAACK", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOSAACK")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDNOTICE"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDNOTICEType"), xsd.MNPProtocol.SDNOTICEType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSDNOTICE", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSDNOTICE"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSDNOTICE") == null) {
+            _myOperations.put("setSDNOTICE", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSDNOTICE")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getSDNOTICEA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDNOTICEAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDNOTICEAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getSDNOTICEA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getSDNOTICEA") == null) {
+            _myOperations.put("getSDNOTICEA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getSDNOTICEA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDNOTICEA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "SDNOTICEAType"), xsd.MNPProtocol.SDNOTICEAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setSDNOTICEA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setSDNOTICEA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setSDNOTICEA") == null) {
+            _myOperations.put("setSDNOTICEA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setSDNOTICEA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBFDRsp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBFDRspType"), xsd.MNPProtocol.RDBFDRspType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRDBFDRsp", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRDBFDRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRDBFDRsp") == null) {
+            _myOperations.put("setRDBFDRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRDBFDRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRDBFDRsp", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBFDRspReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBFDRspType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBFDRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRDBFDRsp") == null) {
+            _myOperations.put("getRDBFDRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRDBFDRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSQRsp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSQRspType"), xsd.MNPProtocol.NPOSQRspType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOSQRsp", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOSQRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOSQRsp") == null) {
+            _myOperations.put("setNPOSQRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOSQRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRDBPDRsp", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBPDRspReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBPDRspType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRDBPDRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRDBPDRsp") == null) {
+            _myOperations.put("getRDBPDRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRDBPDRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBPDRsp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RDBPDRspType"), xsd.MNPProtocol.RDBPDRspType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRDBPDRsp", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRDBPDRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRDBPDRsp") == null) {
+            _myOperations.put("setRDBPDRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRDBPDRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOSQRsp", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSQRspReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSQRspType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSQRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOSQRsp") == null) {
+            _myOperations.put("getNPOSQRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOSQRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getTypeDesc", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getTypeDescReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getTypeDesc"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getTypeDesc") == null) {
+            _myOperations.put("getTypeDesc", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getTypeDesc")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOSPR", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSPRReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSPRType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSPR"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOSPR") == null) {
+            _myOperations.put("getNPOSPR", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOSPR")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getCAN", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getCANReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "CANType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getCAN"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getCAN") == null) {
+            _myOperations.put("getCAN", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getCAN")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "CAN"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "CANType"), xsd.MNPProtocol.CANType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setCAN", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setCAN"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setCAN") == null) {
+            _myOperations.put("setCAN", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setCAN")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOT"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOTType"), xsd.MNPProtocol.NPOTType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOT", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOT"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOT") == null) {
+            _myOperations.put("setNPOT", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOT")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOS", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOS"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOS") == null) {
+            _myOperations.put("getNPOS", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOS")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOS"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSType"), xsd.MNPProtocol.NPOSType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOS", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOS"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOS") == null) {
+            _myOperations.put("setNPOS", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOS")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOSTER", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSTERReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSTERType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSTER"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOSTER") == null) {
+            _myOperations.put("getNPOSTER", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOSTER")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSTER"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSTERType"), xsd.MNPProtocol.NPOSTERType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOSTER", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOSTER"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOSTER") == null) {
+            _myOperations.put("setNPOSTER", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOSTER")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOSA", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSAReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSAType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOSA") == null) {
+            _myOperations.put("getNPOSA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOSA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSA"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSAType"), xsd.MNPProtocol.NPOSAType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOSA", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOSA"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOSA") == null) {
+            _myOperations.put("setNPOSA", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOSA")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "TQRsp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "TQRspType"), xsd.MNPProtocol.TQRspType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setTQRsp", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setTQRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setTQRsp") == null) {
+            _myOperations.put("setTQRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setTQRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNOTE", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNOTEReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NOTEType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNOTE"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNOTE") == null) {
+            _myOperations.put("getNOTE", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNOTE")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getRsp", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRspReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RspType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getRsp") == null) {
+            _myOperations.put("getRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "rsp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "RspType"), xsd.MNPProtocol.RspType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setRsp", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setRsp"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setRsp") == null) {
+            _myOperations.put("setRsp", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setRsp")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSQ"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSQType"), xsd.MNPProtocol.NPOSQType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNPOSQ", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNPOSQ"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNPOSQ") == null) {
+            _myOperations.put("setNPOSQ", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNPOSQ")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getNPOSQ", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSQReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NPOSQType"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getNPOSQ"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getNPOSQ") == null) {
+            _myOperations.put("getNPOSQ", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getNPOSQ")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NOTE"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "NOTEType"), xsd.MNPProtocol.NOTEType[].class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("setNOTE", _params, null);
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "setNOTE"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("setNOTE") == null) {
+            _myOperations.put("setNOTE", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("setNOTE")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "obj"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"), java.lang.Object.class, false, false), 
+        };
+        _oper = new org.apache.axis.description.OperationDesc("equals", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "equalsReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "equals"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("equals") == null) {
+            _myOperations.put("equals", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("equals")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("hashCode", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "hashCodeReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "hashCode"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("hashCode") == null) {
+            _myOperations.put("hashCode", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("hashCode")).add(_oper);
+        _params = new org.apache.axis.description.ParameterDesc [] {
+        };
+        _oper = new org.apache.axis.description.OperationDesc("getVersion", _params, new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getVersionReturn"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        _oper.setElementQName(new javax.xml.namespace.QName("http://MNPProtocol.xsd", "getVersion"));
+        _oper.setSoapAction("");
+        _myOperationsList.add(_oper);
+        if (_myOperations.get("getVersion") == null) {
+            _myOperations.put("getVersion", new java.util.ArrayList());
+        }
+        ((java.util.List)_myOperations.get("getVersion")).add(_oper);
+    }
+
+    public MNPFrameSoapBindingSkeleton() {
+        this.impl = new xsd.MNPProtocol.MNPFrameSoapBindingImpl();
+    }
+
+    public MNPFrameSoapBindingSkeleton(xsd.MNPProtocol.MNPFrame impl) {
+        this.impl = impl;
+    }
+    public void setVersion(java.lang.String version) throws java.rmi.RemoteException
+    {
+        impl.setVersion(version);
+    }
+
+    public void setNPOSPR(xsd.MNPProtocol.NPOSPRType[] NPOSPR) throws java.rmi.RemoteException
+    {
+        impl.setNPOSPR(NPOSPR);
+    }
+
+    public xsd.MNPProtocol.NPOTAType[] getNPOTA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOTAType[] ret = impl.getNPOTA();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.PERType[] getPER() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.PERType[] ret = impl.getPER();
+        return ret;
+    }
+
+    public void setNPOTA(xsd.MNPProtocol.NPOTAType[] NPOTA) throws java.rmi.RemoteException
+    {
+        impl.setNPOTA(NPOTA);
+    }
+
+    public xsd.MNPProtocol.NPOAType[] getNPOA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOAType[] ret = impl.getNPOA();
+        return ret;
+    }
+
+    public void setNPOA(xsd.MNPProtocol.NPOAType[] NPOA) throws java.rmi.RemoteException
+    {
+        impl.setNPOA(NPOA);
+    }
+
+    public xsd.MNPProtocol.NPOTType[] getNPOT() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOTType[] ret = impl.getNPOT();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.NPOType[] getNPO() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOType[] ret = impl.getNPO();
+        return ret;
+    }
+
+    public void setNPO(xsd.MNPProtocol.NPOType[] NPO) throws java.rmi.RemoteException
+    {
+        impl.setNPO(NPO);
+    }
+
+    public xsd.MNPProtocol.NVPType[] getNVP() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NVPType[] ret = impl.getNVP();
+        return ret;
+    }
+
+    public void setNVP(xsd.MNPProtocol.NVPType[] NVP) throws java.rmi.RemoteException
+    {
+        impl.setNVP(NVP);
+    }
+
+    public xsd.MNPProtocol.NVPAType[] getNVPA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NVPAType[] ret = impl.getNVPA();
+        return ret;
+    }
+
+    public void setNVPA(xsd.MNPProtocol.NVPAType[] NVPA) throws java.rmi.RemoteException
+    {
+        impl.setNVPA(NVPA);
+    }
+
+    public void setPER(xsd.MNPProtocol.PERType[] PER) throws java.rmi.RemoteException
+    {
+        impl.setPER(PER);
+    }
+
+    public void setSD(xsd.MNPProtocol.SDType[] SD) throws java.rmi.RemoteException
+    {
+        impl.setSD(SD);
+    }
+
+    public xsd.MNPProtocol.SDType[] getSD() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SDType[] ret = impl.getSD();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.SDAType[] getSDA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SDAType[] ret = impl.getSDA();
+        return ret;
+    }
+
+    public void setTQ(xsd.MNPProtocol.TQType[] TQ) throws java.rmi.RemoteException
+    {
+        impl.setTQ(TQ);
+    }
+
+    public xsd.MNPProtocol.TQRspType[] getTQRsp() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.TQRspType[] ret = impl.getTQRsp();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.SCAType[] getSCA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SCAType[] ret = impl.getSCA();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.RDBPDType[] getRDBPD() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RDBPDType[] ret = impl.getRDBPD();
+        return ret;
+    }
+
+    public void setSDA(xsd.MNPProtocol.SDAType[] SDA) throws java.rmi.RemoteException
+    {
+        impl.setSDA(SDA);
+    }
+
+    public void setSC(xsd.MNPProtocol.SCType[] SC) throws java.rmi.RemoteException
+    {
+        impl.setSC(SC);
+    }
+
+    public xsd.MNPProtocol.SCType[] getSC() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SCType[] ret = impl.getSC();
+        return ret;
+    }
+
+    public void setSCA(xsd.MNPProtocol.SCAType[] SCA) throws java.rmi.RemoteException
+    {
+        impl.setSCA(SCA);
+    }
+
+    public void setRDBPD(xsd.MNPProtocol.RDBPDType[] RDBPD) throws java.rmi.RemoteException
+    {
+        impl.setRDBPD(RDBPD);
+    }
+
+    public xsd.MNPProtocol.RDBFDType[] getRDBFD() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RDBFDType[] ret = impl.getRDBFD();
+        return ret;
+    }
+
+    public void setRDBFD(xsd.MNPProtocol.RDBFDType[] RDBFD) throws java.rmi.RemoteException
+    {
+        impl.setRDBFD(RDBFD);
+    }
+
+    public xsd.MNPProtocol.RNAType[] getRNA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RNAType[] ret = impl.getRNA();
+        return ret;
+    }
+
+    public void setRNA(xsd.MNPProtocol.RNAType[] RNA) throws java.rmi.RemoteException
+    {
+        impl.setRNA(RNA);
+    }
+
+    public xsd.MNPProtocol.RNAAType[] getRNAA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RNAAType[] ret = impl.getRNAA();
+        return ret;
+    }
+
+    public void setRNAA(xsd.MNPProtocol.RNAAType[] RNAA) throws java.rmi.RemoteException
+    {
+        impl.setRNAA(RNAA);
+    }
+
+    public xsd.MNPProtocol.TQType[] getTQ() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.TQType[] ret = impl.getTQ();
+        return ret;
+    }
+
+    public java.lang.Object getDeserializer(java.lang.String mechType, java.lang.Object _javaType, javax.xml.namespace.QName _xmlType) throws java.rmi.RemoteException
+    {
+        java.lang.Object ret = impl.getDeserializer(mechType, _javaType, _xmlType);
+        return ret;
+    }
+
+    public java.lang.Object getSerializer(java.lang.String mechType, javax.xml.namespace.QName _xmlType) throws java.rmi.RemoteException
+    {
+        java.lang.Object ret = impl.getSerializer(mechType, _xmlType);
+        return ret;
+    }
+
+    public void setNPOSAACK(xsd.MNPProtocol.NPOSAACKType[] NPOSAACK) throws java.rmi.RemoteException
+    {
+        impl.setNPOSAACK(NPOSAACK);
+    }
+
+    public void setSCNOTICE(xsd.MNPProtocol.SCNOTICEType[] SCNOTICE) throws java.rmi.RemoteException
+    {
+        impl.setSCNOTICE(SCNOTICE);
+    }
+
+    public xsd.MNPProtocol.SCNOTICEAType[] getSCNOTICEA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SCNOTICEAType[] ret = impl.getSCNOTICEA();
+        return ret;
+    }
+
+    public void setSCNOTICEA(xsd.MNPProtocol.SCNOTICEAType[] SCNOTICEA) throws java.rmi.RemoteException
+    {
+        impl.setSCNOTICEA(SCNOTICEA);
+    }
+
+    public xsd.MNPProtocol.SCNOTICEType[] getSCNOTICE() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SCNOTICEType[] ret = impl.getSCNOTICE();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.SDNOTICEType[] getSDNOTICE() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SDNOTICEType[] ret = impl.getSDNOTICE();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.NPOSAACKType[] getNPOSAACK() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSAACKType[] ret = impl.getNPOSAACK();
+        return ret;
+    }
+
+    public void setSDNOTICE(xsd.MNPProtocol.SDNOTICEType[] SDNOTICE) throws java.rmi.RemoteException
+    {
+        impl.setSDNOTICE(SDNOTICE);
+    }
+
+    public xsd.MNPProtocol.SDNOTICEAType[] getSDNOTICEA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.SDNOTICEAType[] ret = impl.getSDNOTICEA();
+        return ret;
+    }
+
+    public void setSDNOTICEA(xsd.MNPProtocol.SDNOTICEAType[] SDNOTICEA) throws java.rmi.RemoteException
+    {
+        impl.setSDNOTICEA(SDNOTICEA);
+    }
+
+    public void setRDBFDRsp(xsd.MNPProtocol.RDBFDRspType[] RDBFDRsp) throws java.rmi.RemoteException
+    {
+        impl.setRDBFDRsp(RDBFDRsp);
+    }
+
+    public xsd.MNPProtocol.RDBFDRspType[] getRDBFDRsp() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RDBFDRspType[] ret = impl.getRDBFDRsp();
+        return ret;
+    }
+
+    public void setNPOSQRsp(xsd.MNPProtocol.NPOSQRspType[] NPOSQRsp) throws java.rmi.RemoteException
+    {
+        impl.setNPOSQRsp(NPOSQRsp);
+    }
+
+    public xsd.MNPProtocol.RDBPDRspType[] getRDBPDRsp() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RDBPDRspType[] ret = impl.getRDBPDRsp();
+        return ret;
+    }
+
+    public void setRDBPDRsp(xsd.MNPProtocol.RDBPDRspType[] RDBPDRsp) throws java.rmi.RemoteException
+    {
+        impl.setRDBPDRsp(RDBPDRsp);
+    }
+
+    public xsd.MNPProtocol.NPOSQRspType[] getNPOSQRsp() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSQRspType[] ret = impl.getNPOSQRsp();
+        return ret;
+    }
+
+    public java.lang.Object getTypeDesc() throws java.rmi.RemoteException
+    {
+        java.lang.Object ret = impl.getTypeDesc();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.NPOSPRType[] getNPOSPR() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSPRType[] ret = impl.getNPOSPR();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.CANType[] getCAN() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.CANType[] ret = impl.getCAN();
+        return ret;
+    }
+
+    public void setCAN(xsd.MNPProtocol.CANType[] CAN) throws java.rmi.RemoteException
+    {
+        impl.setCAN(CAN);
+    }
+
+    public void setNPOT(xsd.MNPProtocol.NPOTType[] NPOT) throws java.rmi.RemoteException
+    {
+        impl.setNPOT(NPOT);
+    }
+
+    public xsd.MNPProtocol.NPOSType[] getNPOS() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSType[] ret = impl.getNPOS();
+        return ret;
+    }
+
+    public void setNPOS(xsd.MNPProtocol.NPOSType[] NPOS) throws java.rmi.RemoteException
+    {
+        impl.setNPOS(NPOS);
+    }
+
+    public xsd.MNPProtocol.NPOSTERType[] getNPOSTER() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSTERType[] ret = impl.getNPOSTER();
+        return ret;
+    }
+
+    public void setNPOSTER(xsd.MNPProtocol.NPOSTERType[] NPOSTER) throws java.rmi.RemoteException
+    {
+        impl.setNPOSTER(NPOSTER);
+    }
+
+    public xsd.MNPProtocol.NPOSAType[] getNPOSA() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSAType[] ret = impl.getNPOSA();
+        return ret;
+    }
+
+    public void setNPOSA(xsd.MNPProtocol.NPOSAType[] NPOSA) throws java.rmi.RemoteException
+    {
+        impl.setNPOSA(NPOSA);
+    }
+
+    public void setTQRsp(xsd.MNPProtocol.TQRspType[] TQRsp) throws java.rmi.RemoteException
+    {
+        impl.setTQRsp(TQRsp);
+    }
+
+    public xsd.MNPProtocol.NOTEType[] getNOTE() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NOTEType[] ret = impl.getNOTE();
+        return ret;
+    }
+
+    public xsd.MNPProtocol.RspType[] getRsp() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.RspType[] ret = impl.getRsp();
+        return ret;
+    }
+
+    public void setRsp(xsd.MNPProtocol.RspType[] rsp) throws java.rmi.RemoteException
+    {
+        impl.setRsp(rsp);
+    }
+
+    public void setNPOSQ(xsd.MNPProtocol.NPOSQType[] NPOSQ) throws java.rmi.RemoteException
+    {
+        impl.setNPOSQ(NPOSQ);
+    }
+
+    public xsd.MNPProtocol.NPOSQType[] getNPOSQ() throws java.rmi.RemoteException
+    {
+        xsd.MNPProtocol.NPOSQType[] ret = impl.getNPOSQ();
+        return ret;
+    }
+
+    public void setNOTE(xsd.MNPProtocol.NOTEType[] NOTE) throws java.rmi.RemoteException
+    {
+        impl.setNOTE(NOTE);
+    }
+
+    public boolean equals(java.lang.Object obj) throws java.rmi.RemoteException
+    {
+        boolean ret = impl.equals(obj);
+        return ret;
+    }
+
+    public int hashCode() throws java.rmi.RemoteException
+    {
+        int ret = impl.hashCode();
+        return ret;
+    }
+
+    public java.lang.String getVersion() throws java.rmi.RemoteException
+    {
+        java.lang.String ret = impl.getVersion();
+        return ret;
+    }
+
+}

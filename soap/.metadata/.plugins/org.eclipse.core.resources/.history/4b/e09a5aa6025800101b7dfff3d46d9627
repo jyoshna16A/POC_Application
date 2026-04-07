@@ -1,0 +1,15 @@
+package generated.com.example.stub;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test1 {
+	public List<String> number;
+	
+	public List<String> getNumber() {
+		if(number == null) {
+			number = new ArrayList();
+		}
+		return number;
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:mnpprotocol.xsd="http://mnpprotocol.xsd">
+  <wsdd:service name="MNPFrame" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://mnpprotocol.xsd"/>
+    <wsdd:parameter name="wsdlServiceElement" value="MNPFrameService"/>
+    <wsdd:parameter name="schemaQualified" value="http://mnpprotocol.xsd"/>
+    <wsdd:parameter name="wsdlServicePort" value="MNPFrame"/>
+    <wsdd:parameter name="className" value="xsd.mnpprotocol.MNPFrame"/>
+    <wsdd:parameter name="wsdlPortType" value="MNPFrame"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="getVersion getNPOOrNVPOrNVPA setVersion"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;getNPOOrNVPOrNVPAResponse" type="java:xsd.mnpprotocol.GetNPOOrNVPOrNVPAResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;getNPOOrNVPOrNVPA" type="java:xsd.mnpprotocol.GetNPOOrNVPOrNVPA" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;getVersionResponse" type="java:xsd.mnpprotocol.GetVersionResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;setVersion" type="java:xsd.mnpprotocol.SetVersion" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;setVersionResponse" type="java:xsd.mnpprotocol.SetVersionResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;getVersion" type="java:xsd.mnpprotocol.GetVersion" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:arrayMapping qname="mnpprotocol.xsd:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" encodingStyle="" innerType="XMLSchema:anyType"/>
+    <wsdd:operation name="setVersion" qname="mnpprotocol.xsd:setVersion" soapAction="">
+      <wsdd:parameter qname="mnpprotocol.xsd:value" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOOrNVPOrNVPA" qname="mnpprotocol.xsd:getNPOOrNVPOrNVPA" returnQName="mnpprotocol.xsd:getNPOOrNVPOrNVPAReturn" returnType="mnpprotocol.xsd:ArrayOf_xsd_anyType" returnItemQName="mnpprotocol.xsd:item" soapAction=""/>
+    <wsdd:operation name="getVersion" qname="mnpprotocol.xsd:getVersion" returnQName="mnpprotocol.xsd:getVersionReturn" returnType="XMLSchema:string" soapAction=""/>
+  </wsdd:service>
+</wsdd:deployment>

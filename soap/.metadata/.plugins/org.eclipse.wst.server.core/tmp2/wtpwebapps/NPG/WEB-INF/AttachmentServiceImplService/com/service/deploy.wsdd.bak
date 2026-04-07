@@ -1,0 +1,35 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<wsdd:deployment xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:service.com="http://service.com"
+    xmlns:wsdd="http://xml.apache.org/axis/wsdd/">
+  <wsdd:service name="AttachmentServiceImpl" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://service.com"/>
+    <wsdd:parameter name="wsdlServiceElement" value="AttachmentServiceImplService"/>
+    <wsdd:parameter name="schemaQualified" value="http://service.com"/>
+    <wsdd:parameter name="wsdlServicePort" value="AttachmentServiceImpl"/>
+    <wsdd:parameter name="className" value="com.service.AttachmentServiceImplSoapBindingImpl"/>
+    <wsdd:parameter name="wsdlPortType" value="AttachmentServiceImpl"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="downloadFile uploadFile downloadEncryptFile"/>
+    <wsdd:operation name="uploadFile" qname="service.com:uploadFile" returnQName="service.com:uploadFileReturn"
+        returnType="XMLSchema:string" soapAction="">
+      <wsdd:parameter qname="service.com:filePath" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="downloadEncryptFile" qname="service.com:downloadEncryptFile"
+        returnQName="service.com:downloadEncryptFileReturn" returnType="XMLSchema:string"
+        soapAction="">
+      <wsdd:parameter qname="service.com:fileData" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="downloadFile" qname="service.com:downloadFile" returnQName="service.com:downloadFileReturn"
+        returnType="XMLSchema:string" soapAction="">
+      <wsdd:parameter qname="service.com:fileData" type="XMLSchema:string"/>
+    </wsdd:operation>
+  </wsdd:service>
+</wsdd:deployment>

@@ -1,0 +1,3 @@
+#Tomcat publish data
+#Wed Oct 09 17:40:40 IST 2024
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\ADMIN\\Downloads\\apache-cxf-4.0.5\ (1)\\apache-cxf-4.0.5\\lib\\spring-web-6.0.22.jar=WEB-INF/lib/spring-web-6.0.22.jar

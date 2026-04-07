@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="0/org.eclipse.jst.ws.wsImpl.java">
+		<item value="com.example.soap.PersonServiceImpl"/>
+		<item value="xsd.mnpprotocol.MNPFrame"/>
+		<item value="xsd.MNPProtocol.MNPFrameSoapBindingImpl"/>
+		<item value="xsd.MNPProtocol.MNPFrame"/>
+		<item value="com.example.MNPFrame"/>
+	</list>
+	<list key="1/org.eclipse.jst.ws.wsImpl.java">
+		<item value="/Soap1/src/main/resources/geoipservice.asmx.wsdl"/>
+		<item value="/wsdl/src/main/webapp/wsdl/MNPFrame.wsdl"/>
+		<item value="/wsdl/src/main/webapp/wsdl/mnpservice.wsdl"/>
+		<item value="/NPG/src/main/webapp/wsdl/mnpservice.wsdl"/>
+		<item value="/Project/src/main/webapp/wsdl/MNPFrameImpl.wsdl"/>
+	</list>
+</section>

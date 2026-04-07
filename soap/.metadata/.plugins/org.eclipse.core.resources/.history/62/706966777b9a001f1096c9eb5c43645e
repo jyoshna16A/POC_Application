@@ -1,0 +1,343 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<wsdd:deployment xmlns:MNPProtocol.xsd="MNPProtocol.xsd"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:wsdd="http://xml.apache.org/axis/wsdd/"
+    xmlns:xsd="http://ws-i.org/profiles/basic/1.1/xsd">
+  <wsdd:service name="mnpservicePort" provider="java:RPC" use="literal" style="document">
+    <wsdd:parameter name="wsdlTargetNamespace" value="MNPProtocol.xsd"/>
+    <wsdd:parameter name="wsdlServiceElement" value="mnpservice"/>
+    <wsdd:parameter name="schemaQualified" value="MNPProtocol.xsd"/>
+    <wsdd:parameter name="schemaUnqualified" value="http://ws-i.org/profiles/basic/1.1/xsd"/>
+    <wsdd:parameter name="wsdlServicePort" value="mnpservicePort"/>
+    <wsdd:parameter name="className" value="xsd.MNPProtocol.MnpservicePortSoapBindingSkeleton"/>
+    <wsdd:parameter name="wsdlPortType" value="mnpservicePort"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="*"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Email" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>MaxSNPerNPO" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ActivationQuota" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NumberRangeType" type="java:xsd.MNPProtocol.NumberRangeType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOTType" type="java:xsd.MNPProtocol.NPOTType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:BCInfoType" type="java:xsd.MNPProtocol.BCInfoType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>RegistrationCode" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Remark" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>BatchId" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>MessageSenderTelco" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>AccountNumber" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ReasonText" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>StatusCode" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>RecipientTelco" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSAType" type="java:xsd.MNPProtocol.NPOSAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="xsd:swaRef" type="java:org.apache.axis.types.URI" encodingStyle=""
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSPRType" type="java:xsd.MNPProtocol.NPOSPRType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>TypeOfId" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:QuotaResultType" type="java:xsd.MNPProtocol.QuotaResultType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBPDType" type="java:xsd.MNPProtocol.RDBPDType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBFDType" type="java:xsd.MNPProtocol.RDBFDType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>NRH" type="java:java.lang.String" encodingStyle=""
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>MNPFrame" type="java:xsd.MNPProtocol.MNPFrame"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>DNO" type="java:java.lang.String" encodingStyle=""
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>OwnerName" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SD-NOTICEType" type="java:xsd.MNPProtocol.SDNOTICEType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDAType" type="java:xsd.MNPProtocol.SDAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOTAType" type="java:xsd.MNPProtocol.NPOTAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ServiceType" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDInfoType" type="java:xsd.MNPProtocol.SDInfoType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>UndertakingAck" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ResultCode2" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ResultCode3" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOAType" type="java:xsd.MNPProtocol.NPOAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:TimeRangeType" type="java:xsd.MNPProtocol.TimeRangeType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCAType" type="java:xsd.MNPProtocol.SCAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Name" type="java:java.lang.String" encodingStyle=""
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>>NPOType>SubscriberAuthSequence>SubscriberAuthorization"
+        type="java:xsd.MNPProtocol.NPOTypeSubscriberAuthSequenceSubscriberAuthorization"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:StatusResultType" type="java:xsd.MNPProtocol.StatusResultType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>BCAction" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SC-NOTICEAType" type="java:xsd.MNPProtocol.SCNOTICEAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ByLOA" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ReasonCode" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>SimSwap" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SD-NOTICEAType" type="java:xsd.MNPProtocol.SDNOTICEAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCInfoType" type="java:xsd.MNPProtocol.SCInfoType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBFDRspType" type="java:xsd.MNPProtocol.RDBFDRspType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:CorporateCustomerType" type="java:xsd.MNPProtocol.CorporateCustomerType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RDBPDRspType" type="java:xsd.MNPProtocol.RDBPDRspType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>SubscriberNumber" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RNAAType" type="java:xsd.MNPProtocol.RNAAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RspType" type="java:xsd.MNPProtocol.RspType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSQType" type="java:xsd.MNPProtocol.NPOSQType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSQRspType" type="java:xsd.MNPProtocol.NPOSQRspType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:PersonCustomerType" type="java:xsd.MNPProtocol.PersonCustomerType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSTERType" type="java:xsd.MNPProtocol.NPOSTERType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>OldReferenceId" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>WindowName" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:DateRangeType" type="java:xsd.MNPProtocol.DateRangeType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Phone" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SC-NOTICEType" type="java:xsd.MNPProtocol.SCNOTICEType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:WindowType" type="java:xsd.MNPProtocol.WindowType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NOTEType" type="java:xsd.MNPProtocol.NOTEType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSAACKType" type="java:xsd.MNPProtocol.NPOSAACKType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>MessageType" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>DonorTelco" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NVPAType" type="java:xsd.MNPProtocol.NVPAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SDType" type="java:xsd.MNPProtocol.SDType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:TQType" type="java:xsd.MNPProtocol.TQType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>UnderSub-judice" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:CANType" type="java:xsd.MNPProtocol.CANType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>CompanyName" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NVPType" type="java:xsd.MNPProtocol.NVPType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ActivateAging" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOSType" type="java:xsd.MNPProtocol.NPOSType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ResultCode" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>OwnershipChange" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Telefax" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>DataFileName" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:PERInfoType" type="java:xsd.MNPProtocol.PERInfoType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>LSA" type="java:java.lang.String" encodingStyle=""
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>NumberRangeEnd" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:NPOType" type="java:xsd.MNPProtocol.NPOType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Corporate" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>PortingProhibited" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>RNO" type="java:java.lang.String" encodingStyle=""
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:PERType" type="java:xsd.MNPProtocol.PERType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>RequestId" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>MessageReceiverTelco" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>NumberRangeStart" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>OutstandingBill" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>OwnerId" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ContractualObligation" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SubscriberResultType" type="java:xsd.MNPProtocol.SubscriberResultType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>SuspectedTelco" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:DonorQuotaType" type="java:xsd.MNPProtocol.DonorQuotaType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:TQRspType" type="java:xsd.MNPProtocol.TQRspType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>RouteNumber" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ResultText" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>Amount" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>QuotaAmount" type="java:java.math.BigInteger"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:SCType" type="java:xsd.MNPProtocol.SCType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:AuthorType" type="java:xsd.MNPProtocol.AuthorType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:>ReferenceId" type="java:java.lang.String"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"/>
+    <wsdd:typeMapping qname="MNPProtocol.xsd:RNAType" type="java:xsd.MNPProtocol.RNAType"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:>NPOType>SubscriberAuthSequence" type="java:xsd.MNPProtocol.NPOTypeSubscriberAuthSequenceSubscriberAuthorization[]"
+        encodingStyle="" innerType="MNPProtocol.xsd:>>NPOType>SubscriberAuthSequence>SubscriberAuthorization"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:>RDBPDType>SubscriberSequence" type="java:java.lang.String[]"
+        encodingStyle="" innerType="MNPProtocol.xsd:SubscriberNumber"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:>NPOSQType>BatchReference" type="java:java.lang.String[]"
+        encodingStyle="" innerType="MNPProtocol.xsd:ReferenceId"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:>NPOType>SubscriberSequence" type="java:java.lang.String[]"
+        encodingStyle="" innerType="MNPProtocol.xsd:SubscriberNumber"/>
+    <wsdd:arrayMapping qname="MNPProtocol.xsd:>NPOTType>SubscriberSequence" type="java:java.lang.String[]"
+        encodingStyle="" innerType="MNPProtocol.xsd:SubscriberNumber"/>
+  </wsdd:service>
+</wsdd:deployment>

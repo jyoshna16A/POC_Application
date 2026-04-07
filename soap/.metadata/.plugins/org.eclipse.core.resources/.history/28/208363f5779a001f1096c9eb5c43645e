@@ -1,0 +1,22 @@
+/**
+ * MNPFrameSoapBindingImpl.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4.1-SNAPSHOT Nov 07, 2023 (07:57:58 UTC) WSDL2Java emitter.
+ */
+
+package com.example;
+
+public class MNPFrameSoapBindingImpl implements com.example.MNPFrame{
+    public void setVersion(java.lang.String value) throws java.rmi.RemoteException {
+    }
+
+    public java.lang.Object[] getNPOOrNVPOrNVPA() throws java.rmi.RemoteException {
+        return null;
+    }
+
+    public java.lang.String getVersion() throws java.rmi.RemoteException {
+        return null;
+    }
+
+}

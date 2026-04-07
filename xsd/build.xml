@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="XSDtoJava" default="generate-sources" basedir=".">
+    <!-- Set up directories for output -->
+    <property name="src.dir" value="src"/>
+    <property name="xsd.dir" value="src/main/xsd"/>
+    <property name="output.dir" value="src/main/java"/>
+    <property name="package.name" value="com.example.xsd2"/>
+
+    <!-- Initialize the classpath for JAXB tools -->
+    <path id="xjc.classpath">
+        <!-- Add JAXB libraries from local lib directory -->
+        <fileset dir="lib">
+            <include name="jaxb-api-*.jar"/>
+            <include name="jaxb-runtime-*.jar"/>
+            <include name="jaxb-xjc-*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- Define the XJC task to generate Java classes from XSD -->
+    <target name="generate-sources">
+        <mkdir dir="${output.dir}"/>
+
+        <!-- Define the XJC tool directly without taskdefs -->
+        <exec executable="xjc">
+            <arg value="${xsd.dir}/person.xsd"/>
+            <arg value="-d"/>
+            <arg value="${output.dir}"/>
+            <arg value="-p"/>
+            <arg value="${package.name}"/>
+            <arg value="-verbose"/>
+        </exec>
+    </target>
+</project>

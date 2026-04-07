@@ -1,0 +1,1901 @@
+/**
+ * MNPFrame.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4.1-SNAPSHOT Nov 07, 2023 (07:57:58 UTC) WSDL2Java emitter.
+ */
+
+package xsd.MNPProtocol;
+
+public class MNPFrame  implements java.io.Serializable {
+//    private xsd.MNPProtocol.NPOType[] NPO;
+//
+//    private xsd.MNPProtocol.NVPType[] NVP;
+//
+//    private xsd.MNPProtocol.NVPAType[] NVPA;
+//
+//    private xsd.MNPProtocol.NPOTType[] NPOT;
+//
+//    private xsd.MNPProtocol.CANType[] CAN;
+//
+//    private xsd.MNPProtocol.NPOSType[] NPOS;
+//
+//    private xsd.MNPProtocol.NPOSTERType[] NPOSTER;
+//
+//    private xsd.MNPProtocol.NPOSAType[] NPOSA;
+//
+//    private xsd.MNPProtocol.NPOSAACKType[] NPOSAACK;
+//
+//    private xsd.MNPProtocol.NPOSPRType[] NPOSPR;
+//
+//    private xsd.MNPProtocol.NPOAType[] NPOA;
+//
+//    private xsd.MNPProtocol.NPOTAType[] NPOTA;
+//
+//    private xsd.MNPProtocol.PERType[] PER;
+//
+//    private xsd.MNPProtocol.SDType[] SD;
+//
+//    private xsd.MNPProtocol.SDAType[] SDA;
+//
+//    private xsd.MNPProtocol.SCType[] SC;
+//
+//    private xsd.MNPProtocol.SCAType[] SCA;
+//
+//    private xsd.MNPProtocol.SCNOTICEType[] SCNOTICE;
+//
+//    private xsd.MNPProtocol.SCNOTICEAType[] SCNOTICEA;
+//
+//    private xsd.MNPProtocol.SDNOTICEType[] SDNOTICE;
+//
+//    private xsd.MNPProtocol.SDNOTICEAType[] SDNOTICEA;
+//
+//    private xsd.MNPProtocol.RDBPDType[] RDBPD;
+//
+//    private xsd.MNPProtocol.RDBPDRspType[] RDBPDRsp;
+//
+//    private xsd.MNPProtocol.RDBFDType[] RDBFD;
+//
+//    private xsd.MNPProtocol.RDBFDRspType[] RDBFDRsp;
+//
+//    private xsd.MNPProtocol.RNAType[] RNA;
+//
+//    private xsd.MNPProtocol.RNAAType[] RNAA;
+//
+//    private xsd.MNPProtocol.TQType[] TQ;
+//
+//    private xsd.MNPProtocol.TQRspType[] TQRsp;
+//
+//    private xsd.MNPProtocol.NPOSQType[] NPOSQ;
+//
+//    private xsd.MNPProtocol.NPOSQRspType[] NPOSQRsp;
+//
+//    private xsd.MNPProtocol.NOTEType[] NOTE;
+//
+//    private xsd.MNPProtocol.RspType[] rsp;
+
+    private java.lang.String version = "7324dcbvj";  // attribute
+
+    public MNPFrame() {
+    }
+
+    public MNPFrame(
+//           xsd.MNPProtocol.NPOType[] NPO,
+//           xsd.MNPProtocol.NVPType[] NVP,
+//           xsd.MNPProtocol.NVPAType[] NVPA,
+//           xsd.MNPProtocol.NPOTType[] NPOT,
+//           xsd.MNPProtocol.CANType[] CAN,
+//           xsd.MNPProtocol.NPOSType[] NPOS,
+//           xsd.MNPProtocol.NPOSTERType[] NPOSTER,
+//           xsd.MNPProtocol.NPOSAType[] NPOSA,
+//           xsd.MNPProtocol.NPOSAACKType[] NPOSAACK,
+//           xsd.MNPProtocol.NPOSPRType[] NPOSPR,
+//           xsd.MNPProtocol.NPOAType[] NPOA,
+//           xsd.MNPProtocol.NPOTAType[] NPOTA,
+//           xsd.MNPProtocol.PERType[] PER,
+//           xsd.MNPProtocol.SDType[] SD,
+//           xsd.MNPProtocol.SDAType[] SDA,
+//           xsd.MNPProtocol.SCType[] SC,
+//           xsd.MNPProtocol.SCAType[] SCA,
+//           xsd.MNPProtocol.SCNOTICEType[] SCNOTICE,
+//           xsd.MNPProtocol.SCNOTICEAType[] SCNOTICEA,
+//           xsd.MNPProtocol.SDNOTICEType[] SDNOTICE,
+//           xsd.MNPProtocol.SDNOTICEAType[] SDNOTICEA,
+//           xsd.MNPProtocol.RDBPDType[] RDBPD,
+//           xsd.MNPProtocol.RDBPDRspType[] RDBPDRsp,
+//           xsd.MNPProtocol.RDBFDType[] RDBFD,
+//           xsd.MNPProtocol.RDBFDRspType[] RDBFDRsp,
+//           xsd.MNPProtocol.RNAType[] RNA,
+//           xsd.MNPProtocol.RNAAType[] RNAA,
+//           xsd.MNPProtocol.TQType[] TQ,
+//           xsd.MNPProtocol.TQRspType[] TQRsp,
+//           xsd.MNPProtocol.NPOSQType[] NPOSQ,
+//           xsd.MNPProtocol.NPOSQRspType[] NPOSQRsp,
+//           xsd.MNPProtocol.NOTEType[] NOTE,
+//           xsd.MNPProtocol.RspType[] rsp,
+           java.lang.String version) {
+//           this.NPO = NPO;
+//           this.NVP = NVP;
+//           this.NVPA = NVPA;
+//           this.NPOT = NPOT;
+//           this.CAN = CAN;
+//           this.NPOS = NPOS;
+//           this.NPOSTER = NPOSTER;
+//           this.NPOSA = NPOSA;
+//           this.NPOSAACK = NPOSAACK;
+//           this.NPOSPR = NPOSPR;
+//           this.NPOA = NPOA;
+//           this.NPOTA = NPOTA;
+//           this.PER = PER;
+//           this.SD = SD;
+//           this.SDA = SDA;
+//           this.SC = SC;
+//           this.SCA = SCA;
+//           this.SCNOTICE = SCNOTICE;
+//           this.SCNOTICEA = SCNOTICEA;
+//           this.SDNOTICE = SDNOTICE;
+//           this.SDNOTICEA = SDNOTICEA;
+//           this.RDBPD = RDBPD;
+//           this.RDBPDRsp = RDBPDRsp;
+//           this.RDBFD = RDBFD;
+//           this.RDBFDRsp = RDBFDRsp;
+//           this.RNA = RNA;
+//           this.RNAA = RNAA;
+//           this.TQ = TQ;
+//           this.TQRsp = TQRsp;
+//           this.NPOSQ = NPOSQ;
+//           this.NPOSQRsp = NPOSQRsp;
+//           this.NOTE = NOTE;
+//           this.rsp = rsp;
+           this.version = version;
+    }
+
+
+    /**
+     * Gets the NPO value for this MNPFrame.
+     * 
+     * @return NPO
+     */
+//    public xsd.MNPProtocol.NPOType[] getNPO() {
+//        return NPO;
+//    }
+//
+//
+//    /**
+//     * Sets the NPO value for this MNPFrame.
+//     * 
+//     * @param NPO
+//     */
+//    public void setNPO(xsd.MNPProtocol.NPOType[] NPO) {
+//        this.NPO = NPO;
+//    }
+//
+//    public xsd.MNPProtocol.NPOType getNPO(int i) {
+//        return this.NPO[i];
+//    }
+//
+//    public void setNPO(int i, xsd.MNPProtocol.NPOType _value) {
+//        this.NPO[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NVP value for this MNPFrame.
+//     * 
+//     * @return NVP
+//     */
+//    public xsd.MNPProtocol.NVPType[] getNVP() {
+//        return NVP;
+//    }
+//
+//
+//    /**
+//     * Sets the NVP value for this MNPFrame.
+//     * 
+//     * @param NVP
+//     */
+//    public void setNVP(xsd.MNPProtocol.NVPType[] NVP) {
+//        this.NVP = NVP;
+//    }
+//
+//    public xsd.MNPProtocol.NVPType getNVP(int i) {
+//        return this.NVP[i];
+//    }
+//
+//    public void setNVP(int i, xsd.MNPProtocol.NVPType _value) {
+//        this.NVP[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NVPA value for this MNPFrame.
+//     * 
+//     * @return NVPA
+//     */
+//    public xsd.MNPProtocol.NVPAType[] getNVPA() {
+//        return NVPA;
+//    }
+//
+//
+//    /**
+//     * Sets the NVPA value for this MNPFrame.
+//     * 
+//     * @param NVPA
+//     */
+//    public void setNVPA(xsd.MNPProtocol.NVPAType[] NVPA) {
+//        this.NVPA = NVPA;
+//    }
+//
+//    public xsd.MNPProtocol.NVPAType getNVPA(int i) {
+//        return this.NVPA[i];
+//    }
+//
+//    public void setNVPA(int i, xsd.MNPProtocol.NVPAType _value) {
+//        this.NVPA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOT value for this MNPFrame.
+//     * 
+//     * @return NPOT
+//     */
+//    public xsd.MNPProtocol.NPOTType[] getNPOT() {
+//        return NPOT;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOT value for this MNPFrame.
+//     * 
+//     * @param NPOT
+//     */
+//    public void setNPOT(xsd.MNPProtocol.NPOTType[] NPOT) {
+//        this.NPOT = NPOT;
+//    }
+//
+//    public xsd.MNPProtocol.NPOTType getNPOT(int i) {
+//        return this.NPOT[i];
+//    }
+//
+//    public void setNPOT(int i, xsd.MNPProtocol.NPOTType _value) {
+//        this.NPOT[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the CAN value for this MNPFrame.
+//     * 
+//     * @return CAN
+//     */
+//    public xsd.MNPProtocol.CANType[] getCAN() {
+//        return CAN;
+//    }
+//
+//
+//    /**
+//     * Sets the CAN value for this MNPFrame.
+//     * 
+//     * @param CAN
+//     */
+//    public void setCAN(xsd.MNPProtocol.CANType[] CAN) {
+//        this.CAN = CAN;
+//    }
+//
+//    public xsd.MNPProtocol.CANType getCAN(int i) {
+//        return this.CAN[i];
+//    }
+//
+//    public void setCAN(int i, xsd.MNPProtocol.CANType _value) {
+//        this.CAN[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOS value for this MNPFrame.
+//     * 
+//     * @return NPOS
+//     */
+//    public xsd.MNPProtocol.NPOSType[] getNPOS() {
+//        return NPOS;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOS value for this MNPFrame.
+//     * 
+//     * @param NPOS
+//     */
+//    public void setNPOS(xsd.MNPProtocol.NPOSType[] NPOS) {
+//        this.NPOS = NPOS;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSType getNPOS(int i) {
+//        return this.NPOS[i];
+//    }
+//
+//    public void setNPOS(int i, xsd.MNPProtocol.NPOSType _value) {
+//        this.NPOS[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOSTER value for this MNPFrame.
+//     * 
+//     * @return NPOSTER
+//     */
+//    public xsd.MNPProtocol.NPOSTERType[] getNPOSTER() {
+//        return NPOSTER;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOSTER value for this MNPFrame.
+//     * 
+//     * @param NPOSTER
+//     */
+//    public void setNPOSTER(xsd.MNPProtocol.NPOSTERType[] NPOSTER) {
+//        this.NPOSTER = NPOSTER;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSTERType getNPOSTER(int i) {
+//        return this.NPOSTER[i];
+//    }
+//
+//    public void setNPOSTER(int i, xsd.MNPProtocol.NPOSTERType _value) {
+//        this.NPOSTER[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOSA value for this MNPFrame.
+//     * 
+//     * @return NPOSA
+//     */
+//    public xsd.MNPProtocol.NPOSAType[] getNPOSA() {
+//        return NPOSA;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOSA value for this MNPFrame.
+//     * 
+//     * @param NPOSA
+//     */
+//    public void setNPOSA(xsd.MNPProtocol.NPOSAType[] NPOSA) {
+//        this.NPOSA = NPOSA;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSAType getNPOSA(int i) {
+//        return this.NPOSA[i];
+//    }
+//
+//    public void setNPOSA(int i, xsd.MNPProtocol.NPOSAType _value) {
+//        this.NPOSA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOSAACK value for this MNPFrame.
+//     * 
+//     * @return NPOSAACK
+//     */
+//    public xsd.MNPProtocol.NPOSAACKType[] getNPOSAACK() {
+//        return NPOSAACK;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOSAACK value for this MNPFrame.
+//     * 
+//     * @param NPOSAACK
+//     */
+//    public void setNPOSAACK(xsd.MNPProtocol.NPOSAACKType[] NPOSAACK) {
+//        this.NPOSAACK = NPOSAACK;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSAACKType getNPOSAACK(int i) {
+//        return this.NPOSAACK[i];
+//    }
+//
+//    public void setNPOSAACK(int i, xsd.MNPProtocol.NPOSAACKType _value) {
+//        this.NPOSAACK[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOSPR value for this MNPFrame.
+//     * 
+//     * @return NPOSPR
+//     */
+//    public xsd.MNPProtocol.NPOSPRType[] getNPOSPR() {
+//        return NPOSPR;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOSPR value for this MNPFrame.
+//     * 
+//     * @param NPOSPR
+//     */
+//    public void setNPOSPR(xsd.MNPProtocol.NPOSPRType[] NPOSPR) {
+//        this.NPOSPR = NPOSPR;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSPRType getNPOSPR(int i) {
+//        return this.NPOSPR[i];
+//    }
+//
+//    public void setNPOSPR(int i, xsd.MNPProtocol.NPOSPRType _value) {
+//        this.NPOSPR[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOA value for this MNPFrame.
+//     * 
+//     * @return NPOA
+//     */
+//    public xsd.MNPProtocol.NPOAType[] getNPOA() {
+//        return NPOA;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOA value for this MNPFrame.
+//     * 
+//     * @param NPOA
+//     */
+//    public void setNPOA(xsd.MNPProtocol.NPOAType[] NPOA) {
+//        this.NPOA = NPOA;
+//    }
+//
+//    public xsd.MNPProtocol.NPOAType getNPOA(int i) {
+//        return this.NPOA[i];
+//    }
+//
+//    public void setNPOA(int i, xsd.MNPProtocol.NPOAType _value) {
+//        this.NPOA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOTA value for this MNPFrame.
+//     * 
+//     * @return NPOTA
+//     */
+//    public xsd.MNPProtocol.NPOTAType[] getNPOTA() {
+//        return NPOTA;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOTA value for this MNPFrame.
+//     * 
+//     * @param NPOTA
+//     */
+//    public void setNPOTA(xsd.MNPProtocol.NPOTAType[] NPOTA) {
+//        this.NPOTA = NPOTA;
+//    }
+//
+//    public xsd.MNPProtocol.NPOTAType getNPOTA(int i) {
+//        return this.NPOTA[i];
+//    }
+//
+//    public void setNPOTA(int i, xsd.MNPProtocol.NPOTAType _value) {
+//        this.NPOTA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the PER value for this MNPFrame.
+//     * 
+//     * @return PER
+//     */
+//    public xsd.MNPProtocol.PERType[] getPER() {
+//        return PER;
+//    }
+//
+//
+//    /**
+//     * Sets the PER value for this MNPFrame.
+//     * 
+//     * @param PER
+//     */
+//    public void setPER(xsd.MNPProtocol.PERType[] PER) {
+//        this.PER = PER;
+//    }
+//
+//    public xsd.MNPProtocol.PERType getPER(int i) {
+//        return this.PER[i];
+//    }
+//
+//    public void setPER(int i, xsd.MNPProtocol.PERType _value) {
+//        this.PER[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SD value for this MNPFrame.
+//     * 
+//     * @return SD
+//     */
+//    public xsd.MNPProtocol.SDType[] getSD() {
+//        return SD;
+//    }
+//
+//
+//    /**
+//     * Sets the SD value for this MNPFrame.
+//     * 
+//     * @param SD
+//     */
+//    public void setSD(xsd.MNPProtocol.SDType[] SD) {
+//        this.SD = SD;
+//    }
+//
+//    public xsd.MNPProtocol.SDType getSD(int i) {
+//        return this.SD[i];
+//    }
+//
+//    public void setSD(int i, xsd.MNPProtocol.SDType _value) {
+//        this.SD[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SDA value for this MNPFrame.
+//     * 
+//     * @return SDA
+//     */
+//    public xsd.MNPProtocol.SDAType[] getSDA() {
+//        return SDA;
+//    }
+//
+//
+//    /**
+//     * Sets the SDA value for this MNPFrame.
+//     * 
+//     * @param SDA
+//     */
+//    public void setSDA(xsd.MNPProtocol.SDAType[] SDA) {
+//        this.SDA = SDA;
+//    }
+//
+//    public xsd.MNPProtocol.SDAType getSDA(int i) {
+//        return this.SDA[i];
+//    }
+//
+//    public void setSDA(int i, xsd.MNPProtocol.SDAType _value) {
+//        this.SDA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SC value for this MNPFrame.
+//     * 
+//     * @return SC
+//     */
+//    public xsd.MNPProtocol.SCType[] getSC() {
+//        return SC;
+//    }
+//
+//
+//    /**
+//     * Sets the SC value for this MNPFrame.
+//     * 
+//     * @param SC
+//     */
+//    public void setSC(xsd.MNPProtocol.SCType[] SC) {
+//        this.SC = SC;
+//    }
+//
+//    public xsd.MNPProtocol.SCType getSC(int i) {
+//        return this.SC[i];
+//    }
+//
+//    public void setSC(int i, xsd.MNPProtocol.SCType _value) {
+//        this.SC[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SCA value for this MNPFrame.
+//     * 
+//     * @return SCA
+//     */
+//    public xsd.MNPProtocol.SCAType[] getSCA() {
+//        return SCA;
+//    }
+//
+//
+//    /**
+//     * Sets the SCA value for this MNPFrame.
+//     * 
+//     * @param SCA
+//     */
+//    public void setSCA(xsd.MNPProtocol.SCAType[] SCA) {
+//        this.SCA = SCA;
+//    }
+//
+//    public xsd.MNPProtocol.SCAType getSCA(int i) {
+//        return this.SCA[i];
+//    }
+//
+//    public void setSCA(int i, xsd.MNPProtocol.SCAType _value) {
+//        this.SCA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SCNOTICE value for this MNPFrame.
+//     * 
+//     * @return SCNOTICE
+//     */
+//    public xsd.MNPProtocol.SCNOTICEType[] getSCNOTICE() {
+//        return SCNOTICE;
+//    }
+//
+//
+//    /**
+//     * Sets the SCNOTICE value for this MNPFrame.
+//     * 
+//     * @param SCNOTICE
+//     */
+//    public void setSCNOTICE(xsd.MNPProtocol.SCNOTICEType[] SCNOTICE) {
+//        this.SCNOTICE = SCNOTICE;
+//    }
+//
+//    public xsd.MNPProtocol.SCNOTICEType getSCNOTICE(int i) {
+//        return this.SCNOTICE[i];
+//    }
+//
+//    public void setSCNOTICE(int i, xsd.MNPProtocol.SCNOTICEType _value) {
+//        this.SCNOTICE[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SCNOTICEA value for this MNPFrame.
+//     * 
+//     * @return SCNOTICEA
+//     */
+//    public xsd.MNPProtocol.SCNOTICEAType[] getSCNOTICEA() {
+//        return SCNOTICEA;
+//    }
+//
+//
+//    /**
+//     * Sets the SCNOTICEA value for this MNPFrame.
+//     * 
+//     * @param SCNOTICEA
+//     */
+//    public void setSCNOTICEA(xsd.MNPProtocol.SCNOTICEAType[] SCNOTICEA) {
+//        this.SCNOTICEA = SCNOTICEA;
+//    }
+//
+//    public xsd.MNPProtocol.SCNOTICEAType getSCNOTICEA(int i) {
+//        return this.SCNOTICEA[i];
+//    }
+//
+//    public void setSCNOTICEA(int i, xsd.MNPProtocol.SCNOTICEAType _value) {
+//        this.SCNOTICEA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SDNOTICE value for this MNPFrame.
+//     * 
+//     * @return SDNOTICE
+//     */
+//    public xsd.MNPProtocol.SDNOTICEType[] getSDNOTICE() {
+//        return SDNOTICE;
+//    }
+//
+//
+//    /**
+//     * Sets the SDNOTICE value for this MNPFrame.
+//     * 
+//     * @param SDNOTICE
+//     */
+//    public void setSDNOTICE(xsd.MNPProtocol.SDNOTICEType[] SDNOTICE) {
+//        this.SDNOTICE = SDNOTICE;
+//    }
+//
+//    public xsd.MNPProtocol.SDNOTICEType getSDNOTICE(int i) {
+//        return this.SDNOTICE[i];
+//    }
+//
+//    public void setSDNOTICE(int i, xsd.MNPProtocol.SDNOTICEType _value) {
+//        this.SDNOTICE[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the SDNOTICEA value for this MNPFrame.
+//     * 
+//     * @return SDNOTICEA
+//     */
+//    public xsd.MNPProtocol.SDNOTICEAType[] getSDNOTICEA() {
+//        return SDNOTICEA;
+//    }
+//
+//
+//    /**
+//     * Sets the SDNOTICEA value for this MNPFrame.
+//     * 
+//     * @param SDNOTICEA
+//     */
+//    public void setSDNOTICEA(xsd.MNPProtocol.SDNOTICEAType[] SDNOTICEA) {
+//        this.SDNOTICEA = SDNOTICEA;
+//    }
+//
+//    public xsd.MNPProtocol.SDNOTICEAType getSDNOTICEA(int i) {
+//        return this.SDNOTICEA[i];
+//    }
+//
+//    public void setSDNOTICEA(int i, xsd.MNPProtocol.SDNOTICEAType _value) {
+//        this.SDNOTICEA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the RDBPD value for this MNPFrame.
+//     * 
+//     * @return RDBPD
+//     */
+//    public xsd.MNPProtocol.RDBPDType[] getRDBPD() {
+//        return RDBPD;
+//    }
+//
+//
+//    /**
+//     * Sets the RDBPD value for this MNPFrame.
+//     * 
+//     * @param RDBPD
+//     */
+//    public void setRDBPD(xsd.MNPProtocol.RDBPDType[] RDBPD) {
+//        this.RDBPD = RDBPD;
+//    }
+//
+//    public xsd.MNPProtocol.RDBPDType getRDBPD(int i) {
+//        return this.RDBPD[i];
+//    }
+//
+//    public void setRDBPD(int i, xsd.MNPProtocol.RDBPDType _value) {
+//        this.RDBPD[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the RDBPDRsp value for this MNPFrame.
+//     * 
+//     * @return RDBPDRsp
+//     */
+//    public xsd.MNPProtocol.RDBPDRspType[] getRDBPDRsp() {
+//        return RDBPDRsp;
+//    }
+//
+//
+//    /**
+//     * Sets the RDBPDRsp value for this MNPFrame.
+//     * 
+//     * @param RDBPDRsp
+//     */
+//    public void setRDBPDRsp(xsd.MNPProtocol.RDBPDRspType[] RDBPDRsp) {
+//        this.RDBPDRsp = RDBPDRsp;
+//    }
+//
+//    public xsd.MNPProtocol.RDBPDRspType getRDBPDRsp(int i) {
+//        return this.RDBPDRsp[i];
+//    }
+//
+//    public void setRDBPDRsp(int i, xsd.MNPProtocol.RDBPDRspType _value) {
+//        this.RDBPDRsp[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the RDBFD value for this MNPFrame.
+//     * 
+//     * @return RDBFD
+//     */
+//    public xsd.MNPProtocol.RDBFDType[] getRDBFD() {
+//        return RDBFD;
+//    }
+//
+//
+//    /**
+//     * Sets the RDBFD value for this MNPFrame.
+//     * 
+//     * @param RDBFD
+//     */
+//    public void setRDBFD(xsd.MNPProtocol.RDBFDType[] RDBFD) {
+//        this.RDBFD = RDBFD;
+//    }
+//
+//    public xsd.MNPProtocol.RDBFDType getRDBFD(int i) {
+//        return this.RDBFD[i];
+//    }
+//
+//    public void setRDBFD(int i, xsd.MNPProtocol.RDBFDType _value) {
+//        this.RDBFD[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the RDBFDRsp value for this MNPFrame.
+//     * 
+//     * @return RDBFDRsp
+//     */
+//    public xsd.MNPProtocol.RDBFDRspType[] getRDBFDRsp() {
+//        return RDBFDRsp;
+//    }
+//
+//
+//    /**
+//     * Sets the RDBFDRsp value for this MNPFrame.
+//     * 
+//     * @param RDBFDRsp
+//     */
+//    public void setRDBFDRsp(xsd.MNPProtocol.RDBFDRspType[] RDBFDRsp) {
+//        this.RDBFDRsp = RDBFDRsp;
+//    }
+//
+//    public xsd.MNPProtocol.RDBFDRspType getRDBFDRsp(int i) {
+//        return this.RDBFDRsp[i];
+//    }
+//
+//    public void setRDBFDRsp(int i, xsd.MNPProtocol.RDBFDRspType _value) {
+//        this.RDBFDRsp[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the RNA value for this MNPFrame.
+//     * 
+//     * @return RNA
+//     */
+//    public xsd.MNPProtocol.RNAType[] getRNA() {
+//        return RNA;
+//    }
+//
+//
+//    /**
+//     * Sets the RNA value for this MNPFrame.
+//     * 
+//     * @param RNA
+//     */
+//    public void setRNA(xsd.MNPProtocol.RNAType[] RNA) {
+//        this.RNA = RNA;
+//    }
+//
+//    public xsd.MNPProtocol.RNAType getRNA(int i) {
+//        return this.RNA[i];
+//    }
+//
+//    public void setRNA(int i, xsd.MNPProtocol.RNAType _value) {
+//        this.RNA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the RNAA value for this MNPFrame.
+//     * 
+//     * @return RNAA
+//     */
+//    public xsd.MNPProtocol.RNAAType[] getRNAA() {
+//        return RNAA;
+//    }
+//
+//
+//    /**
+//     * Sets the RNAA value for this MNPFrame.
+//     * 
+//     * @param RNAA
+//     */
+//    public void setRNAA(xsd.MNPProtocol.RNAAType[] RNAA) {
+//        this.RNAA = RNAA;
+//    }
+//
+//    public xsd.MNPProtocol.RNAAType getRNAA(int i) {
+//        return this.RNAA[i];
+//    }
+//
+//    public void setRNAA(int i, xsd.MNPProtocol.RNAAType _value) {
+//        this.RNAA[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the TQ value for this MNPFrame.
+//     * 
+//     * @return TQ
+//     */
+//    public xsd.MNPProtocol.TQType[] getTQ() {
+//        return TQ;
+//    }
+//
+//
+//    /**
+//     * Sets the TQ value for this MNPFrame.
+//     * 
+//     * @param TQ
+//     */
+//    public void setTQ(xsd.MNPProtocol.TQType[] TQ) {
+//        this.TQ = TQ;
+//    }
+//
+//    public xsd.MNPProtocol.TQType getTQ(int i) {
+//        return this.TQ[i];
+//    }
+//
+//    public void setTQ(int i, xsd.MNPProtocol.TQType _value) {
+//        this.TQ[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the TQRsp value for this MNPFrame.
+//     * 
+//     * @return TQRsp
+//     */
+//    public xsd.MNPProtocol.TQRspType[] getTQRsp() {
+//        return TQRsp;
+//    }
+//
+//
+//    /**
+//     * Sets the TQRsp value for this MNPFrame.
+//     * 
+//     * @param TQRsp
+//     */
+//    public void setTQRsp(xsd.MNPProtocol.TQRspType[] TQRsp) {
+//        this.TQRsp = TQRsp;
+//    }
+//
+//    public xsd.MNPProtocol.TQRspType getTQRsp(int i) {
+//        return this.TQRsp[i];
+//    }
+//
+//    public void setTQRsp(int i, xsd.MNPProtocol.TQRspType _value) {
+//        this.TQRsp[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOSQ value for this MNPFrame.
+//     * 
+//     * @return NPOSQ
+//     */
+//    public xsd.MNPProtocol.NPOSQType[] getNPOSQ() {
+//        return NPOSQ;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOSQ value for this MNPFrame.
+//     * 
+//     * @param NPOSQ
+//     */
+//    public void setNPOSQ(xsd.MNPProtocol.NPOSQType[] NPOSQ) {
+//        this.NPOSQ = NPOSQ;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSQType getNPOSQ(int i) {
+//        return this.NPOSQ[i];
+//    }
+//
+//    public void setNPOSQ(int i, xsd.MNPProtocol.NPOSQType _value) {
+//        this.NPOSQ[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NPOSQRsp value for this MNPFrame.
+//     * 
+//     * @return NPOSQRsp
+//     */
+//    public xsd.MNPProtocol.NPOSQRspType[] getNPOSQRsp() {
+//        return NPOSQRsp;
+//    }
+//
+//
+//    /**
+//     * Sets the NPOSQRsp value for this MNPFrame.
+//     * 
+//     * @param NPOSQRsp
+//     */
+//    public void setNPOSQRsp(xsd.MNPProtocol.NPOSQRspType[] NPOSQRsp) {
+//        this.NPOSQRsp = NPOSQRsp;
+//    }
+//
+//    public xsd.MNPProtocol.NPOSQRspType getNPOSQRsp(int i) {
+//        return this.NPOSQRsp[i];
+//    }
+//
+//    public void setNPOSQRsp(int i, xsd.MNPProtocol.NPOSQRspType _value) {
+//        this.NPOSQRsp[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the NOTE value for this MNPFrame.
+//     * 
+//     * @return NOTE
+//     */
+//    public xsd.MNPProtocol.NOTEType[] getNOTE() {
+//        return NOTE;
+//    }
+//
+//
+//    /**
+//     * Sets the NOTE value for this MNPFrame.
+//     * 
+//     * @param NOTE
+//     */
+//    public void setNOTE(xsd.MNPProtocol.NOTEType[] NOTE) {
+//        this.NOTE = NOTE;
+//    }
+//
+//    public xsd.MNPProtocol.NOTEType getNOTE(int i) {
+//        return this.NOTE[i];
+//    }
+//
+//    public void setNOTE(int i, xsd.MNPProtocol.NOTEType _value) {
+//        this.NOTE[i] = _value;
+//    }
+//
+//
+//    /**
+//     * Gets the rsp value for this MNPFrame.
+//     * 
+//     * @return rsp
+//     */
+//    public xsd.MNPProtocol.RspType[] getRsp() {
+//        return rsp;
+//    }
+//
+//
+//    /**
+//     * Sets the rsp value for this MNPFrame.
+//     * 
+//     * @param rsp
+//     */
+//    public void setRsp(xsd.MNPProtocol.RspType[] rsp) {
+//        this.rsp = rsp;
+//    }
+//
+//    public xsd.MNPProtocol.RspType getRsp(int i) {
+//        return this.rsp[i];
+//    }
+//
+//    public void setRsp(int i, xsd.MNPProtocol.RspType _value) {
+//        this.rsp[i] = _value;
+//    }
+//
+
+    /**
+     * Gets the version value for this MNPFrame.
+     * 
+     * @return version
+     */
+    
+    
+    public java.lang.String getVersion() {
+        return version;
+    }
+
+
+    /**
+     * Sets the version value for this MNPFrame.
+     * 
+     * @param version
+     */
+    public void setVersion(java.lang.String version) {
+        this.version = version;
+    }
+
+//    private java.lang.Object __equalsCalc = null;
+//    public synchronized boolean equals(java.lang.Object obj) {
+//        if (!(obj instanceof MNPFrame)) return false;
+//        MNPFrame other = (MNPFrame) obj;
+//        if (this == obj) return true;
+//        if (__equalsCalc != null) {
+//            return (__equalsCalc == obj);
+//        }
+//        __equalsCalc = obj;
+//        boolean _equals;
+//        _equals = true && 
+//            ((this.NPO==null && other.getNPO()==null) || 
+//             (this.NPO!=null &&
+//              java.util.Arrays.equals(this.NPO, other.getNPO()))) &&
+//            ((this.NVP==null && other.getNVP()==null) || 
+//             (this.NVP!=null &&
+//              java.util.Arrays.equals(this.NVP, other.getNVP()))) &&
+//            ((this.NVPA==null && other.getNVPA()==null) || 
+//             (this.NVPA!=null &&
+//              java.util.Arrays.equals(this.NVPA, other.getNVPA()))) &&
+//            ((this.NPOT==null && other.getNPOT()==null) || 
+//             (this.NPOT!=null &&
+//              java.util.Arrays.equals(this.NPOT, other.getNPOT()))) &&
+//            ((this.CAN==null && other.getCAN()==null) || 
+//             (this.CAN!=null &&
+//              java.util.Arrays.equals(this.CAN, other.getCAN()))) &&
+//            ((this.NPOS==null && other.getNPOS()==null) || 
+//             (this.NPOS!=null &&
+//              java.util.Arrays.equals(this.NPOS, other.getNPOS()))) &&
+//            ((this.NPOSTER==null && other.getNPOSTER()==null) || 
+//             (this.NPOSTER!=null &&
+//              java.util.Arrays.equals(this.NPOSTER, other.getNPOSTER()))) &&
+//            ((this.NPOSA==null && other.getNPOSA()==null) || 
+//             (this.NPOSA!=null &&
+//              java.util.Arrays.equals(this.NPOSA, other.getNPOSA()))) &&
+//            ((this.NPOSAACK==null && other.getNPOSAACK()==null) || 
+//             (this.NPOSAACK!=null &&
+//              java.util.Arrays.equals(this.NPOSAACK, other.getNPOSAACK()))) &&
+//            ((this.NPOSPR==null && other.getNPOSPR()==null) || 
+//             (this.NPOSPR!=null &&
+//              java.util.Arrays.equals(this.NPOSPR, other.getNPOSPR()))) &&
+//            ((this.NPOA==null && other.getNPOA()==null) || 
+//             (this.NPOA!=null &&
+//              java.util.Arrays.equals(this.NPOA, other.getNPOA()))) &&
+//            ((this.NPOTA==null && other.getNPOTA()==null) || 
+//             (this.NPOTA!=null &&
+//              java.util.Arrays.equals(this.NPOTA, other.getNPOTA()))) &&
+//            ((this.PER==null && other.getPER()==null) || 
+//             (this.PER!=null &&
+//              java.util.Arrays.equals(this.PER, other.getPER()))) &&
+//            ((this.SD==null && other.getSD()==null) || 
+//             (this.SD!=null &&
+//              java.util.Arrays.equals(this.SD, other.getSD()))) &&
+//            ((this.SDA==null && other.getSDA()==null) || 
+//             (this.SDA!=null &&
+//              java.util.Arrays.equals(this.SDA, other.getSDA()))) &&
+//            ((this.SC==null && other.getSC()==null) || 
+//             (this.SC!=null &&
+//              java.util.Arrays.equals(this.SC, other.getSC()))) &&
+//            ((this.SCA==null && other.getSCA()==null) || 
+//             (this.SCA!=null &&
+//              java.util.Arrays.equals(this.SCA, other.getSCA()))) &&
+//            ((this.SCNOTICE==null && other.getSCNOTICE()==null) || 
+//             (this.SCNOTICE!=null &&
+//              java.util.Arrays.equals(this.SCNOTICE, other.getSCNOTICE()))) &&
+//            ((this.SCNOTICEA==null && other.getSCNOTICEA()==null) || 
+//             (this.SCNOTICEA!=null &&
+//              java.util.Arrays.equals(this.SCNOTICEA, other.getSCNOTICEA()))) &&
+//            ((this.SDNOTICE==null && other.getSDNOTICE()==null) || 
+//             (this.SDNOTICE!=null &&
+//              java.util.Arrays.equals(this.SDNOTICE, other.getSDNOTICE()))) &&
+//            ((this.SDNOTICEA==null && other.getSDNOTICEA()==null) || 
+//             (this.SDNOTICEA!=null &&
+//              java.util.Arrays.equals(this.SDNOTICEA, other.getSDNOTICEA()))) &&
+//            ((this.RDBPD==null && other.getRDBPD()==null) || 
+//             (this.RDBPD!=null &&
+//              java.util.Arrays.equals(this.RDBPD, other.getRDBPD()))) &&
+//            ((this.RDBPDRsp==null && other.getRDBPDRsp()==null) || 
+//             (this.RDBPDRsp!=null &&
+//              java.util.Arrays.equals(this.RDBPDRsp, other.getRDBPDRsp()))) &&
+//            ((this.RDBFD==null && other.getRDBFD()==null) || 
+//             (this.RDBFD!=null &&
+//              java.util.Arrays.equals(this.RDBFD, other.getRDBFD()))) &&
+//            ((this.RDBFDRsp==null && other.getRDBFDRsp()==null) || 
+//             (this.RDBFDRsp!=null &&
+//              java.util.Arrays.equals(this.RDBFDRsp, other.getRDBFDRsp()))) &&
+//            ((this.RNA==null && other.getRNA()==null) || 
+//             (this.RNA!=null &&
+//              java.util.Arrays.equals(this.RNA, other.getRNA()))) &&
+//            ((this.RNAA==null && other.getRNAA()==null) || 
+//             (this.RNAA!=null &&
+//              java.util.Arrays.equals(this.RNAA, other.getRNAA()))) &&
+//            ((this.TQ==null && other.getTQ()==null) || 
+//             (this.TQ!=null &&
+//              java.util.Arrays.equals(this.TQ, other.getTQ()))) &&
+//            ((this.TQRsp==null && other.getTQRsp()==null) || 
+//             (this.TQRsp!=null &&
+//              java.util.Arrays.equals(this.TQRsp, other.getTQRsp()))) &&
+//            ((this.NPOSQ==null && other.getNPOSQ()==null) || 
+//             (this.NPOSQ!=null &&
+//              java.util.Arrays.equals(this.NPOSQ, other.getNPOSQ()))) &&
+//            ((this.NPOSQRsp==null && other.getNPOSQRsp()==null) || 
+//             (this.NPOSQRsp!=null &&
+//              java.util.Arrays.equals(this.NPOSQRsp, other.getNPOSQRsp()))) &&
+//            ((this.NOTE==null && other.getNOTE()==null) || 
+//             (this.NOTE!=null &&
+//              java.util.Arrays.equals(this.NOTE, other.getNOTE()))) &&
+//            ((this.rsp==null && other.getRsp()==null) || 
+//             (this.rsp!=null &&
+//              java.util.Arrays.equals(this.rsp, other.getRsp()))) &&
+//            ((this.version==null && other.getVersion()==null) || 
+//             (this.version!=null &&
+//              this.version.equals(other.getVersion())));
+//        __equalsCalc = null;
+//        return _equals;
+//    }
+//
+//    private boolean __hashCodeCalc = false;
+//    public synchronized int hashCode() {
+//        if (__hashCodeCalc) {
+//            return 0;
+//        }
+//        __hashCodeCalc = true;
+//        int _hashCode = 1;
+//        if (getNPO() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPO());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPO(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNVP() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNVP());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNVP(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNVPA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNVPA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNVPA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOT() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOT());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOT(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getCAN() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getCAN());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getCAN(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOS() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOS());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOS(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOSTER() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOSTER());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOSTER(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOSA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOSA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOSA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOSAACK() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOSAACK());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOSAACK(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOSPR() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOSPR());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOSPR(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOTA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOTA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOTA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getPER() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getPER());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getPER(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSD() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSD());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSD(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSDA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSDA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSDA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSC() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSC());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSC(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSCA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSCA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSCA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSCNOTICE() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSCNOTICE());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSCNOTICE(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSCNOTICEA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSCNOTICEA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSCNOTICEA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSDNOTICE() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSDNOTICE());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSDNOTICE(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getSDNOTICEA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getSDNOTICEA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getSDNOTICEA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRDBPD() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRDBPD());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRDBPD(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRDBPDRsp() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRDBPDRsp());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRDBPDRsp(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRDBFD() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRDBFD());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRDBFD(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRDBFDRsp() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRDBFDRsp());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRDBFDRsp(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRNA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRNA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRNA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRNAA() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRNAA());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRNAA(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getTQ() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getTQ());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getTQ(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getTQRsp() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getTQRsp());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getTQRsp(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOSQ() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOSQ());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOSQ(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNPOSQRsp() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNPOSQRsp());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNPOSQRsp(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getNOTE() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getNOTE());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getNOTE(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getRsp() != null) {
+//            for (int i=0;
+//                 i<java.lang.reflect.Array.getLength(getRsp());
+//                 i++) {
+//                java.lang.Object obj = java.lang.reflect.Array.get(getRsp(), i);
+//                if (obj != null &&
+//                    !obj.getClass().isArray()) {
+//                    _hashCode += obj.hashCode();
+//                }
+//            }
+//        }
+//        if (getVersion() != null) {
+//            _hashCode += getVersion().hashCode();
+//        }
+//        __hashCodeCalc = false;
+//        return _hashCode;
+//    }
+//
+//    // Type metadata
+//    private static org.apache.axis.description.TypeDesc typeDesc =
+//        new org.apache.axis.description.TypeDesc(MNPFrame.class, true);
+//
+//    static {
+//        typeDesc.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", ">MNPFrame"));
+//        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+//        attrField.setFieldName("version");
+//        attrField.setXmlName(new javax.xml.namespace.QName("", "version"));
+//        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+//        typeDesc.addFieldDesc(attrField);
+//        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPO");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPO"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NVP");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NVP"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NVPType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NVPA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NVPA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NVPAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOT");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOT"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOTType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("CAN");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "CAN"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "CANType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOS");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOS"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOSTER");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSTER"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSTERType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOSA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOSAACK");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSAACK"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSAACKType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOSPR");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSPR"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSPRType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOTA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOTA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOTAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("PER");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "PER"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "PERType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SD");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SD"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SDType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SDA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SDA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SDAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SC");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SC"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SCType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SCA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SCA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SCAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SCNOTICE");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SC-NOTICE"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SC-NOTICEType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SCNOTICEA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SC-NOTICEA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SC-NOTICEAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SDNOTICE");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SD-NOTICE"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SD-NOTICEType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("SDNOTICEA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "SD-NOTICEA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "SD-NOTICEAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("RDBPD");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBPD"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBPDType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("RDBPDRsp");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBPDRsp"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBPDRspType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("RDBFD");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBFD"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBFDType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("RDBFDRsp");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBFDRsp"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RDBFDRspType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("RNA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "RNA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RNAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("RNAA");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "RNAA"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RNAAType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("TQ");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "TQ"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "TQType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("TQRsp");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "TQRsp"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "TQRspType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOSQ");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSQ"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSQType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NPOSQRsp");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSQRsp"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NPOSQRspType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("NOTE");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "NOTE"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "NOTEType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//        elemField = new org.apache.axis.description.ElementDesc();
+//        elemField.setFieldName("rsp");
+//        elemField.setXmlName(new javax.xml.namespace.QName("MNPProtocol.xsd", "Rsp"));
+//        elemField.setXmlType(new javax.xml.namespace.QName("MNPProtocol.xsd", "RspType"));
+//        elemField.setMinOccurs(0);
+//        elemField.setNillable(false);
+//        elemField.setMaxOccursUnbounded(true);
+//        typeDesc.addFieldDesc(elemField);
+//    }
+//
+//    /**
+//     * Return type metadata object
+//     */
+//    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+//        return typeDesc;
+//    }
+//
+//    /**
+//     * Get Custom Serializer
+//     */
+//    public static org.apache.axis.encoding.Serializer getSerializer(
+//           java.lang.String mechType, 
+//           java.lang.Class _javaType,  
+//           javax.xml.namespace.QName _xmlType) {
+//        return 
+//          new  org.apache.axis.encoding.ser.BeanSerializer(
+//            _javaType, _xmlType, typeDesc);
+//    }
+//
+//    /**
+//     * Get Custom Deserializer
+//     */
+//    public static org.apache.axis.encoding.Deserializer getDeserializer(
+//           java.lang.String mechType, 
+//           java.lang.Class _javaType,  
+//           javax.xml.namespace.QName _xmlType) {
+//        return 
+//          new  org.apache.axis.encoding.ser.BeanDeserializer(
+//            _javaType, _xmlType, typeDesc);
+//    }
+
+}

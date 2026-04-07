@@ -1,0 +1,27 @@
+<project name="WSDL2Java" default="generate-stubs" basedir=".">
+
+	<!-- Set properties -->
+	<property name="wsdl.url"
+		value="D:\backup\office\CapRegenRequest.wsdl" />
+	<property name="generated.src.dir" value="src/generated" />
+	<property name="package.name" value="com.example.stub" />
+
+	<!-- Target to generate stubs -->
+	<target name="generate-stubs">
+		<mkdir dir="${generated.src.dir}" />
+
+		<exec executable="wsimport" failonerror="true">
+			<arg value="-verbose" />
+			<arg value="-Xdebug" />
+			<arg value="-keep" />
+			<arg value="-d" />
+			<arg value="${output.dir}" />
+			<arg value="-s" />
+			<arg value="${source.dir}" />
+			<arg value="-p" />
+			<arg value="${package.name}" />
+			<arg value="${wsdl.url}" />
+		</exec>
+	</target>
+
+</project>

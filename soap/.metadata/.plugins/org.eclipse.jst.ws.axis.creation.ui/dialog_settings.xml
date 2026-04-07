@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.internal.axis.creation.ui.widgets.bean.BeanConfigWidget.wsdlFileText_">
+		<item value="PersonServiceImpl.wsdl"/>
+		<item value="MNPFrame.wsdl"/>
+		<item value="MNPFrameSoapBindingImpl.wsdl"/>
+		<item value="CalculatorSoap11BindingStub.wsdl"/>
+	</list>
+</section>

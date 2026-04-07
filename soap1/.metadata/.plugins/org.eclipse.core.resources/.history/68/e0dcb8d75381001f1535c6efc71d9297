@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://tempuri.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://tempuri.org" xmlns:intf="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4.1-SNAPSHOT
+Built on Nov 07, 2023 (07:57:58 UTC)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://tempuri.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="add">
+    <complexType>
+     <sequence>
+      <element name="intA" type="xsd:int"/>
+      <element name="intB" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addResponse">
+    <complexType>
+     <sequence>
+      <element name="addReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiply">
+    <complexType>
+     <sequence>
+      <element name="intA" type="xsd:int"/>
+      <element name="intB" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplyResponse">
+    <complexType>
+     <sequence>
+      <element name="multiplyReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtract">
+    <complexType>
+     <sequence>
+      <element name="intA" type="xsd:int"/>
+      <element name="intB" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtractResponse">
+    <complexType>
+     <sequence>
+      <element name="subtractReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divide">
+    <complexType>
+     <sequence>
+      <element name="intA" type="xsd:int"/>
+      <element name="intB" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divideResponse">
+    <complexType>
+     <sequence>
+      <element name="divideReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEndpoint">
+    <complexType/>
+   </element>
+   <element name="getEndpointResponse">
+    <complexType>
+     <sequence>
+      <element name="getEndpointReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEndpoint">
+    <complexType>
+     <sequence>
+      <element name="endpoint" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEndpointResponse">
+    <complexType/>
+   </element>
+   <element name="getCalculatorSoap">
+    <complexType/>
+   </element>
+   <element name="getCalculatorSoapResponse">
+    <complexType>
+     <sequence>
+      <element name="getCalculatorSoapReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="subtractRequest">
+
+      <wsdl:part element="impl:subtract" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideRequest">
+
+      <wsdl:part element="impl:divide" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyRequest">
+
+      <wsdl:part element="impl:multiply" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEndpointResponse">
+
+      <wsdl:part element="impl:getEndpointResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEndpointResponse">
+
+      <wsdl:part element="impl:setEndpointResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCalculatorSoapRequest">
+
+      <wsdl:part element="impl:getCalculatorSoap" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideResponse">
+
+      <wsdl:part element="impl:divideResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEndpointRequest">
+
+      <wsdl:part element="impl:setEndpoint" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part element="impl:addResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyResponse">
+
+      <wsdl:part element="impl:multiplyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtractResponse">
+
+      <wsdl:part element="impl:subtractResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part element="impl:add" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEndpointRequest">
+
+      <wsdl:part element="impl:getEndpoint" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCalculatorSoapResponse">
+
+      <wsdl:part element="impl:getCalculatorSoapResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CalculatorSoapProxy">
+
+      <wsdl:operation name="add">
+
+         <wsdl:input message="impl:addRequest" name="addRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addResponse" name="addResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiply">
+
+         <wsdl:input message="impl:multiplyRequest" name="multiplyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplyResponse" name="multiplyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtract">
+
+         <wsdl:input message="impl:subtractRequest" name="subtractRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtractResponse" name="subtractResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divide">
+
+         <wsdl:input message="impl:divideRequest" name="divideRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divideResponse" name="divideResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEndpoint">
+
+         <wsdl:input message="impl:getEndpointRequest" name="getEndpointRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEndpointResponse" name="getEndpointResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEndpoint">
+
+         <wsdl:input message="impl:setEndpointRequest" name="setEndpointRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setEndpointResponse" name="setEndpointResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCalculatorSoap">
+
+         <wsdl:input message="impl:getCalculatorSoapRequest" name="getCalculatorSoapRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCalculatorSoapResponse" name="getCalculatorSoapResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CalculatorSoapProxySoapBinding" type="impl:CalculatorSoapProxy">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiply">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtract">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtractRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtractResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divide">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divideRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divideResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEndpoint">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEndpointRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEndpointResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEndpoint">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setEndpointRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setEndpointResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCalculatorSoap">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCalculatorSoapRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCalculatorSoapResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CalculatorSoapProxyService">
+
+      <wsdl:port binding="impl:CalculatorSoapProxySoapBinding" name="CalculatorSoapProxy">
+
+         <wsdlsoap:address location="http://tempuri.org/CalculatorWsdl/services/CalculatorSoapProxy"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

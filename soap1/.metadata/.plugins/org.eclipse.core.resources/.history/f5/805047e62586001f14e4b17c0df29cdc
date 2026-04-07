@@ -1,0 +1,13 @@
+package com.example.calculator;
+
+
+public interface CalculatorService{
+
+    public int add(Calculator c);
+
+    public int subtract(Calculator c);
+
+    public int multiply(Calculator c);
+
+    public int divide(Calculator c) throws ArithmeticException;
+}

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4.1-SNAPSHOT
+Built on Nov 07, 2023 (07:57:58 UTC)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="multiplyTwoNumbers">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplyTwoNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="multiplyTwoNumbersReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addTwoNumbers">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addTwoNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="addTwoNumbersReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divisionTwoNumbers">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divisionTwoNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="divisionTwoNumbersReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="substractTwoNumbers">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="substractTwoNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="substractTwoNumbersReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="multiplyTwoNumbersResponse">
+
+      <wsdl:part element="impl:multiplyTwoNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divisionTwoNumbersRequest">
+
+      <wsdl:part element="impl:divisionTwoNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divisionTwoNumbersResponse">
+
+      <wsdl:part element="impl:divisionTwoNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addTwoNumbersRequest">
+
+      <wsdl:part element="impl:addTwoNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addTwoNumbersResponse">
+
+      <wsdl:part element="impl:addTwoNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="substractTwoNumbersRequest">
+
+      <wsdl:part element="impl:substractTwoNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyTwoNumbersRequest">
+
+      <wsdl:part element="impl:multiplyTwoNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="substractTwoNumbersResponse">
+
+      <wsdl:part element="impl:substractTwoNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AdditionOfTwoNumbers">
+
+      <wsdl:operation name="multiplyTwoNumbers">
+
+         <wsdl:input message="impl:multiplyTwoNumbersRequest" name="multiplyTwoNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplyTwoNumbersResponse" name="multiplyTwoNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addTwoNumbers">
+
+         <wsdl:input message="impl:addTwoNumbersRequest" name="addTwoNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addTwoNumbersResponse" name="addTwoNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divisionTwoNumbers">
+
+         <wsdl:input message="impl:divisionTwoNumbersRequest" name="divisionTwoNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divisionTwoNumbersResponse" name="divisionTwoNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="substractTwoNumbers">
+
+         <wsdl:input message="impl:substractTwoNumbersRequest" name="substractTwoNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:substractTwoNumbersResponse" name="substractTwoNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AdditionOfTwoNumbersSoapBinding" type="impl:AdditionOfTwoNumbers">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="multiplyTwoNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplyTwoNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplyTwoNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addTwoNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addTwoNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addTwoNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divisionTwoNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divisionTwoNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divisionTwoNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="substractTwoNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="substractTwoNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="substractTwoNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AdditionOfTwoNumbersService">
+
+      <wsdl:port binding="impl:AdditionOfTwoNumbersSoapBinding" name="AdditionOfTwoNumbers">
+
+         <wsdlsoap:address location="http://localhost:9799/WebServiceFirst1/services/AdditionOfTwoNumbers"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

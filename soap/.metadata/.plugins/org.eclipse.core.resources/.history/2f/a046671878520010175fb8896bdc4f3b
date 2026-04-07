@@ -1,0 +1,12 @@
+package generated.com.example.stub;
+
+import java.util.List;
+import com.example.stub.CheckCAPRegenRequestBody;
+
+public class Test {
+	public static void main(String[] args) {
+		Test1 test1 = new Test1();
+		List<String> test = test1.getNumber();
+		System.out.println(test);
+	}
+}

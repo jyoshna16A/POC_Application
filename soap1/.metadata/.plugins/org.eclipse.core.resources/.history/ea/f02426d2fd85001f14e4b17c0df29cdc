@@ -1,0 +1,29 @@
+package com.example.calculator;
+
+
+public class CalculatorServiceImpl implements CalculatorService {
+
+    @Override
+    public int add(Calculator c) {
+    	System.out.println("Add : " + c.getA() + c.getB());
+        return c.getA() + c.getB();
+    }
+
+    @Override
+    public int subtract(Calculator c) {
+        return c.getA() - c.getB();
+    }
+
+    @Override
+    public int multiply(Calculator c) {
+        return c.getA() * c.getB();
+    }
+
+    @Override
+    public int divide(Calculator c) throws ArithmeticException {
+        if (c.getB() == 0) {
+            throw new ArithmeticException("Division by zero is not allowed");
+        }
+        return c.getA() / c.getB();
+    }
+}

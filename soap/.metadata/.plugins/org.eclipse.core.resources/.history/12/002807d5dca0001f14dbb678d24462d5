@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project name="jboss wsconsume" basedir=".">
+   <!-- Load the JBossWS Ant tasks -->
+   <property name="jboss.home" location="C:\Users\ADMIN\Downloads\jboss-5.1.0.GA\jboss-5.1.0.GA"/>
+   <path id="jboss.classpath">
+      <fileset dir="${jboss.home}/lib">
+         <include name="*.jar"/>
+      </fileset>
+     
+      <pathelement location="C:\Program Files\Java\jdk1.8.0_202\lib\tools.jar"/>
+   </path>
+
+   
+	<wsconsume 
+	  fork="true"
+	  verbose="true"
+	  destdir="output"
+	  sourcedestdir="gen-src"
+	  keep="true"
+	  wsdllocation="C:\Users\ADMIN\Downloads\mnpservice.wsdl">
+	  <binding dir="binding-files" includes="*.xml" excludes="bad.xml"/>
+	</wsconsume>
+
+   <target name="clean">
+      <!-- Clean generated directories -->
+      <echo>Cleaning output and generated source directories...</echo>
+      <delete dir="output"/>
+      <delete dir="gen-src"/>
+   </target>
+</project>

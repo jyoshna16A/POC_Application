@@ -1,0 +1,133 @@
+
+package com.example;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for QuotaResultType complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="QuotaResultType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}QuotaDate"/&gt;
+ *         &lt;element name="DonorQuota" type="{MNPProtocol.xsd}DonorQuotaType"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}ActivationQuota"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}MaxSNPerNPO"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "QuotaResultType", propOrder = {
+    "quotaDate",
+    "donorQuota",
+    "activationQuota",
+    "maxSNPerNPO"
+})
+public class QuotaResultType {
+
+    @XmlElement(name = "QuotaDate", required = true)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar quotaDate;
+    @XmlElement(name = "DonorQuota", required = true)
+    protected DonorQuotaType donorQuota;
+    @XmlElement(name = "ActivationQuota")
+    protected int activationQuota;
+    @XmlElement(name = "MaxSNPerNPO")
+    protected int maxSNPerNPO;
+
+    /**
+     * Gets the value of the quotaDate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getQuotaDate() {
+        return quotaDate;
+    }
+
+    /**
+     * Sets the value of the quotaDate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setQuotaDate(XMLGregorianCalendar value) {
+        this.quotaDate = value;
+    }
+
+    /**
+     * Gets the value of the donorQuota property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DonorQuotaType }
+     *     
+     */
+    public DonorQuotaType getDonorQuota() {
+        return donorQuota;
+    }
+
+    /**
+     * Sets the value of the donorQuota property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DonorQuotaType }
+     *     
+     */
+    public void setDonorQuota(DonorQuotaType value) {
+        this.donorQuota = value;
+    }
+
+    /**
+     * Gets the value of the activationQuota property.
+     * 
+     */
+    public int getActivationQuota() {
+        return activationQuota;
+    }
+
+    /**
+     * Sets the value of the activationQuota property.
+     * 
+     */
+    public void setActivationQuota(int value) {
+        this.activationQuota = value;
+    }
+
+    /**
+     * Gets the value of the maxSNPerNPO property.
+     * 
+     */
+    public int getMaxSNPerNPO() {
+        return maxSNPerNPO;
+    }
+
+    /**
+     * Sets the value of the maxSNPerNPO property.
+     * 
+     */
+    public void setMaxSNPerNPO(int value) {
+        this.maxSNPerNPO = value;
+    }
+
+}

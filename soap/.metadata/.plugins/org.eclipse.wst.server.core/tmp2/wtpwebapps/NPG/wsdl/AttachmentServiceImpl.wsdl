@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.com" xmlns:intf="http://service.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4.1-SNAPSHOT
+Built on Nov 07, 2023 (07:57:58 UTC)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="uploadFile">
+    <complexType>
+     <sequence>
+      <element name="filePath" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="uploadFileResponse">
+    <complexType>
+     <sequence>
+      <element name="uploadFileReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="downloadEncryptFile">
+    <complexType>
+     <sequence>
+      <element name="fileData" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="downloadEncryptFileResponse">
+    <complexType>
+     <sequence>
+      <element name="downloadEncryptFileReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="downloadFile">
+    <complexType>
+     <sequence>
+      <element name="fileData" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="downloadFileResponse">
+    <complexType>
+     <sequence>
+      <element name="downloadFileReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="downloadEncryptFileResponse">
+
+      <wsdl:part element="impl:downloadEncryptFileResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="uploadFileRequest">
+
+      <wsdl:part element="impl:uploadFile" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="downloadFileResponse">
+
+      <wsdl:part element="impl:downloadFileResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="downloadEncryptFileRequest">
+
+      <wsdl:part element="impl:downloadEncryptFile" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="uploadFileResponse">
+
+      <wsdl:part element="impl:uploadFileResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="downloadFileRequest">
+
+      <wsdl:part element="impl:downloadFile" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AttachmentServiceImpl">
+
+      <wsdl:operation name="uploadFile">
+
+         <wsdl:input message="impl:uploadFileRequest" name="uploadFileRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:uploadFileResponse" name="uploadFileResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="downloadEncryptFile">
+
+         <wsdl:input message="impl:downloadEncryptFileRequest" name="downloadEncryptFileRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:downloadEncryptFileResponse" name="downloadEncryptFileResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="downloadFile">
+
+         <wsdl:input message="impl:downloadFileRequest" name="downloadFileRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:downloadFileResponse" name="downloadFileResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AttachmentServiceImplSoapBinding" type="impl:AttachmentServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="uploadFile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="uploadFileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="uploadFileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="downloadEncryptFile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="downloadEncryptFileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="downloadEncryptFileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="downloadFile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="downloadFileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="downloadFileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AttachmentServiceImplService">
+
+      <wsdl:port binding="impl:AttachmentServiceImplSoapBinding" name="AttachmentServiceImpl">
+
+         <wsdlsoap:address location="http://tempuri.org/NPG/services/AttachmentServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+/**
+ * MNPFrameService.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4.1-SNAPSHOT Nov 07, 2023 (07:57:58 UTC) WSDL2Java emitter.
+ */
+
+package com.example;
+
+public interface MNPFrameService extends javax.xml.rpc.Service {
+    public java.lang.String getMNPFrameAddress();
+
+    public com.example.MNPFrame getMNPFrame() throws javax.xml.rpc.ServiceException;
+
+    public com.example.MNPFrame getMNPFrame(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+}

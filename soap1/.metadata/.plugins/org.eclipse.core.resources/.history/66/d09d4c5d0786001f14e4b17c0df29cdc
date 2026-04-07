@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:tempuri.org="http://tempuri.org">
+  <wsdd:service name="CalculatorSoapProxy" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://tempuri.org"/>
+    <wsdd:parameter name="wsdlServiceElement" value="CalculatorSoapProxyService"/>
+    <wsdd:parameter name="schemaQualified" value="http://tempuri.org"/>
+    <wsdd:parameter name="wsdlServicePort" value="CalculatorSoapProxy"/>
+    <wsdd:parameter name="className" value="org.tempuri.CalculatorSoapProxy"/>
+    <wsdd:parameter name="wsdlPortType" value="CalculatorSoapProxy"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="add getCalculatorSoap subtract divide getEndpoint multiply setEndpoint"/>
+    <wsdd:operation name="add" qname="tempuri.org:add" returnQName="tempuri.org:addReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="tempuri.org:intA" type="XMLSchema:int"/>
+      <wsdd:parameter qname="tempuri.org:intB" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="multiply" qname="tempuri.org:multiply" returnQName="tempuri.org:multiplyReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="tempuri.org:intA" type="XMLSchema:int"/>
+      <wsdd:parameter qname="tempuri.org:intB" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="subtract" qname="tempuri.org:subtract" returnQName="tempuri.org:subtractReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="tempuri.org:intA" type="XMLSchema:int"/>
+      <wsdd:parameter qname="tempuri.org:intB" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="divide" qname="tempuri.org:divide" returnQName="tempuri.org:divideReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="tempuri.org:intA" type="XMLSchema:int"/>
+      <wsdd:parameter qname="tempuri.org:intB" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="getEndpoint" qname="tempuri.org:getEndpoint" returnQName="tempuri.org:getEndpointReturn" returnType="XMLSchema:string" soapAction=""/>
+    <wsdd:operation name="setEndpoint" qname="tempuri.org:setEndpoint" soapAction="">
+      <wsdd:parameter qname="tempuri.org:endpoint" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="getCalculatorSoap" qname="tempuri.org:getCalculatorSoap" returnQName="tempuri.org:getCalculatorSoapReturn" returnType="XMLSchema:anyType" soapAction=""/>
+  </wsdd:service>
+</wsdd:deployment>

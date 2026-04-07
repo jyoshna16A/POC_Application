@@ -1,0 +1,25 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<wsdd:deployment xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:jyoshna.com="http://jyoshna.com"
+    xmlns:wsdd="http://xml.apache.org/axis/wsdd/">
+  <wsdd:service name="Test" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://jyoshna.com"/>
+    <wsdd:parameter name="wsdlServiceElement" value="TestService"/>
+    <wsdd:parameter name="schemaQualified" value="http://jyoshna.com"/>
+    <wsdd:parameter name="wsdlServicePort" value="Test"/>
+    <wsdd:parameter name="className" value="com.jyoshna.TestSoapBindingImpl"/>
+    <wsdd:parameter name="wsdlPortType" value="Test"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="main"/>
+    <wsdd:operation name="main" qname="jyoshna.com:main" soapAction="">
+      <wsdd:parameter qname="jyoshna.com:args" type="XMLSchema:string"/>
+    </wsdd:operation>
+  </wsdd:service>
+</wsdd:deployment>

@@ -1,0 +1,37 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<wsdd:deployment xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+    xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:www.webservicex.net="http://www.webservicex.net/">
+  <wsdd:service name="GeoIPServiceSoap" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://www.webservicex.net/"/>
+    <wsdd:parameter name="wsdlServiceElement" value="GeoIPService"/>
+    <wsdd:parameter name="schemaQualified" value="http://www.webservicex.net/"/>
+    <wsdd:parameter name="wsdlServicePort" value="GeoIPServiceSoap"/>
+    <wsdd:parameter name="className" value="net.webservicex.www.GeoIPServiceSoapSkeleton"/>
+    <wsdd:parameter name="wsdlPortType" value="GeoIPServiceSoap"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="*"/>
+    <wsdd:typeMapping qname="www.webservicex.net:GeoIP" type="java:net.webservicex.www.GeoIP"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+  </wsdd:service>
+  <wsdd:service name="GeoIPServiceSoap12" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://www.webservicex.net/"/>
+    <wsdd:parameter name="wsdlServiceElement" value="GeoIPService"/>
+    <wsdd:parameter name="schemaQualified" value="http://www.webservicex.net/"/>
+    <wsdd:parameter name="wsdlServicePort" value="GeoIPServiceSoap12"/>
+    <wsdd:parameter name="className" value="net.webservicex.www.GeoIPServiceSoap12Skeleton"/>
+    <wsdd:parameter name="wsdlPortType" value="GeoIPServiceSoap"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="*"/>
+    <wsdd:typeMapping qname="www.webservicex.net:GeoIP" type="java:net.webservicex.www.GeoIP"
+        encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+  </wsdd:service>
+</wsdd:deployment>

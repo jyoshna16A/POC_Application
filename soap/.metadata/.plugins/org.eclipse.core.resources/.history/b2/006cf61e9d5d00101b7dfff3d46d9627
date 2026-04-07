@@ -1,0 +1,16 @@
+package generated.com.example.stub;
+
+import java.util.List;
+
+public class Test {
+	public static void main(String[] args) {
+		Test1 test1 = new Test1();
+		/*
+		 * List<String> test = test1.getNumber(); test.add("0"); test.add("1");
+		 * System.out.println(test);
+		 */
+		test1.setI(null);
+		Integer i = test1.getI();
+		System.out.println(i);
+	}
+}

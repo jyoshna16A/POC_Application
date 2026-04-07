@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="jboss wsconsume" basedir=".">
+   <!-- Load the JBossWS Ant tasks -->
+   <property name="jboss.home" location="C:\Users\ADMIN\Downloads\jboss-5.1.0.GA\jboss-5.1.0.GA"/>
+   <path id="jboss.classpath">
+      <fileset dir="${jboss.home}/lib">
+         <include name="*.jar"/>
+      </fileset>
+     
+      <pathelement location="C:\Program Files\Java\jdk1.8.0_202\lib\tools.jar"/>
+   </path>
+
+   <target name="generateClient" depends="clean">
+      <mkdir dir="${basedir}/src"/>
+      <java classname="org.jboss.ws.tools.cmd.WSConsume" fork="true" failonerror="true">
+         <arg value="-k"/> <!-- Keeps the generated source -->
+         <arg value="-o"/>
+         <arg value="${basedir}/src"/>
+         <arg value="C:\Users\ADMIN\Downloads\mnpservice.wsdl"/>
+         <classpath>
+            <path refid="jboss.classpath"/>
+         </classpath>
+      </java>
+   </target>
+
+   <target name="clean">
+      <!-- Clean generated directories -->
+      <echo>Cleaning output and generated source directories...</echo>
+      <delete dir="output"/>
+      <delete dir="gen-src"/>
+   </target>
+</project>

@@ -1,0 +1,53 @@
+<project name="axis2-transport-http" default="package" basedir=".">
+    
+    <!-- Define properties -->
+    <property name="build.dir" value="target"/>
+    <property name="jar.name" value="axis2-transport-http-1.6.2.jar"/>
+    
+    <!-- Initialize the build directory -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <echo>"${build.dir}"</echo>
+    </target>
+    
+    <!-- Compile Java files -->
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="${build.dir}" 
+               > 
+        </javac>
+    </target>
+    
+    <!-- Package into a JAR -->
+   <!--  <target name="jar" depends="compile">
+        <mkdir dir="${build.dir}/lib"/>
+        <copy todir="${build.dir}/lib">
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+        
+        <jar destfile="${build.dir}/${jar.name}" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="your.main.ClassName"/>
+            </manifest>
+        </jar>
+    </target> -->
+
+    <!-- Shade functionality (Relocating javax.* to jakarta.*) -->
+    <target name="shade" depends="compile">
+        <echo message="Shading javax.* to jakarta.*"/>
+        <replace dir="${build.dir}">
+            <replacefilter token="javax.servlet" value="jakarta.servlet"/>
+            
+            <replacefilter token="javax.activation" value="jakarta.activation"/>
+        </replace>
+        
+    </target>
+
+    <!-- Package the final JAR -->
+    <target name="package" depends="shade">
+    	<jar destfile="${build.dir}/${jar.name}" basedir="${basedir}" />
+        <echo message="Packaging complete. Final JAR: ${build.dir}/${jar.name}"/>
+    </target>
+
+</project>

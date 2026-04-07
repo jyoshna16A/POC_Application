@@ -1,0 +1,12 @@
+127.0.0.1 - - [09/Jan/2025:11:22:59 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [09/Jan/2025:11:23:00 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 291
+127.0.0.1 - - [09/Jan/2025:11:23:00 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 5219
+127.0.0.1 - - [09/Jan/2025:11:23:24 +0530] "POST /SOAPWSDL/services/PersonServiceImpl HTTP/1.1" 200 383
+127.0.0.1 - - [09/Jan/2025:11:32:40 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [09/Jan/2025:11:32:40 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 291
+127.0.0.1 - - [09/Jan/2025:11:32:40 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 5219
+127.0.0.1 - - [09/Jan/2025:11:33:02 +0530] "POST /SOAPWSDL/services/PersonServiceImpl HTTP/1.1" 200 383
+127.0.0.1 - - [09/Jan/2025:11:36:04 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [09/Jan/2025:11:36:04 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 291
+127.0.0.1 - - [09/Jan/2025:11:36:04 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 5219
+127.0.0.1 - - [09/Jan/2025:11:36:18 +0530] "POST /SOAPWSDL/services/PersonServiceImpl HTTP/1.1" 200 383

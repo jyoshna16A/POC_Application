@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:mnpprotocol.xsd="http://mnpprotocol.xsd">
+  <wsdd:service name="MnpClient" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://mnpprotocol.xsd"/>
+    <wsdd:parameter name="wsdlServiceElement" value="MnpClientService"/>
+    <wsdd:parameter name="schemaQualified" value="http://mnpprotocol.xsd"/>
+    <wsdd:parameter name="wsdlServicePort" value="MnpClient"/>
+    <wsdd:parameter name="className" value="xsd.mnpprotocol.MnpClient"/>
+    <wsdd:parameter name="wsdlPortType" value="MnpClient"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="send send1"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:SubscriberResultType" type="java:xsd.mnpprotocol.SubscriberResultType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:MNPFrame" type="java:xsd.mnpprotocol.MNPFrame" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:NPOAType" type="java:xsd.mnpprotocol.NPOAType" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="mnpprotocol.xsd:&gt;send1Response" type="java:xsd.mnpprotocol.Send1Response" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:operation name="send" qname="mnpprotocol.xsd:send" returnQName="mnpprotocol.xsd:sendReturn" returnType="XMLSchema:string" soapAction="">
+      <wsdd:parameter qname="mnpprotocol.xsd:message" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="send1" qname="mnpprotocol.xsd:send1" returnQName="mnpprotocol.xsd:send1Return" returnType="mnpprotocol.xsd:MNPFrame" soapAction="">
+      <wsdd:parameter qname="mnpprotocol.xsd:mnpFrame" type="mnpprotocol.xsd:MNPFrame"/>
+    </wsdd:operation>
+  </wsdd:service>
+</wsdd:deployment>

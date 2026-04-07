@@ -1,0 +1,13 @@
+package generated.com.example.stub;
+
+import java.util.List;
+
+import com.example.stub.CheckCAPRegenRequestBody;
+
+public class Test {
+	public static void main(String[] args) {
+		CheckCAPRegenRequestBody check = new CheckCAPRegenRequestBody();
+		List<String> test = check.getAssociatedTNs();
+		System.out.println(test);
+	}
+}

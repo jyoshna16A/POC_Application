@@ -1,0 +1,12 @@
+package com.example.calculator;
+
+import javax.xml.ws.Endpoint;
+
+public class CalculatorServicePublisher {
+
+    public static void main(String[] args) {
+        // Publish the service at this URL
+        Endpoint.publish("http://localhost:9799/CalculatorWsdl/services/CalculatorServiceImpl.wsdl", new CalculatorServiceImpl());
+        System.out.println("Calculator Web Service is running at http://localhost:9799/ws/calculator?wsdl");
+    }
+}

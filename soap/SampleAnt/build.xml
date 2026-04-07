@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<project name="cxf wsdl2java" basedir=".">   
+   <property name="cxf.home" location ="${basedir}/apache-cxf"/>
+	<property name="build.dir" value="bin"/>
+	<property name="lib.dir" value="${basedir}/lib"/>
+	<property name = "src.dir" value = "${basedir}/src"/>
+   <path id="cxf.classpath">
+      <fileset dir="${cxf.home}/lib">
+         <include name="*.jar"/>
+      	<include name = "${basedir}\lib\junit-4.12.jar"/>
+      </fileset>
+	   <!--	<fileset dir="${lib.dir}">
+	        <include name="*.jar"/>
+	    </fileset>-->
+   	  <!--<fileset dir = "${src.dir}">
+   	  	    <include name =""/>
+   	  </fileset>-->
+    <pathelement path="${build.dir}"/>
+   </path>
+       
+	<target name="cxfWSDLToJava" depends = "clean">
+	    <mkdir dir="${basedir}"/>
+	    <java classname="org.apache.cxf.tools.wsdlto.WSDLToJava" fork="true">
+	        <!-- Specify the output directory for generated Java files -->
+	        <arg value="-d"/>
+	        <arg value="${basedir}/src"/>
+	        <arg value="${basedir}/wsdl/mnpservice.wsdl"/>
+	        <classpath>
+	            <path refid="cxf.classpath"/>
+	        </classpath>
+	    </java>
+	</target>
+	
+	<target name="runJavaClass" depends="compile">
+	    <echo>Running MyTestClass for localhost...</echo>
+	    <java classname="com.jyoshna.Test" fork="true">
+	        <arg value="localhost"/>
+	        <classpath>
+	            <path refid="cxf.classpath"/>
+	        </classpath>
+	    </java>
+
+	    <echo>Running MyTestClass for system IP...</echo>
+	    <java classname="com.jyoshna.Test" fork="true">
+	        <arg value="useSystemIp"/>
+	        <classpath>
+	            <path refid="cxf.classpath"/>
+	        </classpath>
+	    </java>
+	</target>
+
+	
+	<target name="compile" depends="compileService">
+	        <echo>Compiling Test.java...</echo>
+	        <javac srcdir="src" destdir="${build.dir}" classpathref="cxf.classpath"/>
+	    </target>
+	
+	<target name="compileService">
+	    <mkdir dir="bin"/>
+	    <javac srcdir="src" destdir="bin"/>
+	</target>
+
+	
+	<target name="clean">
+	    <!-- Delete the src directory to clean it -->
+		<echo>Clean the src directory</echo>
+	    <delete dir="${basedir}/src/xsd/mnpprotocol"/>
+	</target>
+	
+</project>

@@ -1,0 +1,6 @@
+127.0.0.1 - - [27/Jan/2025:15:21:24 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [27/Jan/2025:15:21:24 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 291
+127.0.0.1 - - [27/Jan/2025:15:21:24 +0530] "POST /SOAPWSDL/services/AdminService HTTP/1.0" 200 5219
+169.254.191.30 - - [27/Jan/2025:15:22:03 +0530] "GET /SOAPWSDL/services/PersonServiceImpl?wsdl HTTP/1.1" 200 6645
+169.254.191.30 - - [27/Jan/2025:15:22:03 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+127.0.0.1 - - [27/Jan/2025:16:09:11 +0530] "POST /SOAPWSDL/services/PersonServiceImpl HTTP/1.1" 200 1545

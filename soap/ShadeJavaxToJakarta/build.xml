@@ -1,0 +1,54 @@
+<project name="axis2-transport-http" default="package" basedir=".">
+
+    <property name="maven.compiler.source" value="17"/>
+    <property name="maven.compiler.target" value="17"/>
+    <property name="build.dir" value="target"/>
+    <property name="jar.name" value="axis2-transport-http-1.6.2.jar"/>
+    <property name="proguard.jar" value="lib/proguard.jar"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="${build.dir}">
+            <classpath>
+                <fileset dir="lib">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${build.dir}/lib"/>
+        <copy todir="${build.dir}/lib">
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+        
+        <jar destfile="${build.dir}/${jar.name}" basedir="${build.dir}"/>
+    </target>
+
+    <target name="shade" depends="jar">
+        <echo message="Shading javax.* to jakarta.* using ProGuard"/>
+        <java jar="${proguard.jar}" fork="true">
+            <arg value="-injars"/>
+            <arg value="${build.dir}/${jar.name}"/>
+            <arg value="-outjars"/>
+            <arg value="${build.dir}/${jar.name}"/>  <!-- Overwrites the original file -->
+            <arg value="-dontwarn"/>
+            <arg value="-dontoptimize"/>
+            <arg value="-dontobfuscate"/>
+            <arg value="-keep class * {*;}"/>
+            <arg value="-repackageclasses jakarta"/>
+            <arg value="-allowaccessmodification"/>
+        </java>
+    </target>
+
+    <target name="package" depends="shade">
+        <echo message="Shaded JAR is ready: ${build.dir}/${jar.name}"/>
+    </target>
+
+</project>

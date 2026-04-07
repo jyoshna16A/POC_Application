@@ -1,0 +1,42 @@
+
+ppk file:
+
+For our environment:
+------------------------
+"C:\Users\ADMIN\Downloads\bharath_139.59.70.157.ppk"  need to place that file in the WinSCP -> Advanced -> SSC --> Authentication
+and in MobaXtrem also we need to add the ppk file in the advanced settings -> private key
+
+For customer environment:
+-------------------------
+"C:\Users\ADMIN\Downloads\loadtrippingKey 1.ppk"  need to place that file in the WinSCP -> Advanced -> SSC --> Authentication
+and in MobaXtrem also we need to add the ppk file in the advanced settings -> private key
+
+MobaXterm :
+-----------
+Passphrase for key "bharath@iot-dev1": Bh@rath
+su -l iot  
+iotpsswd
+cd Mahesh
+ps -eaf | grep java
+kill -9 2100221
+sudo cp /home/bharath/LTBackend-1.0.0.jar .
+nohup java -jar LTBackend-1.0.0.jar &
+
+key file: Downloads
+
+
+to check the keystore.jks file is latest file or not:
+
+D:\load_triping\Git\bin\LT_Backend\LT_Backend\LTBackend\src\main\resources>keytool -list -keystore keystore.jks
+
+password : changeit
+
+
+
+
+To check the java classes in the jar files :
+
+C:\Users\ADMIN\Downloads\jboss-as-7.1.1.Final\jboss-as-7.1.1.Final\lib>jar -tvf jbossws-native-core-4.2.1.Final.jar
+
+
+poster and flix

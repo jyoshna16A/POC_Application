@@ -1,0 +1,1580 @@
+
+package xsd.mnpprotocol;
+
+import java.math.BigInteger;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.namespace.QName;
+import jakarta.activation.DataHandler;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAttachmentRef;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the xsd.mnpprotocol package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+    private final static QName _Corporate_QNAME = new QName("MNPProtocol.xsd", "Corporate");
+    private final static QName _SimSwap_QNAME = new QName("MNPProtocol.xsd", "SimSwap");
+    private final static QName _ContractualObligation_QNAME = new QName("MNPProtocol.xsd", "ContractualObligation");
+    private final static QName _ActivateAging_QNAME = new QName("MNPProtocol.xsd", "ActivateAging");
+    private final static QName _OwnershipChange_QNAME = new QName("MNPProtocol.xsd", "OwnershipChange");
+    private final static QName _OutstandingBill_QNAME = new QName("MNPProtocol.xsd", "OutstandingBill");
+    private final static QName _UnderSubJudice_QNAME = new QName("MNPProtocol.xsd", "UnderSub-judice");
+    private final static QName _PortingProhibited_QNAME = new QName("MNPProtocol.xsd", "PortingProhibited");
+    private final static QName _MessageSenderTelco_QNAME = new QName("MNPProtocol.xsd", "MessageSenderTelco");
+    private final static QName _MessageReceiverTelco_QNAME = new QName("MNPProtocol.xsd", "MessageReceiverTelco");
+    private final static QName _RequestId_QNAME = new QName("MNPProtocol.xsd", "RequestId");
+    private final static QName _ReferenceId_QNAME = new QName("MNPProtocol.xsd", "ReferenceId");
+    private final static QName _Timestamp_QNAME = new QName("MNPProtocol.xsd", "Timestamp");
+    private final static QName _AccountNumber_QNAME = new QName("MNPProtocol.xsd", "AccountNumber");
+    private final static QName _ActivationQuota_QNAME = new QName("MNPProtocol.xsd", "ActivationQuota");
+    private final static QName _BCAction_QNAME = new QName("MNPProtocol.xsd", "BCAction");
+    private final static QName _ByLOA_QNAME = new QName("MNPProtocol.xsd", "ByLOA");
+    private final static QName _CompanyName_QNAME = new QName("MNPProtocol.xsd", "CompanyName");
+    private final static QName _DCTime_QNAME = new QName("MNPProtocol.xsd", "DCTime");
+    private final static QName _DataFileName_QNAME = new QName("MNPProtocol.xsd", "DataFileName");
+    private final static QName _Date_QNAME = new QName("MNPProtocol.xsd", "Date");
+    private final static QName _DateRangeEnd_QNAME = new QName("MNPProtocol.xsd", "DateRangeEnd");
+    private final static QName _DateRangeStart_QNAME = new QName("MNPProtocol.xsd", "DateRangeStart");
+    private final static QName _DonorTelco_QNAME = new QName("MNPProtocol.xsd", "DonorTelco");
+    private final static QName _DownloadTime_QNAME = new QName("MNPProtocol.xsd", "DownloadTime");
+    private final static QName _Email_QNAME = new QName("MNPProtocol.xsd", "Email");
+    private final static QName _ErrorCode_QNAME = new QName("MNPProtocol.xsd", "ErrorCode");
+    private final static QName _ErrorText_QNAME = new QName("MNPProtocol.xsd", "ErrorText");
+    private final static QName _MaxSNPerNPO_QNAME = new QName("MNPProtocol.xsd", "MaxSNPerNPO");
+    private final static QName _MessageType_QNAME = new QName("MNPProtocol.xsd", "MessageType");
+    private final static QName _Name_QNAME = new QName("MNPProtocol.xsd", "Name");
+    private final static QName _OldReferenceId_QNAME = new QName("MNPProtocol.xsd", "OldReferenceId");
+    private final static QName _OrderedTransferTime_QNAME = new QName("MNPProtocol.xsd", "OrderedTransferTime");
+    private final static QName _TimeoutDate_QNAME = new QName("MNPProtocol.xsd", "TimeoutDate");
+    private final static QName _OrderedApprovalTime_QNAME = new QName("MNPProtocol.xsd", "OrderedApprovalTime");
+    private final static QName _OwnerId_QNAME = new QName("MNPProtocol.xsd", "OwnerId");
+    private final static QName _OwnerName_QNAME = new QName("MNPProtocol.xsd", "OwnerName");
+    private final static QName _OverallResult_QNAME = new QName("MNPProtocol.xsd", "OverallResult");
+    private final static QName _Phone_QNAME = new QName("MNPProtocol.xsd", "Phone");
+    private final static QName _QuotaDate_QNAME = new QName("MNPProtocol.xsd", "QuotaDate");
+    private final static QName _WindowName_QNAME = new QName("MNPProtocol.xsd", "WindowName");
+    private final static QName _QuotaAmount_QNAME = new QName("MNPProtocol.xsd", "QuotaAmount");
+    private final static QName _ReasonCode_QNAME = new QName("MNPProtocol.xsd", "ReasonCode");
+    private final static QName _ReasonText_QNAME = new QName("MNPProtocol.xsd", "ReasonText");
+    private final static QName _RecipientTelco_QNAME = new QName("MNPProtocol.xsd", "RecipientTelco");
+    private final static QName _RecommendTransferTime_QNAME = new QName("MNPProtocol.xsd", "RecommendTransferTime");
+    private final static QName _ReferenceTimestamp_QNAME = new QName("MNPProtocol.xsd", "ReferenceTimestamp");
+    private final static QName _RegistrationCode_QNAME = new QName("MNPProtocol.xsd", "RegistrationCode");
+    private final static QName _Remark_QNAME = new QName("MNPProtocol.xsd", "Remark");
+    private final static QName _ResultCode_QNAME = new QName("MNPProtocol.xsd", "ResultCode");
+    private final static QName _ResultCode2_QNAME = new QName("MNPProtocol.xsd", "ResultCode2");
+    private final static QName _ResultCode3_QNAME = new QName("MNPProtocol.xsd", "ResultCode3");
+    private final static QName _ResultText_QNAME = new QName("MNPProtocol.xsd", "ResultText");
+    private final static QName _RouteNumber_QNAME = new QName("MNPProtocol.xsd", "RouteNumber");
+    private final static QName _ServiceType_QNAME = new QName("MNPProtocol.xsd", "ServiceType");
+    private final static QName _SignatureDate_QNAME = new QName("MNPProtocol.xsd", "SignatureDate");
+    private final static QName _SubscriberNumber_QNAME = new QName("MNPProtocol.xsd", "SubscriberNumber");
+    private final static QName _SuspectedTelco_QNAME = new QName("MNPProtocol.xsd", "SuspectedTelco");
+    private final static QName _StatusCode_QNAME = new QName("MNPProtocol.xsd", "StatusCode");
+    private final static QName _Telefax_QNAME = new QName("MNPProtocol.xsd", "Telefax");
+    private final static QName _NumberRangeStart_QNAME = new QName("MNPProtocol.xsd", "NumberRangeStart");
+    private final static QName _NumberRangeEnd_QNAME = new QName("MNPProtocol.xsd", "NumberRangeEnd");
+    private final static QName _UndertakingAck_QNAME = new QName("MNPProtocol.xsd", "UndertakingAck");
+    private final static QName _TimeRangeEnd_QNAME = new QName("MNPProtocol.xsd", "TimeRangeEnd");
+    private final static QName _TimeRangeStart_QNAME = new QName("MNPProtocol.xsd", "TimeRangeStart");
+    private final static QName _TypeOfId_QNAME = new QName("MNPProtocol.xsd", "TypeOfId");
+    private final static QName _LSA_QNAME = new QName("MNPProtocol.xsd", "LSA");
+    private final static QName _BatchId_QNAME = new QName("MNPProtocol.xsd", "BatchId");
+    private final static QName _Checksum_QNAME = new QName("MNPProtocol.xsd", "Checksum");
+    private final static QName _Success_QNAME = new QName("MNPProtocol.xsd", "Success");
+    private final static QName _Fail_QNAME = new QName("MNPProtocol.xsd", "Fail");
+    private final static QName _RNO_QNAME = new QName("MNPProtocol.xsd", "RNO");
+    private final static QName _DNO_QNAME = new QName("MNPProtocol.xsd", "DNO");
+    private final static QName _NRH_QNAME = new QName("MNPProtocol.xsd", "NRH");
+    private final static QName _BillDate_QNAME = new QName("MNPProtocol.xsd", "BillDate");
+    private final static QName _DueDate_QNAME = new QName("MNPProtocol.xsd", "DueDate");
+    private final static QName _Amount_QNAME = new QName("MNPProtocol.xsd", "Amount");
+    private final static QName _LOAImage_QNAME = new QName("MNPProtocol.xsd", "LOAImage");
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: xsd.mnpprotocol
+     * 
+     */
+    public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link NPOSQType }
+     * 
+     */
+    public NPOSQType createNPOSQType() {
+        return new NPOSQType();
+    }
+
+    /**
+     * Create an instance of {@link RDBPDType }
+     * 
+     */
+    public RDBPDType createRDBPDType() {
+        return new RDBPDType();
+    }
+
+    /**
+     * Create an instance of {@link NPOTType }
+     * 
+     */
+    public NPOTType createNPOTType() {
+        return new NPOTType();
+    }
+
+    /**
+     * Create an instance of {@link NPOType }
+     * 
+     */
+    public NPOType createNPOType() {
+        return new NPOType();
+    }
+
+    /**
+     * Create an instance of {@link NPOType.SubscriberAuthSequence }
+     * 
+     */
+    public NPOType.SubscriberAuthSequence createNPOTypeSubscriberAuthSequence() {
+        return new NPOType.SubscriberAuthSequence();
+    }
+
+    /**
+     * Create an instance of {@link MNPFrame }
+     * 
+     */
+    public MNPFrame createMNPFrame() {
+        return new MNPFrame();
+    }
+
+    /**
+     * Create an instance of {@link NVPType }
+     * 
+     */
+    public NVPType createNVPType() {
+        return new NVPType();
+    }
+
+    /**
+     * Create an instance of {@link NVPAType }
+     * 
+     */
+    public NVPAType createNVPAType() {
+        return new NVPAType();
+    }
+
+    /**
+     * Create an instance of {@link CANType }
+     * 
+     */
+    public CANType createCANType() {
+        return new CANType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSType }
+     * 
+     */
+    public NPOSType createNPOSType() {
+        return new NPOSType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSTERType }
+     * 
+     */
+    public NPOSTERType createNPOSTERType() {
+        return new NPOSTERType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSAType }
+     * 
+     */
+    public NPOSAType createNPOSAType() {
+        return new NPOSAType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSAACKType }
+     * 
+     */
+    public NPOSAACKType createNPOSAACKType() {
+        return new NPOSAACKType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSPRType }
+     * 
+     */
+    public NPOSPRType createNPOSPRType() {
+        return new NPOSPRType();
+    }
+
+    /**
+     * Create an instance of {@link NPOAType }
+     * 
+     */
+    public NPOAType createNPOAType() {
+        return new NPOAType();
+    }
+
+    /**
+     * Create an instance of {@link NPOTAType }
+     * 
+     */
+    public NPOTAType createNPOTAType() {
+        return new NPOTAType();
+    }
+
+    /**
+     * Create an instance of {@link PERType }
+     * 
+     */
+    public PERType createPERType() {
+        return new PERType();
+    }
+
+    /**
+     * Create an instance of {@link SDType }
+     * 
+     */
+    public SDType createSDType() {
+        return new SDType();
+    }
+
+    /**
+     * Create an instance of {@link SDAType }
+     * 
+     */
+    public SDAType createSDAType() {
+        return new SDAType();
+    }
+
+    /**
+     * Create an instance of {@link SCType }
+     * 
+     */
+    public SCType createSCType() {
+        return new SCType();
+    }
+
+    /**
+     * Create an instance of {@link SCAType }
+     * 
+     */
+    public SCAType createSCAType() {
+        return new SCAType();
+    }
+
+    /**
+     * Create an instance of {@link SCNOTICEType }
+     * 
+     */
+    public SCNOTICEType createSCNOTICEType() {
+        return new SCNOTICEType();
+    }
+
+    /**
+     * Create an instance of {@link SCNOTICEAType }
+     * 
+     */
+    public SCNOTICEAType createSCNOTICEAType() {
+        return new SCNOTICEAType();
+    }
+
+    /**
+     * Create an instance of {@link SDNOTICEType }
+     * 
+     */
+    public SDNOTICEType createSDNOTICEType() {
+        return new SDNOTICEType();
+    }
+
+    /**
+     * Create an instance of {@link SDNOTICEAType }
+     * 
+     */
+    public SDNOTICEAType createSDNOTICEAType() {
+        return new SDNOTICEAType();
+    }
+
+    /**
+     * Create an instance of {@link RDBPDRspType }
+     * 
+     */
+    public RDBPDRspType createRDBPDRspType() {
+        return new RDBPDRspType();
+    }
+
+    /**
+     * Create an instance of {@link RDBFDType }
+     * 
+     */
+    public RDBFDType createRDBFDType() {
+        return new RDBFDType();
+    }
+
+    /**
+     * Create an instance of {@link RDBFDRspType }
+     * 
+     */
+    public RDBFDRspType createRDBFDRspType() {
+        return new RDBFDRspType();
+    }
+
+    /**
+     * Create an instance of {@link RNAType }
+     * 
+     */
+    public RNAType createRNAType() {
+        return new RNAType();
+    }
+
+    /**
+     * Create an instance of {@link RNAAType }
+     * 
+     */
+    public RNAAType createRNAAType() {
+        return new RNAAType();
+    }
+
+    /**
+     * Create an instance of {@link TQType }
+     * 
+     */
+    public TQType createTQType() {
+        return new TQType();
+    }
+
+    /**
+     * Create an instance of {@link TQRspType }
+     * 
+     */
+    public TQRspType createTQRspType() {
+        return new TQRspType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSQRspType }
+     * 
+     */
+    public NPOSQRspType createNPOSQRspType() {
+        return new NPOSQRspType();
+    }
+
+    /**
+     * Create an instance of {@link NOTEType }
+     * 
+     */
+    public NOTEType createNOTEType() {
+        return new NOTEType();
+    }
+
+    /**
+     * Create an instance of {@link RspType }
+     * 
+     */
+    public RspType createRspType() {
+        return new RspType();
+    }
+
+    /**
+     * Create an instance of {@link AuthorType }
+     * 
+     */
+    public AuthorType createAuthorType() {
+        return new AuthorType();
+    }
+
+    /**
+     * Create an instance of {@link BCInfoType }
+     * 
+     */
+    public BCInfoType createBCInfoType() {
+        return new BCInfoType();
+    }
+
+    /**
+     * Create an instance of {@link CorporateCustomerType }
+     * 
+     */
+    public CorporateCustomerType createCorporateCustomerType() {
+        return new CorporateCustomerType();
+    }
+
+    /**
+     * Create an instance of {@link DateRangeType }
+     * 
+     */
+    public DateRangeType createDateRangeType() {
+        return new DateRangeType();
+    }
+
+    /**
+     * Create an instance of {@link PersonCustomerType }
+     * 
+     */
+    public PersonCustomerType createPersonCustomerType() {
+        return new PersonCustomerType();
+    }
+
+    /**
+     * Create an instance of {@link QuotaResultType }
+     * 
+     */
+    public QuotaResultType createQuotaResultType() {
+        return new QuotaResultType();
+    }
+
+    /**
+     * Create an instance of {@link DonorQuotaType }
+     * 
+     */
+    public DonorQuotaType createDonorQuotaType() {
+        return new DonorQuotaType();
+    }
+
+    /**
+     * Create an instance of {@link WindowType }
+     * 
+     */
+    public WindowType createWindowType() {
+        return new WindowType();
+    }
+
+    /**
+     * Create an instance of {@link ReferenceIdType }
+     * 
+     */
+    public ReferenceIdType createReferenceIdType() {
+        return new ReferenceIdType();
+    }
+
+    /**
+     * Create an instance of {@link SCInfoType }
+     * 
+     */
+    public SCInfoType createSCInfoType() {
+        return new SCInfoType();
+    }
+
+    /**
+     * Create an instance of {@link SDInfoType }
+     * 
+     */
+    public SDInfoType createSDInfoType() {
+        return new SDInfoType();
+    }
+
+    /**
+     * Create an instance of {@link PERInfoType }
+     * 
+     */
+    public PERInfoType createPERInfoType() {
+        return new PERInfoType();
+    }
+
+    /**
+     * Create an instance of {@link SubscriberResultType }
+     * 
+     */
+    public SubscriberResultType createSubscriberResultType() {
+        return new SubscriberResultType();
+    }
+
+    /**
+     * Create an instance of {@link StatusResultType }
+     * 
+     */
+    public StatusResultType createStatusResultType() {
+        return new StatusResultType();
+    }
+
+    /**
+     * Create an instance of {@link TimeRangeType }
+     * 
+     */
+    public TimeRangeType createTimeRangeType() {
+        return new TimeRangeType();
+    }
+
+    /**
+     * Create an instance of {@link NumberRangeType }
+     * 
+     */
+    public NumberRangeType createNumberRangeType() {
+        return new NumberRangeType();
+    }
+
+    /**
+     * Create an instance of {@link NPOSQType.BatchReference }
+     * 
+     */
+    public NPOSQType.BatchReference createNPOSQTypeBatchReference() {
+        return new NPOSQType.BatchReference();
+    }
+
+    /**
+     * Create an instance of {@link RDBPDType.SubscriberSequence }
+     * 
+     */
+    public RDBPDType.SubscriberSequence createRDBPDTypeSubscriberSequence() {
+        return new RDBPDType.SubscriberSequence();
+    }
+
+    /**
+     * Create an instance of {@link NPOTType.SubscriberSequence }
+     * 
+     */
+    public NPOTType.SubscriberSequence createNPOTTypeSubscriberSequence() {
+        return new NPOTType.SubscriberSequence();
+    }
+
+    /**
+     * Create an instance of {@link NPOType.SubscriberSequence }
+     * 
+     */
+    public NPOType.SubscriberSequence createNPOTypeSubscriberSequence() {
+        return new NPOType.SubscriberSequence();
+    }
+
+    /**
+     * Create an instance of {@link NPOType.SubscriberAuthSequence.SubscriberAuthorization }
+     * 
+     */
+    public NPOType.SubscriberAuthSequence.SubscriberAuthorization createNPOTypeSubscriberAuthSequenceSubscriberAuthorization() {
+        return new NPOType.SubscriberAuthSequence.SubscriberAuthorization();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Corporate")
+    public JAXBElement<String> createCorporate(String value) {
+        return new JAXBElement<String>(_Corporate_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "SimSwap")
+    public JAXBElement<String> createSimSwap(String value) {
+        return new JAXBElement<String>(_SimSwap_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ContractualObligation")
+    public JAXBElement<String> createContractualObligation(String value) {
+        return new JAXBElement<String>(_ContractualObligation_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ActivateAging")
+    public JAXBElement<String> createActivateAging(String value) {
+        return new JAXBElement<String>(_ActivateAging_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OwnershipChange")
+    public JAXBElement<String> createOwnershipChange(String value) {
+        return new JAXBElement<String>(_OwnershipChange_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OutstandingBill")
+    public JAXBElement<String> createOutstandingBill(String value) {
+        return new JAXBElement<String>(_OutstandingBill_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "UnderSub-judice")
+    public JAXBElement<String> createUnderSubJudice(String value) {
+        return new JAXBElement<String>(_UnderSubJudice_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "PortingProhibited")
+    public JAXBElement<String> createPortingProhibited(String value) {
+        return new JAXBElement<String>(_PortingProhibited_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "MessageSenderTelco")
+    public JAXBElement<String> createMessageSenderTelco(String value) {
+        return new JAXBElement<String>(_MessageSenderTelco_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "MessageReceiverTelco")
+    public JAXBElement<String> createMessageReceiverTelco(String value) {
+        return new JAXBElement<String>(_MessageReceiverTelco_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "RequestId")
+    public JAXBElement<String> createRequestId(String value) {
+        return new JAXBElement<String>(_RequestId_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ReferenceId")
+    public JAXBElement<String> createReferenceId(String value) {
+        return new JAXBElement<String>(_ReferenceId_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Timestamp")
+    public JAXBElement<XMLGregorianCalendar> createTimestamp(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_Timestamp_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "AccountNumber")
+    public JAXBElement<String> createAccountNumber(String value) {
+        return new JAXBElement<String>(_AccountNumber_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ActivationQuota")
+    public JAXBElement<Integer> createActivationQuota(Integer value) {
+        return new JAXBElement<Integer>(_ActivationQuota_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "BCAction")
+    public JAXBElement<Integer> createBCAction(Integer value) {
+        return new JAXBElement<Integer>(_BCAction_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ByLOA")
+    public JAXBElement<String> createByLOA(String value) {
+        return new JAXBElement<String>(_ByLOA_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "CompanyName")
+    public JAXBElement<String> createCompanyName(String value) {
+        return new JAXBElement<String>(_CompanyName_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DCTime")
+    public JAXBElement<XMLGregorianCalendar> createDCTime(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_DCTime_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DataFileName")
+    public JAXBElement<String> createDataFileName(String value) {
+        return new JAXBElement<String>(_DataFileName_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Date")
+    public JAXBElement<XMLGregorianCalendar> createDate(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_Date_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DateRangeEnd")
+    public JAXBElement<XMLGregorianCalendar> createDateRangeEnd(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_DateRangeEnd_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DateRangeStart")
+    public JAXBElement<XMLGregorianCalendar> createDateRangeStart(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_DateRangeStart_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DonorTelco")
+    public JAXBElement<String> createDonorTelco(String value) {
+        return new JAXBElement<String>(_DonorTelco_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DownloadTime")
+    public JAXBElement<XMLGregorianCalendar> createDownloadTime(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_DownloadTime_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Email")
+    public JAXBElement<String> createEmail(String value) {
+        return new JAXBElement<String>(_Email_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ErrorCode")
+    public JAXBElement<Integer> createErrorCode(Integer value) {
+        return new JAXBElement<Integer>(_ErrorCode_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ErrorText")
+    public JAXBElement<String> createErrorText(String value) {
+        return new JAXBElement<String>(_ErrorText_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "MaxSNPerNPO")
+    public JAXBElement<Integer> createMaxSNPerNPO(Integer value) {
+        return new JAXBElement<Integer>(_MaxSNPerNPO_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "MessageType")
+    public JAXBElement<String> createMessageType(String value) {
+        return new JAXBElement<String>(_MessageType_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Name")
+    public JAXBElement<String> createName(String value) {
+        return new JAXBElement<String>(_Name_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OldReferenceId")
+    public JAXBElement<String> createOldReferenceId(String value) {
+        return new JAXBElement<String>(_OldReferenceId_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OrderedTransferTime")
+    public JAXBElement<XMLGregorianCalendar> createOrderedTransferTime(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_OrderedTransferTime_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "TimeoutDate")
+    public JAXBElement<XMLGregorianCalendar> createTimeoutDate(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_TimeoutDate_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OrderedApprovalTime")
+    public JAXBElement<XMLGregorianCalendar> createOrderedApprovalTime(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_OrderedApprovalTime_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OwnerId")
+    public JAXBElement<String> createOwnerId(String value) {
+        return new JAXBElement<String>(_OwnerId_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OwnerName")
+    public JAXBElement<String> createOwnerName(String value) {
+        return new JAXBElement<String>(_OwnerName_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "OverallResult")
+    public JAXBElement<Integer> createOverallResult(Integer value) {
+        return new JAXBElement<Integer>(_OverallResult_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Phone")
+    public JAXBElement<String> createPhone(String value) {
+        return new JAXBElement<String>(_Phone_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "QuotaDate")
+    public JAXBElement<XMLGregorianCalendar> createQuotaDate(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_QuotaDate_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "WindowName")
+    public JAXBElement<String> createWindowName(String value) {
+        return new JAXBElement<String>(_WindowName_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "QuotaAmount")
+    public JAXBElement<Integer> createQuotaAmount(Integer value) {
+        return new JAXBElement<Integer>(_QuotaAmount_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ReasonCode")
+    public JAXBElement<Integer> createReasonCode(Integer value) {
+        return new JAXBElement<Integer>(_ReasonCode_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ReasonText")
+    public JAXBElement<String> createReasonText(String value) {
+        return new JAXBElement<String>(_ReasonText_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "RecipientTelco")
+    public JAXBElement<String> createRecipientTelco(String value) {
+        return new JAXBElement<String>(_RecipientTelco_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "RecommendTransferTime")
+    public JAXBElement<XMLGregorianCalendar> createRecommendTransferTime(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_RecommendTransferTime_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ReferenceTimestamp")
+    public JAXBElement<XMLGregorianCalendar> createReferenceTimestamp(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_ReferenceTimestamp_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "RegistrationCode")
+    public JAXBElement<String> createRegistrationCode(String value) {
+        return new JAXBElement<String>(_RegistrationCode_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Remark")
+    public JAXBElement<String> createRemark(String value) {
+        return new JAXBElement<String>(_Remark_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ResultCode")
+    public JAXBElement<Integer> createResultCode(Integer value) {
+        return new JAXBElement<Integer>(_ResultCode_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ResultCode2")
+    public JAXBElement<Integer> createResultCode2(Integer value) {
+        return new JAXBElement<Integer>(_ResultCode2_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ResultCode3")
+    public JAXBElement<Integer> createResultCode3(Integer value) {
+        return new JAXBElement<Integer>(_ResultCode3_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ResultText")
+    public JAXBElement<String> createResultText(String value) {
+        return new JAXBElement<String>(_ResultText_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "RouteNumber")
+    public JAXBElement<String> createRouteNumber(String value) {
+        return new JAXBElement<String>(_RouteNumber_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "ServiceType")
+    public JAXBElement<String> createServiceType(String value) {
+        return new JAXBElement<String>(_ServiceType_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "SignatureDate")
+    public JAXBElement<XMLGregorianCalendar> createSignatureDate(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_SignatureDate_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "SubscriberNumber")
+    public JAXBElement<String> createSubscriberNumber(String value) {
+        return new JAXBElement<String>(_SubscriberNumber_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "SuspectedTelco")
+    public JAXBElement<String> createSuspectedTelco(String value) {
+        return new JAXBElement<String>(_SuspectedTelco_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "StatusCode")
+    public JAXBElement<String> createStatusCode(String value) {
+        return new JAXBElement<String>(_StatusCode_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Telefax")
+    public JAXBElement<String> createTelefax(String value) {
+        return new JAXBElement<String>(_Telefax_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "NumberRangeStart")
+    public JAXBElement<String> createNumberRangeStart(String value) {
+        return new JAXBElement<String>(_NumberRangeStart_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "NumberRangeEnd")
+    public JAXBElement<String> createNumberRangeEnd(String value) {
+        return new JAXBElement<String>(_NumberRangeEnd_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "UndertakingAck")
+    public JAXBElement<String> createUndertakingAck(String value) {
+        return new JAXBElement<String>(_UndertakingAck_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "TimeRangeEnd")
+    public JAXBElement<XMLGregorianCalendar> createTimeRangeEnd(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_TimeRangeEnd_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "TimeRangeStart")
+    public JAXBElement<XMLGregorianCalendar> createTimeRangeStart(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_TimeRangeStart_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "TypeOfId")
+    public JAXBElement<Integer> createTypeOfId(Integer value) {
+        return new JAXBElement<Integer>(_TypeOfId_QNAME, Integer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "LSA")
+    public JAXBElement<String> createLSA(String value) {
+        return new JAXBElement<String>(_LSA_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "BatchId")
+    public JAXBElement<String> createBatchId(String value) {
+        return new JAXBElement<String>(_BatchId_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Checksum")
+    public JAXBElement<BigInteger> createChecksum(BigInteger value) {
+        return new JAXBElement<BigInteger>(_Checksum_QNAME, BigInteger.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Success")
+    public JAXBElement<BigInteger> createSuccess(BigInteger value) {
+        return new JAXBElement<BigInteger>(_Success_QNAME, BigInteger.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Fail")
+    public JAXBElement<BigInteger> createFail(BigInteger value) {
+        return new JAXBElement<BigInteger>(_Fail_QNAME, BigInteger.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "RNO")
+    public JAXBElement<String> createRNO(String value) {
+        return new JAXBElement<String>(_RNO_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DNO")
+    public JAXBElement<String> createDNO(String value) {
+        return new JAXBElement<String>(_DNO_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "NRH")
+    public JAXBElement<String> createNRH(String value) {
+        return new JAXBElement<String>(_NRH_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "BillDate")
+    public JAXBElement<XMLGregorianCalendar> createBillDate(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_BillDate_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "DueDate")
+    public JAXBElement<XMLGregorianCalendar> createDueDate(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_DueDate_QNAME, XMLGregorianCalendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "Amount")
+    public JAXBElement<String> createAmount(String value) {
+        return new JAXBElement<String>(_Amount_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DataHandler }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DataHandler }{@code >}
+     */
+    @XmlElementDecl(namespace = "MNPProtocol.xsd", name = "LOAImage")
+    @XmlAttachmentRef
+    public JAXBElement<DataHandler> createLOAImage(DataHandler value) {
+        return new JAXBElement<DataHandler>(_LOAImage_QNAME, DataHandler.class, null, value);
+    }
+
+}

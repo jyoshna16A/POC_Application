@@ -1,0 +1,149 @@
+
+package xsd.mnpprotocol;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for CorporateCustomerType complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="CorporateCustomerType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}CompanyName"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}RegistrationCode" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}AccountNumber" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}SignatureDate"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorporateCustomerType", propOrder = {
+    "companyName",
+    "registrationCode",
+    "accountNumber",
+    "signatureDate"
+})
+public class CorporateCustomerType {
+
+    @XmlElement(name = "CompanyName", required = true)
+    protected String companyName;
+    @XmlElement(name = "RegistrationCode")
+    protected String registrationCode;
+    @XmlElement(name = "AccountNumber")
+    protected String accountNumber;
+    @XmlElement(name = "SignatureDate", required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar signatureDate;
+
+    /**
+     * Gets the value of the companyName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    /**
+     * Sets the value of the companyName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCompanyName(String value) {
+        this.companyName = value;
+    }
+
+    /**
+     * Gets the value of the registrationCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRegistrationCode() {
+        return registrationCode;
+    }
+
+    /**
+     * Sets the value of the registrationCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRegistrationCode(String value) {
+        this.registrationCode = value;
+    }
+
+    /**
+     * Gets the value of the accountNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    /**
+     * Sets the value of the accountNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAccountNumber(String value) {
+        this.accountNumber = value;
+    }
+
+    /**
+     * Gets the value of the signatureDate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getSignatureDate() {
+        return signatureDate;
+    }
+
+    /**
+     * Sets the value of the signatureDate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setSignatureDate(XMLGregorianCalendar value) {
+        this.signatureDate = value;
+    }
+
+}

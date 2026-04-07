@@ -1,0 +1,6 @@
+#Tue Nov 05 10:26:07 IST 2024
+__DEFAULT__=false
+expression=MNPProtocol.xsd
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true

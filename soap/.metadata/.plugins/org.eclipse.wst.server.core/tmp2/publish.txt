@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Feb 04 18:37:04 IST 2025
+org.eclipse.jst.j2ee.server\:SampleAnt=WEB-INF/lib/SampleAnt.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\ADMIN\\Downloads\\apache-cxf-3.5.9\\apache-cxf-3.5.9\\lib\\spring-web-5.3.37.jar=WEB-INF/lib/spring-web-5.3.37.jar

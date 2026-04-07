@@ -1,0 +1,960 @@
+
+package xsd.mnpprotocol;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.activation.DataHandler;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttachmentRef;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for NPOType complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="NPOType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}MessageSenderTelco"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}MessageReceiverTelco"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}RequestId"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}Timestamp"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}ReferenceId"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}RecipientTelco"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}DonorTelco"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}OldReferenceId" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}ByLOA" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}LOAImage" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}UndertakingAck" minOccurs="0"/&gt;
+ *         &lt;choice&gt;
+ *           &lt;element name="SubscriberSequence"&gt;
+ *             &lt;complexType&gt;
+ *               &lt;complexContent&gt;
+ *                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                   &lt;sequence&gt;
+ *                     &lt;element ref="{MNPProtocol.xsd}SubscriberNumber" maxOccurs="unbounded"/&gt;
+ *                   &lt;/sequence&gt;
+ *                 &lt;/restriction&gt;
+ *               &lt;/complexContent&gt;
+ *             &lt;/complexType&gt;
+ *           &lt;/element&gt;
+ *           &lt;element name="SubscriberAuthSequence"&gt;
+ *             &lt;complexType&gt;
+ *               &lt;complexContent&gt;
+ *                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                   &lt;sequence&gt;
+ *                     &lt;element name="SubscriberAuthorization" maxOccurs="unbounded"&gt;
+ *                       &lt;complexType&gt;
+ *                         &lt;complexContent&gt;
+ *                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                             &lt;sequence&gt;
+ *                               &lt;element ref="{MNPProtocol.xsd}SubscriberNumber"/&gt;
+ *                               &lt;element ref="{MNPProtocol.xsd}OwnerId"/&gt;
+ *                               &lt;element ref="{MNPProtocol.xsd}TypeOfId"/&gt;
+ *                             &lt;/sequence&gt;
+ *                           &lt;/restriction&gt;
+ *                         &lt;/complexContent&gt;
+ *                       &lt;/complexType&gt;
+ *                     &lt;/element&gt;
+ *                   &lt;/sequence&gt;
+ *                 &lt;/restriction&gt;
+ *               &lt;/complexContent&gt;
+ *             &lt;/complexType&gt;
+ *           &lt;/element&gt;
+ *         &lt;/choice&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}OrderedTransferTime" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}OrderedApprovalTime" minOccurs="0"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}LSA"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}RouteNumber"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}ServiceType"/&gt;
+ *         &lt;choice&gt;
+ *           &lt;element name="PersonCustomer" type="{MNPProtocol.xsd}PersonCustomerType"/&gt;
+ *           &lt;element name="CorporateCustomer" type="{MNPProtocol.xsd}CorporateCustomerType"/&gt;
+ *         &lt;/choice&gt;
+ *         &lt;element name="Author" type="{MNPProtocol.xsd}AuthorType"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}Remark" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "NPOType", propOrder = {
+    "messageSenderTelco",
+    "messageReceiverTelco",
+    "requestId",
+    "timestamp",
+    "referenceId",
+    "recipientTelco",
+    "donorTelco",
+    "oldReferenceId",
+    "byLOA",
+    "loaImage",
+    "undertakingAck",
+    "subscriberSequence",
+    "subscriberAuthSequence",
+    "orderedTransferTime",
+    "orderedApprovalTime",
+    "lsa",
+    "routeNumber",
+    "serviceType",
+    "personCustomer",
+    "corporateCustomer",
+    "author",
+    "remark"
+})
+public class NPOType {
+
+    @XmlElement(name = "MessageSenderTelco", required = true)
+    protected String messageSenderTelco;
+    @XmlElement(name = "MessageReceiverTelco", required = true)
+    protected String messageReceiverTelco;
+    @XmlElement(name = "RequestId", required = true)
+    protected String requestId;
+    @XmlElement(name = "Timestamp", required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar timestamp;
+    @XmlElement(name = "ReferenceId", required = true)
+    protected String referenceId;
+    @XmlElement(name = "RecipientTelco", required = true)
+    protected String recipientTelco;
+    @XmlElement(name = "DonorTelco", required = true)
+    protected String donorTelco;
+    @XmlElement(name = "OldReferenceId")
+    protected String oldReferenceId;
+    @XmlElement(name = "ByLOA")
+    protected String byLOA;
+    @XmlElement(name = "LOAImage", type = String.class)
+    @XmlAttachmentRef
+    @XmlSchemaType(name = "anyURI")
+    protected DataHandler loaImage;
+    @XmlElement(name = "UndertakingAck")
+    protected String undertakingAck;
+    @XmlElement(name = "SubscriberSequence")
+    protected NPOType.SubscriberSequence subscriberSequence;
+    @XmlElement(name = "SubscriberAuthSequence")
+    protected NPOType.SubscriberAuthSequence subscriberAuthSequence;
+    @XmlElement(name = "OrderedTransferTime")
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar orderedTransferTime;
+    @XmlElement(name = "OrderedApprovalTime")
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar orderedApprovalTime;
+    @XmlElement(name = "LSA", required = true)
+    protected String lsa;
+    @XmlElement(name = "RouteNumber", required = true)
+    protected String routeNumber;
+    @XmlElement(name = "ServiceType", required = true)
+    protected String serviceType;
+    @XmlElement(name = "PersonCustomer")
+    protected PersonCustomerType personCustomer;
+    @XmlElement(name = "CorporateCustomer")
+    protected CorporateCustomerType corporateCustomer;
+    @XmlElement(name = "Author", required = true)
+    protected AuthorType author;
+    @XmlElement(name = "Remark")
+    protected String remark;
+    @XmlAttribute(name = "version")
+    protected String version;
+
+    /**
+     * Gets the value of the messageSenderTelco property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessageSenderTelco() {
+        return messageSenderTelco;
+    }
+
+    /**
+     * Sets the value of the messageSenderTelco property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessageSenderTelco(String value) {
+        this.messageSenderTelco = value;
+    }
+
+    /**
+     * Gets the value of the messageReceiverTelco property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessageReceiverTelco() {
+        return messageReceiverTelco;
+    }
+
+    /**
+     * Sets the value of the messageReceiverTelco property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessageReceiverTelco(String value) {
+        this.messageReceiverTelco = value;
+    }
+
+    /**
+     * Gets the value of the requestId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    /**
+     * Sets the value of the requestId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRequestId(String value) {
+        this.requestId = value;
+    }
+
+    /**
+     * Gets the value of the timestamp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * Sets the value of the timestamp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setTimestamp(XMLGregorianCalendar value) {
+        this.timestamp = value;
+    }
+
+    /**
+     * Gets the value of the referenceId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    /**
+     * Sets the value of the referenceId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReferenceId(String value) {
+        this.referenceId = value;
+    }
+
+    /**
+     * Gets the value of the recipientTelco property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRecipientTelco() {
+        return recipientTelco;
+    }
+
+    /**
+     * Sets the value of the recipientTelco property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRecipientTelco(String value) {
+        this.recipientTelco = value;
+    }
+
+    /**
+     * Gets the value of the donorTelco property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDonorTelco() {
+        return donorTelco;
+    }
+
+    /**
+     * Sets the value of the donorTelco property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDonorTelco(String value) {
+        this.donorTelco = value;
+    }
+
+    /**
+     * Gets the value of the oldReferenceId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOldReferenceId() {
+        return oldReferenceId;
+    }
+
+    /**
+     * Sets the value of the oldReferenceId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOldReferenceId(String value) {
+        this.oldReferenceId = value;
+    }
+
+    /**
+     * Gets the value of the byLOA property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getByLOA() {
+        return byLOA;
+    }
+
+    /**
+     * Sets the value of the byLOA property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setByLOA(String value) {
+        this.byLOA = value;
+    }
+
+    /**
+     * Gets the value of the loaImage property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public DataHandler getLOAImage() {
+        return loaImage;
+    }
+
+    /**
+     * Sets the value of the loaImage property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLOAImage(DataHandler value) {
+        this.loaImage = value;
+    }
+
+    /**
+     * Gets the value of the undertakingAck property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUndertakingAck() {
+        return undertakingAck;
+    }
+
+    /**
+     * Sets the value of the undertakingAck property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUndertakingAck(String value) {
+        this.undertakingAck = value;
+    }
+
+    /**
+     * Gets the value of the subscriberSequence property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NPOType.SubscriberSequence }
+     *     
+     */
+    public NPOType.SubscriberSequence getSubscriberSequence() {
+        return subscriberSequence;
+    }
+
+    /**
+     * Sets the value of the subscriberSequence property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NPOType.SubscriberSequence }
+     *     
+     */
+    public void setSubscriberSequence(NPOType.SubscriberSequence value) {
+        this.subscriberSequence = value;
+    }
+
+    /**
+     * Gets the value of the subscriberAuthSequence property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NPOType.SubscriberAuthSequence }
+     *     
+     */
+    public NPOType.SubscriberAuthSequence getSubscriberAuthSequence() {
+        return subscriberAuthSequence;
+    }
+
+    /**
+     * Sets the value of the subscriberAuthSequence property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NPOType.SubscriberAuthSequence }
+     *     
+     */
+    public void setSubscriberAuthSequence(NPOType.SubscriberAuthSequence value) {
+        this.subscriberAuthSequence = value;
+    }
+
+    /**
+     * Gets the value of the orderedTransferTime property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getOrderedTransferTime() {
+        return orderedTransferTime;
+    }
+
+    /**
+     * Sets the value of the orderedTransferTime property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setOrderedTransferTime(XMLGregorianCalendar value) {
+        this.orderedTransferTime = value;
+    }
+
+    /**
+     * Gets the value of the orderedApprovalTime property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getOrderedApprovalTime() {
+        return orderedApprovalTime;
+    }
+
+    /**
+     * Sets the value of the orderedApprovalTime property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setOrderedApprovalTime(XMLGregorianCalendar value) {
+        this.orderedApprovalTime = value;
+    }
+
+    /**
+     * Gets the value of the lsa property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLSA() {
+        return lsa;
+    }
+
+    /**
+     * Sets the value of the lsa property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLSA(String value) {
+        this.lsa = value;
+    }
+
+    /**
+     * Gets the value of the routeNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRouteNumber() {
+        return routeNumber;
+    }
+
+    /**
+     * Sets the value of the routeNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRouteNumber(String value) {
+        this.routeNumber = value;
+    }
+
+    /**
+     * Gets the value of the serviceType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    /**
+     * Sets the value of the serviceType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setServiceType(String value) {
+        this.serviceType = value;
+    }
+
+    /**
+     * Gets the value of the personCustomer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PersonCustomerType }
+     *     
+     */
+    public PersonCustomerType getPersonCustomer() {
+        return personCustomer;
+    }
+
+    /**
+     * Sets the value of the personCustomer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PersonCustomerType }
+     *     
+     */
+    public void setPersonCustomer(PersonCustomerType value) {
+        this.personCustomer = value;
+    }
+
+    /**
+     * Gets the value of the corporateCustomer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CorporateCustomerType }
+     *     
+     */
+    public CorporateCustomerType getCorporateCustomer() {
+        return corporateCustomer;
+    }
+
+    /**
+     * Sets the value of the corporateCustomer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CorporateCustomerType }
+     *     
+     */
+    public void setCorporateCustomer(CorporateCustomerType value) {
+        this.corporateCustomer = value;
+    }
+
+    /**
+     * Gets the value of the author property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AuthorType }
+     *     
+     */
+    public AuthorType getAuthor() {
+        return author;
+    }
+
+    /**
+     * Sets the value of the author property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AuthorType }
+     *     
+     */
+    public void setAuthor(AuthorType value) {
+        this.author = value;
+    }
+
+    /**
+     * Gets the value of the remark property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    /**
+     * Sets the value of the remark property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRemark(String value) {
+        this.remark = value;
+    }
+
+    /**
+     * Gets the value of the version property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    /**
+     * Sets the value of the version property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVersion(String value) {
+        this.version = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="SubscriberAuthorization" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element ref="{MNPProtocol.xsd}SubscriberNumber"/&gt;
+     *                   &lt;element ref="{MNPProtocol.xsd}OwnerId"/&gt;
+     *                   &lt;element ref="{MNPProtocol.xsd}TypeOfId"/&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "subscriberAuthorization"
+    })
+    public static class SubscriberAuthSequence {
+
+        @XmlElement(name = "SubscriberAuthorization", required = true)
+        protected List<NPOType.SubscriberAuthSequence.SubscriberAuthorization> subscriberAuthorization;
+
+        /**
+         * Gets the value of the subscriberAuthorization property.
+         * 
+         * <p>
+         * This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a <CODE>set</CODE> method for the subscriberAuthorization property.
+         * 
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getSubscriberAuthorization().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link NPOType.SubscriberAuthSequence.SubscriberAuthorization }
+         * 
+         * 
+         */
+        public List<NPOType.SubscriberAuthSequence.SubscriberAuthorization> getSubscriberAuthorization() {
+            if (subscriberAuthorization == null) {
+                subscriberAuthorization = new ArrayList<NPOType.SubscriberAuthSequence.SubscriberAuthorization>();
+            }
+            return this.subscriberAuthorization;
+        }
+
+
+        /**
+         * <p>Java class for anonymous complex type.
+         * 
+         * <p>The following schema fragment specifies the expected content contained within this class.
+         * 
+         * <pre>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element ref="{MNPProtocol.xsd}SubscriberNumber"/&gt;
+         *         &lt;element ref="{MNPProtocol.xsd}OwnerId"/&gt;
+         *         &lt;element ref="{MNPProtocol.xsd}TypeOfId"/&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
+         * </pre>
+         * 
+         * 
+         */
+        @XmlAccessorType(XmlAccessType.FIELD)
+        @XmlType(name = "", propOrder = {
+            "subscriberNumber",
+            "ownerId",
+            "typeOfId"
+        })
+        public static class SubscriberAuthorization {
+
+            @XmlElement(name = "SubscriberNumber", required = true)
+            protected String subscriberNumber;
+            @XmlElement(name = "OwnerId", required = true)
+            protected String ownerId;
+            @XmlElement(name = "TypeOfId")
+            protected int typeOfId;
+
+            /**
+             * Gets the value of the subscriberNumber property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getSubscriberNumber() {
+                return subscriberNumber;
+            }
+
+            /**
+             * Sets the value of the subscriberNumber property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setSubscriberNumber(String value) {
+                this.subscriberNumber = value;
+            }
+
+            /**
+             * Gets the value of the ownerId property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getOwnerId() {
+                return ownerId;
+            }
+
+            /**
+             * Sets the value of the ownerId property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setOwnerId(String value) {
+                this.ownerId = value;
+            }
+
+            /**
+             * Gets the value of the typeOfId property.
+             * 
+             */
+            public int getTypeOfId() {
+                return typeOfId;
+            }
+
+            /**
+             * Sets the value of the typeOfId property.
+             * 
+             */
+            public void setTypeOfId(int value) {
+                this.typeOfId = value;
+            }
+
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element ref="{MNPProtocol.xsd}SubscriberNumber" maxOccurs="unbounded"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "subscriberNumber"
+    })
+    public static class SubscriberSequence {
+
+        @XmlElement(name = "SubscriberNumber", required = true)
+        protected List<String> subscriberNumber;
+
+        /**
+         * Gets the value of the subscriberNumber property.
+         * 
+         * <p>
+         * This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a <CODE>set</CODE> method for the subscriberNumber property.
+         * 
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getSubscriberNumber().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link String }
+         * 
+         * 
+         */
+        public List<String> getSubscriberNumber() {
+            if (subscriberNumber == null) {
+                subscriberNumber = new ArrayList<String>();
+            }
+            return this.subscriberNumber;
+        }
+
+    }
+
+}

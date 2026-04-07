@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;ShadeJavaxToJakarta&apos;" deleteContents="true" description="Delete resource &apos;ShadeJavaxToJakarta&apos;" element1="/ShadeJavaxToJakarta" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1741784245716"/>&#x0A;<refactoring comment="Delete resource &apos;ShadeJavaxToJakarta/apache-cxf&apos;" deleteContents="false" description="Delete resource &apos;ShadeJavaxToJakarta/apache-cxf&apos;" element1="/ShadeJavaxToJakarta/apache-cxf" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1741784564969"/>
+</session>

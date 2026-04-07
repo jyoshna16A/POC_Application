@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+D:\soap1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3521623724.index

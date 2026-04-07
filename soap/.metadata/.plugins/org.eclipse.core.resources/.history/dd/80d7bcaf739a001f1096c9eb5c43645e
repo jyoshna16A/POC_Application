@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:example.com="http://example.com" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <wsdd:service name="MNPFrame" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://example.com"/>
+    <wsdd:parameter name="wsdlServiceElement" value="MNPFrameService"/>
+    <wsdd:parameter name="schemaQualified" value="http://example.com"/>
+    <wsdd:parameter name="wsdlServicePort" value="MNPFrame"/>
+    <wsdd:parameter name="className" value="com.example.MNPFrame"/>
+    <wsdd:parameter name="wsdlPortType" value="MNPFrame"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="getVersion getNPOOrNVPOrNVPA setVersion"/>
+    <wsdd:typeMapping qname="example.com:&gt;getVersion" type="java:com.example.GetVersion" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="example.com:&gt;setVersionResponse" type="java:com.example.SetVersionResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="example.com:&gt;setVersion" type="java:com.example.SetVersion" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="example.com:&gt;getNPOOrNVPOrNVPA" type="java:com.example.GetNPOOrNVPOrNVPA" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="example.com:&gt;getVersionResponse" type="java:com.example.GetVersionResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:typeMapping qname="example.com:&gt;getNPOOrNVPOrNVPAResponse" type="java:com.example.GetNPOOrNVPOrNVPAResponse" encodingStyle="" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"/>
+    <wsdd:arrayMapping qname="example.com:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" encodingStyle="" innerType="XMLSchema:anyType"/>
+    <wsdd:operation name="setVersion" qname="example.com:setVersion" soapAction="">
+      <wsdd:parameter qname="example.com:value" type="XMLSchema:string"/>
+    </wsdd:operation>
+    <wsdd:operation name="getNPOOrNVPOrNVPA" qname="example.com:getNPOOrNVPOrNVPA" returnQName="example.com:getNPOOrNVPOrNVPAReturn" returnType="example.com:ArrayOf_xsd_anyType" returnItemQName="example.com:item" soapAction=""/>
+    <wsdd:operation name="getVersion" qname="example.com:getVersion" returnQName="example.com:getVersionReturn" returnType="XMLSchema:string" soapAction=""/>
+  </wsdd:service>
+</wsdd:deployment>

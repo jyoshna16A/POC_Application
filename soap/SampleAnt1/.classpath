@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/openlogic-openjdk-jre-17.0.13+11-windows-x64">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/ADMIN/Downloads/jar_files (2)/jbossws-common-tools-2.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ADMIN/Downloads/jar_files/ant-1.10.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ADMIN/Downloads/jar_files/ant-launcher-1.10.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ADMIN/Downloads/jar_files (2)/jbossws-api-3.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ADMIN/Downloads/jar_files (2)/jbossws-native-core-4.2.1.Final.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

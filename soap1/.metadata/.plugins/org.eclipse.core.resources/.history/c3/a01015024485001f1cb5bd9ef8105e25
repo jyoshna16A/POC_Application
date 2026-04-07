@@ -1,0 +1,32 @@
+package com.example.calculator;
+
+import javax.jws.WebService;
+
+// Implement the Web Service
+@WebService(endpointInterface = "com.example.calculator.CalculatorService")
+public class CalculatorServiceImpl implements CalculatorService {
+
+    @Override
+    public int add(int a, int b) {
+    	System.out.println("Add : " + a + b);
+        return a + b;
+    }
+
+    @Override
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    @Override
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    public int divide(int a, int b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not allowed");
+        }
+        return a / b;
+    }
+}

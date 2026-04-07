@@ -1,0 +1,394 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">XML Schema for NPC Messages</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:simpleType name="AcceptedType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Y|N" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="AcctPayType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Postpaid|Prepaid" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="AmountType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='3' />
+			<xsd:maxLength value='20' />
+			<xsd:pattern value="([0-9]{0,17})[.]([0-9]{2})" /> 
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="CommentsType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='250' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DownloadSimpleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Full|Delta" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="FlagType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Y|N" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Len10StrType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='10' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Len50StrType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='50' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Len100StrType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='100' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Len200StrType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='200' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="LSAIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value='2' fixed='true' />
+			<xsd:pattern value="[A-Za-z0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="NPDateFormatType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value='14' fixed='true' />
+			<xsd:pattern value="[0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="OrigAssigneeFlagType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Y|N" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="PartIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='8' />
+			<xsd:pattern value="[A-Za-z0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="PortingCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='32' />
+			<xsd:pattern value="[A-Za-z0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="PortSimpleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="MOBILE|ANY" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="RouteType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="10" />
+			<xsd:pattern value="[A-Za-z0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="TelephoneNumberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='15' />
+			<xsd:pattern value="[0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="TranIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value='21' />
+			<xsd:maxLength value='28' />
+			<xsd:pattern value="[A-Za-z0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="BaseMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="BaseWithRteMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="Route" type="RouteType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MessageHeaderType">
+		<xsd:sequence>
+			<xsd:element name="LSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="PortType" type="PortSimpleType" minOccurs="1" />
+			<xsd:element name="TransactionID" type="TranIDType" minOccurs="1" />
+			<xsd:element name="MessageID" type="xsd:integer" minOccurs="1" />
+			<xsd:element name="MsgCreateTimeStamp" type="NPDateFormatType" minOccurs="1" />
+			<xsd:element name="Sender" type="PartIDType" minOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="NumRangeType">
+		<xsd:sequence>
+			<xsd:element name="NumberFrom" type="TelephoneNumberType" minOccurs="1" />
+			<xsd:element name="NumberTo" type="TelephoneNumberType" minOccurs="1" />
+			<xsd:element name="PortingCode" type="PortingCodeType" minOccurs="0" />
+			<xsd:element name="ReasonCode" type="Len10StrType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="NumRangeTypeWithOAFlag">
+		<xsd:sequence>
+			<xsd:element name="NumberFrom" type="TelephoneNumberType" minOccurs="1" />
+			<xsd:element name="NumberTo" type="TelephoneNumberType" minOccurs="1" />
+			<xsd:element name="OrigAssigneeFlag" type="OrigAssigneeFlagType" minOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="NumRangeTypeWithFlag">
+		<xsd:sequence>
+			<xsd:element name="NumberFrom" type="TelephoneNumberType" minOccurs="1" />
+			<xsd:element name="NumberTo" type="TelephoneNumberType" minOccurs="1" />
+			<xsd:element name="RangeAccepted" type="AcceptedType" minOccurs="1" />
+			<xsd:element name="ReasonCode" type="Len10StrType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 1001/1002  Recipient to MCH(Mobile Number Portability Clearing House)/ MCH to Donor-->
+	<xsd:complexType name="PortReqMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="DonorLSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="Donor" type="PartIDType" minOccurs="1" />
+			<xsd:element name="RecipientLSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="Recipient" type="PartIDType" minOccurs="1" />
+			<xsd:element name="AccountPayType" type="AcctPayType" minOccurs="1" />
+			<xsd:element name="PortingCode" type="PortingCodeType" minOccurs="0" />
+			<xsd:element name="CorpPortFlag" type="FlagType" minOccurs="0" /> 
+			<xsd:element name="DocumentFileName" type="Len200StrType" minOccurs="0" />
+			<xsd:element name="SubRequestTime" type="NPDateFormatType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 1003 Donor to MCH -->
+	<xsd:complexType name="PortRespMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRangeFlagged" type="NumRangeTypeWithFlag" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 1004 MCH to Recipient-->
+	<xsd:complexType name="PortRespWithFlagMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRangeFlagged" type="NumRangeTypeWithFlag" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="PortAccepted" type="AcceptedType" minOccurs="1" />
+			<xsd:element name="PortTime" type="NPDateFormatType" minOccurs="0" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 1010 MCH to Recipient, Donor, other operators-->
+	<xsd:complexType name="PortActBroadcastMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRangeOAFlagged" type="NumRangeTypeWithOAFlag" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="Donor" type="PartIDType" minOccurs="1" />
+			<xsd:element name="Recipient" type="PartIDType" minOccurs="1" />
+			<xsd:element name="Route" type="RouteType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PortTimeChgMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="NewPortTime" type="NPDateFormatType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 3001/3002 -  Recipient to MCH/MCH to Recipient,Donor -->
+	<xsd:complexType name="PortCancelMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="ReasonCode" type="Len10StrType" minOccurs="0" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 7001/7002 Donor to MCH/MCH to Recipient-->
+	<xsd:complexType name="NonpaymentReqMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="BillAmount" type="AmountType" minOccurs="1" />
+			<xsd:element name="BillDate" type="NPDateFormatType" minOccurs="1" />
+			<xsd:element name="BillDueDate" type="NPDateFormatType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 7003/7004 Recipient to MCH/MCH to Donor-->
+	<xsd:complexType name="NonpaymentRespMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="ReasonCode" type="Len10StrType" minOccurs="0" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 5001/5002 Recipient to MCH/MCH to Original Assiginee -->
+	<xsd:complexType name="NumReturnReqMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="LastRecipientLSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="LastRecipient" type="PartIDType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 5003 Original Assignee to MCH-->
+	<xsd:complexType name="NumReturnReqWithRteMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="LastRecipientLSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="LastRecipient" type="PartIDType" minOccurs="1" />
+			<xsd:element name="Route" type="RouteType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 5004 MCH to Recipient, Original Assignee and other operators -->
+	<xsd:complexType name="NumReturnBroadcastMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRangeOAFlagged" type="NumRangeTypeWithOAFlag" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="OriginalAssignee" type="PartIDType" minOccurs="1" />
+			<xsd:element name="LastRecipient" type="PartIDType" minOccurs="1" />
+			<xsd:element name="Route" type="RouteType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 6001 Operator to MCH-->
+	<xsd:complexType name="SyncReqMsgType">
+		<xsd:sequence>
+			<xsd:element name="ReqSenderLSAID" type="LSAIDType" minOccurs="0" />
+			<xsd:element name="DownloadType" type="DownloadSimpleType" minOccurs="1" />
+			<xsd:element name="StartDate" type="NPDateFormatType" minOccurs="0" />
+			<xsd:element name="EndDate" type="NPDateFormatType" minOccurs="0" />
+			<xsd:element name="IncDonRecLSAFlag" type="FlagType" minOccurs="0" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 6002 MCH to operator-->
+	<xsd:complexType name="SyncRespMsgType">
+		<xsd:sequence>
+			<xsd:element name="TimeStamp" type="NPDateFormatType" minOccurs="1" />
+			<xsd:element name="Location" type="Len200StrType" minOccurs="1" />
+			<xsd:element name="ContactDetails" type="Len100StrType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 9001 MCH to operator -->
+	<xsd:complexType name="PortTerminatedMsgType">
+		<xsd:sequence>
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="DonorLSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="Donor" type="PartIDType" minOccurs="1" />
+			<xsd:element name="RecipientLSAID" type="LSAIDType" minOccurs="1" />
+			<xsd:element name="Recipient" type="PartIDType" minOccurs="1" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 9999 to operator -->
+	<xsd:complexType name="ErrorNotifMsgType">
+		<xsd:sequence>
+			<xsd:element name="ErrorCode" type="Len10StrType" minOccurs="0" />
+			<xsd:element name="ErrorDesc" type="Len100StrType" minOccurs="0" />
+			<xsd:element name="ErroredMessageID" type="xsd:integer" minOccurs="1" />
+			<xsd:element name="NumberRange" type="NumRangeType" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="Comments" type="CommentsType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="NPCMessageType">
+		<xsd:choice maxOccurs="1" minOccurs="1">
+			<xsd:element name="PortRequest" type="PortReqMsgType" />
+			<xsd:element name="PortResponse" type="PortRespMsgType" />
+			<xsd:element name="PortRespWithFlag" type="PortRespWithFlagMsgType" />
+			<xsd:element name="PortExecute" type="BaseMsgType" />
+			<xsd:element name="PortDeact" type="BaseMsgType" />
+			<xsd:element name="PortDeactWithRte" type="BaseWithRteMsgType" />
+			<xsd:element name="PortActivated" type="BaseWithRteMsgType" />
+			<xsd:element name="PortActivatedBroadcast" type="PortActBroadcastMsgType" />
+			<xsd:element name="PortTimeChangeRequest" type="PortTimeChgMsgType" />
+			<xsd:element name="PortTimeChangeNotification" type="PortTimeChgMsgType" />
+			<xsd:element name="PortCancelRequest" type="PortCancelMsgType" />
+			<xsd:element name="PortCancelNotification" type="PortCancelMsgType" />
+			<xsd:element name="NonpaymentDisconnReq" type="NonpaymentReqMsgType" />
+			<xsd:element name="NonpaymentDisconnResp" type="NonpaymentRespMsgType" />
+			<xsd:element name="NumReturnRequest" type="NumReturnReqMsgType" />
+			<xsd:element name="NumReturnRequestWithRte" type="NumReturnReqWithRteMsgType" />
+			<xsd:element name="NumReturnResponse" type="BaseWithRteMsgType" />
+			<xsd:element name="NumReturnBroadcast" type="NumReturnBroadcastMsgType" />
+			<xsd:element name="SynchronisationRequest" type="SyncReqMsgType" />
+			<xsd:element name="SynchronisationResponse" type="SyncRespMsgType" />
+			<xsd:element name="PortTerminated" type="PortTerminatedMsgType" />
+			<xsd:element name="ErrorNotification" type="ErrorNotifMsgType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="NPCDataType">
+		<xsd:sequence>
+			<xsd:element name="MessageHeader" type="MessageHeaderType" minOccurs="1" />
+			<xsd:element name="NPCMessage" type="NPCMessageType" minOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="NPCMessageData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="NPCData" type="NPCDataType" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

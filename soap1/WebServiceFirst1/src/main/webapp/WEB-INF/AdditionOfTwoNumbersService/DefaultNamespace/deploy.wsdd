@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><wsdd:deployment xmlns:wsdd="http://xml.apache.org/axis/wsdd/" xmlns:DefaultNamespace="http://DefaultNamespace" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <wsdd:service name="AdditionOfTwoNumbers" provider="java:RPC" use="literal" style="wrapped">
+    <wsdd:parameter name="wsdlTargetNamespace" value="http://DefaultNamespace"/>
+    <wsdd:parameter name="wsdlServiceElement" value="AdditionOfTwoNumbersService"/>
+    <wsdd:parameter name="schemaQualified" value="http://DefaultNamespace"/>
+    <wsdd:parameter name="wsdlServicePort" value="AdditionOfTwoNumbers"/>
+    <wsdd:parameter name="className" value="AdditionOfTwoNumbers"/>
+    <wsdd:parameter name="wsdlPortType" value="AdditionOfTwoNumbers"/>
+    <wsdd:parameter name="typeMappingVersion" value="1.2"/>
+    <wsdd:parameter name="allowedMethods" value="multiplyTwoNumbers addTwoNumbers substractTwoNumbers divisionTwoNumbers"/>
+    <wsdd:operation name="multiplyTwoNumbers" qname="DefaultNamespace:multiplyTwoNumbers" returnQName="DefaultNamespace:multiplyTwoNumbersReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="DefaultNamespace:a" type="XMLSchema:int"/>
+      <wsdd:parameter qname="DefaultNamespace:b" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="addTwoNumbers" qname="DefaultNamespace:addTwoNumbers" returnQName="DefaultNamespace:addTwoNumbersReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="DefaultNamespace:a" type="XMLSchema:int"/>
+      <wsdd:parameter qname="DefaultNamespace:b" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="divisionTwoNumbers" qname="DefaultNamespace:divisionTwoNumbers" returnQName="DefaultNamespace:divisionTwoNumbersReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="DefaultNamespace:a" type="XMLSchema:int"/>
+      <wsdd:parameter qname="DefaultNamespace:b" type="XMLSchema:int"/>
+    </wsdd:operation>
+    <wsdd:operation name="substractTwoNumbers" qname="DefaultNamespace:substractTwoNumbers" returnQName="DefaultNamespace:substractTwoNumbersReturn" returnType="XMLSchema:int" soapAction="">
+      <wsdd:parameter qname="DefaultNamespace:a" type="XMLSchema:int"/>
+      <wsdd:parameter qname="DefaultNamespace:b" type="XMLSchema:int"/>
+    </wsdd:operation>
+  </wsdd:service>
+</wsdd:deployment>

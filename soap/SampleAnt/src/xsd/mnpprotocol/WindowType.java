@@ -1,0 +1,82 @@
+
+package xsd.mnpprotocol;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for WindowType complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="WindowType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}QuotaAmount"/&gt;
+ *         &lt;element ref="{MNPProtocol.xsd}WindowName"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "WindowType", propOrder = {
+    "quotaAmount",
+    "windowName"
+})
+public class WindowType {
+
+    @XmlElement(name = "QuotaAmount")
+    protected int quotaAmount;
+    @XmlElement(name = "WindowName", required = true)
+    protected String windowName;
+
+    /**
+     * Gets the value of the quotaAmount property.
+     * 
+     */
+    public int getQuotaAmount() {
+        return quotaAmount;
+    }
+
+    /**
+     * Sets the value of the quotaAmount property.
+     * 
+     */
+    public void setQuotaAmount(int value) {
+        this.quotaAmount = value;
+    }
+
+    /**
+     * Gets the value of the windowName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWindowName() {
+        return windowName;
+    }
+
+    /**
+     * Sets the value of the windowName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWindowName(String value) {
+        this.windowName = value;
+    }
+
+}
