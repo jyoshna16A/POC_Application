@@ -1,0 +1,18 @@
+
+<div id="app">
+  <div><video #video id="video" width="640" height="480" autoplay></video></div>
+  <div><button id="snap" class="btn btn-primary" (click)="capture()">Capture a Photo</button></div>
+  <canvas #canvas id="canvas" width="640" height="480"></canvas>
+
+  <ul class="list-group list-group-horizontal-lg">
+    <li *ngFor="let c of captures" class="list-group-item" >
+
+        <img src="{{ c }}" height="100"/>
+
+
+    </li>
+</ul>
+</div>
+
+
+
