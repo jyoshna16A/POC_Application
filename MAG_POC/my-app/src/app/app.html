@@ -1,0 +1,9 @@
+<button (click)="toggleVisibility()">
+  {{ isVisible ? 'Hide' : 'Show' }} List
+</button>
+
+<div *ngIf="isVisible">
+  <li *ngFor="let item of visibleItems" style="display: inline;">
+    {{ item.name }},
+  </li>
+</div>
